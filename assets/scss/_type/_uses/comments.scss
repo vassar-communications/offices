@@ -1,0 +1,7 @@
+.comment-content {
+	@include font(sans-serif, xsmall-regular);
+	
+	p {
+		font-size: 1em;
+	}
+}

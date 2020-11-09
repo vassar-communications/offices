@@ -1,0 +1,67 @@
+.u-lContent {
+	strong {
+		em, i {
+			font-weight: 600;
+			font-variation-settings: "wght" 600;		
+		}
+	}
+}
+label {
+	@include font(sans-serif, small);
+}
+blockquote, pre {
+	font-size: 90%;
+}
+pre {
+	font-family: Monaco, monospace;
+	font-size: 0.8em;
+	line-height: 1.4;
+}
+h2 {
+    margin: 1em 0 0.3em 0;
+	@include font(serif-display, medium-condensed);
+}
+h3 {
+	margin: 1.8em 0 0.2em 0;
+}
+h2 + h3 {
+	margin-top: 0.6em;
+}
+h4 {
+	margin: 1.8em 0 0.4em 0;
+}
+h5 {
+	margin: 1.8em 0 0.4em 0;
+	@include font(sans-serif, medsmall-bold-caps);
+}
+li, td {
+	@extend %sans-serif-regular;
+}
+p {
+	@include font(sans-serif, regular);	
+}
+li {
+	@include font(sans-serif, regular-condensed);
+	
+	.u-lContent & {
+		margin-bottom: 0.3em;
+	}
+}
+b, strong {
+	@extend %sans-serif-bold;
+}
+.page__title {
+	margin-bottom: 1.4em;
+}
+.has-intro-font-size {
+	@include font(serif-display, medium);
+}
+p {
+	margin-top: 0;
+}
+p:only-child {
+    margin-bottom: 0;
+}
+th {
+	@include font(sans-serif, small-smallcaps-bold);
+}

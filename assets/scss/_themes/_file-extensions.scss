@@ -1,0 +1,40 @@
+/* Linked-list modules */
+
+/*
+.module {
+	li {
+		a {
+			position: relative;
+
+			&[href$=".xls"]:after {
+				content: "XLS";
+			}
+
+			&:after {
+				color: #fff;
+				background: #bbb;
+				display: inline-block;
+				padding: 0.1em 0.2em 0 0.2em;
+				top: 0.2em;
+				position: absolute;
+			}
+		}
+	}
+}
+*/	
+	
+/* General content */
+	
+.entry__content {
+	a:after {
+		margin-left: 0.3em;
+		font-size: 86%;
+		color: #666;    
+	}
+	a[href$=".pdf"]:after {
+		content: "(PDF)";
+	}
+	a[href$=".xls"]:after {
+		content: "(Excel spreadsheet)";
+	}
+}

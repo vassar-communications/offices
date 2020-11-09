@@ -1,0 +1,30 @@
+
+/*	Basics is for pervasive rules that should apply everywhere. These are more fundamental and generic than helpers - they apply to all layouts. This could be a single page, but I'm setting it up as a folder in case anyone would want to include stuff like reset/normalize stylesheets.
+	
+	Couple of ideas here from https://every-layout.dev/
+	
+	(As I'm updating this, I'm seeing that it seems to work more like a reset)
+
+
+*/
+
+body, figure {
+	margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+*:only-child,
+*:first-child {
+    margin-top: 0;
+}
+img {
+	height: auto;
+	width: 100%;
+}
+pre {
+	white-space: break-spaces;
+}

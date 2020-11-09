@@ -1,0 +1,53 @@
+/*
+	This is the layout for simplified blog posts that would appear in an archive listing or search results.
+*/
+
+article.type-post {
+	margin-bottom: 1.4em;
+	padding-bottom: 1.4em;
+	position: relative;
+	
+	.post-edit-link {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+.post__meta {
+	margin: 1em 0;
+}
+
+.minimal-post-on-frontpage,
+.archive,
+.search {
+	article {
+		.post__title {
+			margin: 0;
+		}
+		.post__meta {
+			grid-area: post-meta;
+			margin: 0.6em 0;
+		}
+	}
+	article.has-post-thumbnail {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		grid-template-rows: auto auto auto;
+		grid-template-areas: "post-image post-title" "post-image post-meta" "post-image post-content";
+
+		.post__header {
+			grid-area: post-title;
+		}
+		.post__image {
+			grid-area: post-image;
+			padding-right: 1em;
+			
+			img {
+				height: auto;
+			}
+		}
+		.entry__content {
+			grid-area: post-content;
+		}
+	}
+}

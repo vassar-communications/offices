@@ -1,0 +1,19 @@
+.wp-block-lazyblock-linked-list {
+	li {
+		a {
+			@include font(sans-serif, xsmall-bold);
+		}
+	}
+	.item__desc {
+		@include font(sans-serif, xsmall-condensed);
+	}	
+}
+
+/*
+.module {
+	h2 {
+		@extend %sans-serif-weight-black;
+		@extend %sans-serif-normal;
+	}
+}
+*/

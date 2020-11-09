@@ -1,0 +1,8 @@
+
+About _uses
+===========
+
+These files apply the existing typographic styles to actual markup.
+
+There isn't any type styling in here, since all of that should be defined in the _styles.scss file. These files just take the already-defined styles and apply them to specific parts of the site.
+

@@ -1,0 +1,25 @@
+.contactItem-hasPhoto {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #eee;
+
+	.wp-block-group__inner-container {
+		overflow: hidden;
+	}
+	h3 {
+		margin-top: 0;
+	}
+	.wp-block-image {
+		figure {
+			margin-bottom: 0;
+			margin-right: 1em;
+			width: 6em;
+   		}
+		img {
+			line-height: 0;
+			display: block;
+		}
+	}
+}

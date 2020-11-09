@@ -1,0 +1,26 @@
+.page__title {
+	@include font(serif-display, xxlarge-bold);	
+}
+
+
+/*
+.page__title {
+	.home & {
+		@extend %sans-serif-large;
+		@extend %sans-serif-xbold;
+	}
+	@at-root:not(.home) & {
+		@include font(serif, headline);
+
+		margin-top: 0;
+	}
+}
+.post__title {
+	.blog & {
+		@include font(serif, headline);
+	}
+	.archive & {
+		@include font(serif, headline);
+	}
+}
+*/

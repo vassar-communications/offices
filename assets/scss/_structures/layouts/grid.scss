@@ -1,0 +1,11 @@
+.cols-1-sm {
+	
+}
+.cols-3-lg {
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 2em;
+}
+
+.grid {
+	display: grid;
+}

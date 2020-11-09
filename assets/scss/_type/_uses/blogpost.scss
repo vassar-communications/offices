@@ -1,0 +1,20 @@
+.post__title {
+	@include font(serif-display, large-bold);
+	margin-bottom: 0.2em;
+}
+
+.minimal-post-on-frontpage {
+	.post__title {
+		@include font(serif-display, large-bold-condensed);
+	}	
+	.entry__content {
+		p {
+			@include font(sans-serif, small-condensed);
+		}
+	}
+}
+
+.post-edit-link,
+.post__date {
+	@include font(sans-serif, xsmall-regular);
+}

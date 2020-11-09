@@ -1,0 +1,134 @@
+/* unibar overrides */
+
+.u-NavSite--global {
+	position: relative !important;
+    z-index: 100 !important;
+    background: #8f192b !important;
+}
+a.ac-skipLink.ac-NavAnchor--menu.icon {
+	font-family: "Source Sans Variable" !important;
+	font-size: 0.9em !important;
+	font-variation-settings: "wght" 400 !important;
+}
+
+
+
+/*	Nav */
+
+.menu-toggle:before {
+    content: '\2630 ';
+    font-size: 2em;
+}
+.menu-toggle__text {
+	@include hide-visually();
+}
+
+.page__title {
+	//	Fixes J getting cropped on the left
+    padding-left: 0.1em;
+}
+
+
+//	This makes sure the page title doesn't wind up right against the sides of the screen
+
+
+
+.alignright {
+	float: right;
+	clear: right;
+	margin: 0 0 2em 2em;
+}
+.alignleft {
+	float: left;
+	clear: left;
+	margin: 0 2em 2em 0;
+}
+
+
+/*	Note module (shipping & receiving) */
+	
+p.has-background {
+	background: #fbf4ec !important;
+    font-size: 90%;
+    padding: 1em;
+}
+
+
+/*	 Blog posts */
+
+.label--date {
+	@include hide-visually();
+}
+
+
+.single-post {
+	.page__title {
+		margin-bottom: 0.8em;
+	}
+	.post__image {
+		display: none;
+	}
+	.screen-reader-text {
+		@include hide-visually();
+	}
+}
+
+.nav-links {
+    display: flex;
+    width: 100%;
+}
+.nav-links > * {
+    width: 50%;
+}
+.nav-next {
+    text-align: right;
+}
+.prevnext__title {
+    display: block;
+}
+
+.prevnext__name {
+	@include font(serif-display, medium);
+}
+.nav-links *:only-child {
+    width: 100%;
+}
+.readmore-link {
+	@include font(sans-serif, xsmall-regular);
+}
+
+
+
+.edit-link {
+	display: none;
+	/*
+	background: rgba(255,255,255,0.9);
+	border-radius: 0.2em;
+	padding: 0.2em 0.4em;
+	position: absolute;
+    right: 2em;
+    top: 3em;
+	z-index: 100;
+	max-width: 10em;
+    border: 1px solid #aaa;
+    
+    .screen-reader-text {
+	    &:before {
+		    content: '“';
+	    }
+	    &:after {
+		    content: '”';
+	    }	    
+    }
+    */
+}
+
+
+
+
+
+
+
+
+
+

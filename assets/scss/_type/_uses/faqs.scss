@@ -1,0 +1,9 @@
+.faq__index {
+//	margin: 1em 0 !important;
+	
+	@extend %linked-list;
+	
+	a {
+		@include font(sans-serif, xsmall-regular);
+	}
+}

@@ -1,0 +1,29 @@
+.wp-block-lazyblock-directory {
+	margin: 2em 0 2em 0;
+
+	.module__title {
+	    margin-bottom: 0.6em;
+	}
+	.directory {
+		width: 100%;
+
+		@include small() {
+			tr {
+				th:nth-child(2) {
+					padding-left: 0;
+			    }
+				
+				td:first-child {
+				    width: 40%;
+			    }
+				td:nth-child(2) {
+				    width: 30%;
+			    }
+				th:nth-child(3),
+				td:nth-child(3) {
+					text-align: right;
+			    }
+			}
+		}
+	}
+}

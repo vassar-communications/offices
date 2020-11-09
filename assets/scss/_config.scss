@@ -1,0 +1,69 @@
+$small: 40em;
+$medium: 60em;
+$large: 70em;
+
+$breakpoints: (
+	small: $small,
+	medium: $medium,
+	large: $large,
+);
+
+$serif-display: freight-big-pro;
+
+$gray--xlight: #f5f5f5;
+
+$VC--vassarVeryLightGray: #f8f7f6;
+$VC__vassarLightGray: #F0EEEB;
+$VC__vassarTextGray: #BFB9B0;
+$VC__vassarLinkPink: #ce1e46;
+$VC__vassarDullPink: #935966;
+$VC__vassarCharcoal: #5A5A5A;
+
+$VC__vassarBurgundy: #861f41;
+$VC__vassarBurgundy-dark: #54162a;
+$VC__vassarGray: #746661;
+$VC__vassarGray-lighter: #928580;
+
+$light-brown-large-areas: #fff8ef;
+$light-brown-small-areas: #f1ede8;
+
+
+$light-gray: #d5d1cf;
+$xlight-gray: #F0EEEB;
+$xlight-gray-cool: #f1f5f7;
+$cream: #fbf4ec; //#fff8ef;
+$red: #ed1c24;
+$gold: #c6aa76;
+$gray: #746661;
+$light-burgundy: #951829;
+$dark-burgundy: #641A2B;
+$pink: rgb(242,212,215);
+$dark-gray-cool: #63666a;
+$dark-gray-warm: rgb(101,86,86);
+
+$grad-rose: linear-gradient(45deg, #d0953d 0%, #ab5762 100%);
+$grad-lightburg-red: linear-gradient(45deg, $light-burgundy 0%, $red 100%);
+$grad-coolgray-red: linear-gradient(45deg, $dark-gray-cool 0%, $red 100%);
+$grad-darkburg-red: linear-gradient(45deg, $dark-burgundy 0%, $red 100%);
+
+$grad-lightburg-red-left: linear-gradient(135deg, $light-burgundy 0%, $red 100%);
+$grad-darkburg-red-left: linear-gradient(135deg, $dark-burgundy 0%, $red 100%);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+.standard-content {
+	@extend %sans-serif-normal;
+	line-height: 1.4;
+}
+p, li {
+	@extend .standard-content;
+}
+
+
+%module--box-text {
+	@extend %sans-serif-xsmall;
+	@extend %sans-serif-xsmall-weight-regular;
+}

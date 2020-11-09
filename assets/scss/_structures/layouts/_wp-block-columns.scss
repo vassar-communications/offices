@@ -1,0 +1,11 @@
+.wp-block-column {
+	margin-top: 1em;
+}
+
+.wp-block-columns {
+	@include break(medium) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2em;
+	}
+}

@@ -1,0 +1,27 @@
+.breakout,
+.width-fullscreen {
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: none;
+	right: 50%;
+	position: relative;
+	width: 100vw;
+}
+.size-thumbnail {
+	width: 33% !important;
+
+	@include break(large) {
+		width: 25% !important;
+	}
+}
+.size-medium {
+	width: 33%;
+}
+.size-large {
+	width: 100%;
+	
+	@include break(large) {
+		width: 50%;
+	}
+}

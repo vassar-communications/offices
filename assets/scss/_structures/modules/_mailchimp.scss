@@ -1,0 +1,35 @@
+#mc_embed_signup {
+	clear:left;
+	@include font(sans-serif, small);
+    background: $VC--vassarVeryLightGray;
+    padding: 1em;
+    
+    ul {
+	    margin: 0;
+	    padding: 0;
+	    
+	    li {
+		    list-style: none;
+		    margin: 0;
+		    padding: 0;
+	    }
+    }
+}
+#mc_embed_signup input[type=radio] {
+	margin-right: 5px;
+}
+#mc_embed_signup input[type=text] {
+	flex: 1;
+}
+#mc_embed_signup form {
+    padding: 0px 0 5px 3%;
+}
+.galleria--content {
+    margin: 0 0 .5%;
+}
+
+.mc-field-group {
+    padding: 0.2em 0;
+    display: flex;
+	flex-wrap: wrap;
+}

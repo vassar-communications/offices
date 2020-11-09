@@ -1,0 +1,96 @@
+@import "_config";
+@import "~beltpack";
+@import "~typeset";
+@import "_basics/_all";
+@import "_tools/_all";
+@import "_type/_all";
+@import "_structures/_all";
+@import "_themes/_all";
+@import "_file-this";
+
+
+#wpadminbar {
+	opacity: 0;
+	
+	&:hover {
+		opacity: 1;
+	}
+}
+
+
+@keyframes alert {
+	0% {
+		background: #fff;
+		border: 1em solid #f00;
+		color: #f00;
+	}
+	49% {
+		background: #fff;
+		border: 1em solid #f00;
+		color: #f00;
+	}
+	50% {
+		background: #f00;
+		color: #fff;
+		border: 1em solid #fff;
+	}
+	100% {
+		background: #f00;
+		color: #fff;
+		border: 1em solid #fff;
+	}
+}
+
+/*
+.red-alert {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.2);
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+.red-box {
+	h2 {
+		font-family: "acumin-pro-extra-condensed";
+		text-transform: uppercase;
+		margin: 0;
+		font-size: 6em;
+		line-height: 0.9;
+		margin-bottom: 0.2em;
+	}
+	text-align: center;
+	width: 40em;
+	padding: 2em;
+	background: #fff;
+	
+	animation-name: alert;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+span.edit-link {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    opacity: 0.2;
+    
+    &:hover {
+	    opacity: 1;
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+

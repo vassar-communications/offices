@@ -1,0 +1,133 @@
+blockquote,
+pre {
+	background: $xlight-gray-cool;
+}
+.u-lContent {
+	h2 {
+		color: $VC__vassarBurgundy;
+	}
+	h4 {
+		color: $VC__vassarGray-lighter;
+	}
+}
+hr {
+    margin: 2em 0;
+    border: 1px solid #eee;
+}
+.entry-title {
+	@include has-drop-border();
+}
+
+
+@mixin burgundy-to-pink() {
+	@include links($VC__vassarBurgundy, $VC__vassarGray, $VC__vassarLinkPink, $VC__vassarLinkPink);
+	
+	a {
+		text-decoration: underline;
+	}
+
+	&:hover {
+		text-decoration: underline $VC__vassarGray;
+	}
+}
+
+
+/*	This file doesn't do anything except bind variables to specific elements on the page. The actual colors are set in the palette files.
+
+*/
+
+
+@mixin bg-text($bg) {
+	background: $bg;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+html {
+	color: $VC__vassarCharcoal;
+}
+
+@mixin custom-link-var($desc) {
+	& {
+		background: var(--#{$desc}-link-bg, var(--link-bg));
+		color: var(--#{$desc}-link-color, var(--link));
+//		text-decoration: none;
+
+		&:hover,
+		&:visited:hover {
+			background: var(--#{$desc}-link-bg-hover, var(--link-bg-hover));
+			color: var(--#{$desc}-link-color-hover, var(--link-hover));
+			text-shadow: var(--#{$desc}-link-glow);
+		}
+	}
+}
+
+a {
+	@include burgundy-to-pink();
+	transition: 0.4s color ease;
+}
+
+.page__title {
+	color: $VC__vassarBurgundy-dark;
+
+	@include bg-text($grad-darkburg-red);
+
+	position: relative;
+	
+	&:after {
+		content: "";
+		position: absolute;
+		width: 3em;
+		border-top: 2px solid $red;
+		left: 0;
+		bottom: -0.5em;
+	}
+}
+
+.wp-block-lazyblock-linked-list a {
+	@include links($VC__vassarLinkPink, $VC__vassarLinkPink, #000, $VC__vassarLinkPink);
+}
+
+.module {
+	h2 {
+		color: $VC__vassarBurgundy-dark;
+	}
+}
+
+
+.faq__index {
+	li {
+		border-bottom: 1px solid $VC--vassarVeryLightGray;
+	}
+}
+
+.entry__content {
+	a {
+		@include links($VC__vassarLinkPink, $VC__vassarGray, #000, $VC__vassarLinkPink);
+		
+		
+	}
+}
+
+.home {
+	ul.nav-menu {
+	    position: relative;
+	    
+	    &:before {
+			background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+		    content: "";
+		    height: 140%;
+		    left: 0;
+		    position: absolute;
+		    top: 0;
+		    width: 10em;
+	    }
+	}
+}
+
+
+
+
+
+

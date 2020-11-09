@@ -1,0 +1,36 @@
+
+/*	Lazyblocks
+	==========
+
+*/
+
+//	Lazyblocks does not have any generic 'lazyblock' class
+//	hence the attribute selector
+
+div[class^="wp-block-lazyblock-"] {
+    margin-bottom: 1em;
+}
+.module {
+	
+}
+.module--box {
+	margin-top: 1em;
+	overflow: hidden;
+	padding: 2em;
+}
+.module__subsection {
+	margin-bottom: 1em;
+}
+.module {
+	h3 {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.directory {
+	.person__office {
+		margin-bottom: 0;
+	}	
+}

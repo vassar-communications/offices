@@ -1,0 +1,19 @@
+.alignleft,
+.alignright {
+	@include break(large) {
+		width: 50%;
+	}
+}
+
+.size-medium {
+	
+	width: 50%;
+
+	@include break(small) {
+		width: 33%;
+	}
+}
+.wp-block-table {
+	margin: 0;
+}
+

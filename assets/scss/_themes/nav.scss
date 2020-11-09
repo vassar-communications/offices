@@ -1,0 +1,69 @@
+
+
+/*	Top-level menu items
+	-------------------- */
+
+.u-NavSite__main {
+	a {
+		@include links($VC__vassarBurgundy, $VC__vassarBurgundy, $VC__vassarLinkPink, $VC__vassarLinkPink);
+		text-decoration: none;
+	}
+	.current_page_item,
+	.current-menu-ancestor {
+		& > a {
+			background: $VC__vassarBurgundy;
+			@include links(#fff, #fff, #fff, #fff);
+		}
+	}
+}
+
+.current_page_item > a {
+	background: $grad-coolgray-red;
+	color: #fff;
+}
+
+
+
+/*	Second-level menu items
+	----------------------- */
+
+	.nav-menu--secondary {
+		border-left: 0.4em solid $VC__vassarBurgundy;
+	}
+
+
+.current-page-ancestor,
+.current-page-parent {
+	& > a {
+		background: $xlight-gray;
+	}
+	.sub-menu {
+		border-color: $xlight-gray;
+	}
+}
+.menu-item {
+	a {
+	    transition: all 0.4s ease;
+	    transition-property: color, background, padding;
+	    mix-blend-mode: multiply;
+	}
+    &:not(.current-menu-item):hover {
+	    & > a {
+		    background: $VC__vassarBurgundy;
+		    color: #fff;
+		    
+		    padding-left: 0.4em !important;
+			text-decoration: none;
+
+		    @include break(small) {
+			    background: $light-brown-small-areas;
+			    color: #ce1e46;
+		    }
+	    }
+    }
+	&.current-menu-item {
+		& > a:hover {
+			color: #fff;
+		}
+	}
+}

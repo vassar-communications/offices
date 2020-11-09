@@ -1,0 +1,39 @@
+.u-NavSite__main {
+	a {
+//		@extend %sans-serif-small;
+//		@extend %sans-serif-bold;
+
+		@include font(sans-serif, medsmall-regular);
+	}
+	.menu {
+		& > .menu-item {
+			& > a {
+				@include font(sans-serif, medsmall-light);
+				
+				@include css((
+					font-size: (1.1em, 0.84em),
+				));
+			}
+		}
+	}
+	.current_page_item {
+//		@extend %sans-serif-weight-bold;
+	}
+}
+.u-NavSite__secondary {
+	a {
+		@include font(sans-serif, xsmall-medium);
+//		@extend %sans-serif-xxsmall;
+//		@extend %sans-serif-weight-medium;
+	}
+	.children {
+		border-left: 2px solid #000;
+		margin-bottom: 0.4em;
+		padding-left: 1em;
+	}
+	.page_item_has_children.current_page_item > a,
+	.page_item_has_children.current_page_ancestor > a {
+	    background: #000;
+	    padding: 0.2em 0.4em;
+	}
+}

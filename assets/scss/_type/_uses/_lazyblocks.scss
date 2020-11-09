@@ -1,0 +1,103 @@
+
+/*	MODULES
+	=======
+
+	This is styling for the LazyBlocks modules.
+	
+	
+*/
+
+
+/*	Module basics
+	-------------
+	These styles are used across all modules.	
+*/
+
+.module__title {
+	@include font(sans-serif, regular-medbold);
+	margin-top: 0;
+	margin-bottom: 0.2em;
+}
+
+.module__sub-title {
+	@include font(sans-serif, xsmall-bold);
+	margin-bottom: 0.4em;
+
+	&.small-caps {
+		@include font(sans-serif, xsmall-caps);
+	}
+}
+.module__text {
+	@include font(sans-serif, small);
+	
+	p {
+		font-size: 1em;
+	}
+}
+.item__text {
+	@include font(sans-serif, xsmall-condensed);
+}
+
+.module .module__subheader {
+//	@extend %module--box-text;
+//	@extend %sans-serif-small-caps;
+}
+
+div[class^="wp-block-lazyblock-"] {
+	td {
+		@include font(sans-serif, small);
+	}
+}
+
+
+/*	Contact module
+	----------------
+*/
+
+.contact__item {
+	@include font(sans-serif, xsmall);
+}
+.item--address {
+	& > * {
+		font-size: 1em;
+	}
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+
+/*	Deadlines module
+	----------------
+*/
+
+
+.module--deadlines {
+	.module__subsection {
+		display: flex;
+	}
+}
+.hours--time {
+	@extend %module--box-text;
+	@extend %sans-serif-bold;
+}
+.module--box.note--info {
+	background: #DCF4F5;
+    border-top: 2px solid #79C3C7;
+
+	.module__title {
+		color: 	#5CA7AB;
+	}
+}
+.module--box.note--important {
+	background: #FFE8DE;
+	border-top: 2px solid #d40;
+	
+	.module__title {
+		color: 	#c30;
+	}
+}

@@ -1,0 +1,50 @@
+td {
+	@include small() {
+    	border-top: 1px solid #eee;
+    }
+}
+th {
+	background: #eee;
+}
+tr {
+	display: block;
+	border-top: 1px solid #eee;
+
+	@include small() {
+		display: table-row;
+    	border-top: none;
+    }
+}
+
+.wp-block-table {
+    margin: 1em 0;
+}
+
+table {
+    border-spacing: 0;
+	width: 100%;
+}
+td {
+    padding: 0.3em 0;
+	vertical-align: top;
+}
+th {
+   text-align: left;
+   padding: 0.3em 0.4em;
+}
+table { //.responsive {
+	th {
+		display: none;
+
+		@include small() {
+			display: table-cell;
+		}
+	}
+	td {
+		display: block;
+		
+		@include small() {
+			display: table-cell;
+		}
+	}
+}

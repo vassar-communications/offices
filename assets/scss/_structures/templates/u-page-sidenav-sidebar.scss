@@ -1,0 +1,438 @@
+@keyframes slidein {
+	from {
+		top: -100%;
+	}
+	to {
+		top: 0;
+	}
+}
+
+/*
+
+.site-title {
+    text-align: center;
+}
+.u-Masthead {
+	padding: 0 6em;
+}
+
+*/
+
+.menu-toggle {
+	background: #fff;
+	border-radius: 0.2em;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	border-top: 2px solid #eee;
+
+	display: inline-block;
+	padding: 0.6em 1em;
+	z-index: 10;
+	box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.2);
+}
+
+.menu-close,
+.menu-toggle {
+    position: absolute;
+	right: 0.6em;
+	top: 0;
+
+    @include break(small) {
+	    right: 2em;
+	    top: 2em;
+    }
+}
+@include break(small) {
+	.menu-toggle {
+		display: none;
+	}
+}
+.menu-close {
+	display: none;
+	top: 2em;
+	z-index: 10;
+}
+#menu {
+	transition: all 0.4s ease;
+	top: -100%;
+}
+#menu:target {
+	box-shadow: 0 12px 12px rgba(0,0,0,0.3);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    padding: 5em 0 3em 0;
+    z-index: 10;
+    
+	@include bp__frosted-glass(white);
+
+	@include break(small) {
+		padding-top: 0;
+	}
+
+	.menu-close {
+	    display: block;
+    }
+}
+
+
+#secondary {
+	display: none;
+}
+.nav-menu {
+	border-bottom: 9px solid #f8f7f6;
+	padding-left: 0;
+	
+	@include break(medium) {
+		float: right;
+	}
+}
+
+
+// .u-NavSite__secondary 
+
+ul.children {
+	display: none;
+}
+
+// .u-NavSite__secondary 
+// .u-NavSite__secondary 
+
+.page_item_has_children.current_page_item a + .children,
+.page_item_has_children.current_page_ancestor a + .children {
+	display: block;
+}
+
+
+nav {
+	a {
+		text-decoration: none;
+	}
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+.site-info {
+	margin-top: 6em;
+	padding: 4em;
+	text-align: center;
+}
+.u-NavSite__secondary {
+	display: none;
+    max-width: 22em;
+	
+	@include small() {
+		display: block;
+	}
+}
+
+
+html:not(.home) {
+	.PageContentInner {
+//		display: grid;
+	}
+}
+
+//	this should apply to all top-level pages
+
+//.page-parent,
+html:not(.page-child) {
+	.u-lHeader {
+		align-items: center;
+		display: flex;
+		justify-content: left;
+		padding: 16em 2em 2em;
+		
+		@include break(medium) {
+			grid-area: masthead;
+			grid-column: 1 / span 8;
+		}
+	}
+}
+html.home {
+	.u-lHeader {
+		padding: 0;
+	}
+}
+
+html {
+	min-height: 100vh;
+
+	&:not(.home) {
+		.nav-menu,
+		.site-title {
+			margin: 0;
+		}
+		.u-NavSite__secondary,
+		.u-lMain {
+//			@include large() {
+				margin-top: 2.4em;			
+//			}
+		}
+	}
+
+
+
+/*	Standard page
+	=============
+	The following applies to every page in the site.
+*/
+
+	.menu-menu-1-container,
+	.menu-main-navigation-container {
+		padding: 1.8em;
+	}
+
+	.page__title {
+		display: inline-block;
+		padding-bottom: 0.2em;
+	}
+	.site-description {
+		display: none;
+	}
+
+	.u-lMain {
+		padding: 2em 2em 6em 2em;
+		padding-top: 0;
+		
+		@include break(medium) {
+			grid-area: content;
+			grid-column: 1 / span 8;
+			padding-right: 2em;
+		}
+	}
+	.u-lContent {
+		@include break(large) {
+			margin: 0 auto;
+			max-width: 38em;
+		}
+	}
+
+	.u-lFooter {
+		grid-area: footer;
+	}
+
+	.u-NavSite__main {
+		padding-top: 2em;
+		grid-area: nav-top;
+		line-height: 1.4;
+		padding: 0;
+
+		@include break(medium) {
+			grid-column: 1 / span 8;
+		}
+	
+		.menu {
+			@include break(medium) {
+				text-align: center;
+				padding-left: 0;
+				max-width: 50em;
+				margin: 0 auto;
+			}
+
+			 li {
+				@include small() {				 
+					display: inline-block;
+				}
+				
+				a {
+					padding: 0.1em 0.4em;
+				}
+		
+				.sub-menu {
+					@include small() {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+
+
+	.menu-item {
+		a {
+			display: block;
+			padding: 0.2em 0;
+		}
+	}
+	.sub-menu {
+	    display: none;
+	}
+	.current-page-ancestor,
+	.current-page-parent,
+	.current-menu-item {
+		& > a {
+			padding: 0.4em 0 0.3em 0.5em;
+		}
+		& > .sub-menu {
+		    display: block;
+		}
+	}			
+	.sub-menu {
+		border-left: 1px solid #000;
+		padding: 0.2em 0 0 0.6em;
+		margin-bottom: 0.2em;
+	}
+
+	&.page {
+		&.page-parent:not(.has-subnav),
+		&:not(.has-subnav) {
+			.PageContentInner {
+		
+				@include break(small) {
+					display: grid;
+					grid-template-areas: "masthead" "nav-top" "content" "footer";
+					grid-template-columns: 1fr;
+					grid-template-rows: auto auto auto auto;
+				}
+				@include break(medium) {
+					grid-template-areas: "masthead masthead" "nav-top nav-top" "content content" "footer footer";
+					grid-template-columns: repeat(8, 1fr);
+					grid-template-rows: auto auto auto;
+				}
+			}
+		}
+		&.has-subnav {
+		.PageContentInner {
+
+			@include break(small) {
+				display: grid;
+				grid-template-areas: "masthead" "nav-top" "nav-secondary" "content" "footer";
+				grid-template-columns: 1fr;
+				grid-template-rows: auto auto auto auto auto;
+			}
+			@include break(medium) {
+				grid-template-areas: "masthead nav-top" "nav-secondary content" "footer footer";
+				grid-template-columns: repeat(8, 1fr);
+				grid-template-rows: auto auto auto auto auto;
+				grid-template-areas: "masthead masthead" "nav-top nav-top" "nav-secondary content" "footer footer";
+			}
+
+			.u-NavSite__level--1 {
+				width: 70%;
+			}
+		}
+		.u-NavSite__secondary {
+			grid-area: nav-secondary;
+		
+			@include break(medium) {
+				grid-column: 1 / span 2;
+				grid-row: 3;
+				padding-right: 2em;
+			}
+		}
+//		}
+		.u-lContent {
+			@include break(large) {
+				margin: 0;
+				max-width: 34em;
+				width: 100%;
+			}
+		}
+		.u-lMain {
+			@include break(medium) {
+				grid-row: 3;
+				grid-column: 3 / span 7;
+			}
+			@include break(large) {
+				display: flex;
+			}
+		}
+	}
+	}
+	&.page-child {
+		/*	Subpage. This is a page that's a child of a top-level section.
+			These guys shouldn't have photo banners.
+		*/
+
+		.u-NavSite__main {
+			.menu {
+				text-align: center;
+				
+				@include break(medium) {
+					text-align: right;
+				}
+			}
+		}
+		
+		&:not(.has-subnav) {
+			@include break(medium) {
+				.PageContentInner {
+					grid-template-areas:
+				        "masthead nav-top"
+				        "content content"
+				        "footer footer";
+				}
+				.u-lHeader {
+					grid-column: 1 / span 3;
+					padding: 2em;
+				}
+				.u-NavSite__main {
+					grid-column: 4 / span 8;
+				}
+			}
+		}
+		&.has-subnav {
+			.PageContentInner {
+				@include break(medium) {
+					grid-template-areas:
+				        "masthead nav-top"
+				        "nav-secondary content"
+				        "footer footer";
+
+					.u-lHeader {
+						grid-column: 1 / span 3;
+						padding: 2em;
+					}
+					.u-NavSite__main {
+						grid-column: 4 / span 8;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+.PageContent {
+	//	This is the default footer for the theme.
+	//	In this case, the actual site footer is going to be provided by the
+	//	universal nav plugin.
+	.u-lFooter {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+/*
+	.widget-area {
+		@include small() {
+			column-count: 2;
+			
+			.widget {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+		@include large() {
+			column-count: 1;
+			padding-left: 2.4em;
+			width: 30%;
+		}
+	}
+*/
+

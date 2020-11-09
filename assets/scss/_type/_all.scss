@@ -1,0 +1,7 @@
+@import "atoms";
+@import "molecules";
+@import "_uses/_all";
+
+//	Must be scoped to .type-acumin within this file. I can't include that in the block above, since both .type-acumin and the HTML classes in "flourishes.scss", like .sched-item--title-condensed, need to be paired, and .type-acumin won't be paired if flourishes is contained in anything. 
+
+//	Essentially: flourishes are variants on this particular palette. "uses" doesn't contain variants - it would only contain stuff that's part of the standard typography for this palette.

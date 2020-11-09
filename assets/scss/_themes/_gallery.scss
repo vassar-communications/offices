@@ -1,0 +1,12 @@
+.blocks-gallery-item__caption {
+	a {
+		@include links(#fff, #fff, #fff, #fff);
+		text-decoration-color: #fff;
+		transition: 0.4s all ease;
+		
+		&:hover {
+			text-decoration: none;
+			background: rgba(255,255,255,0.6);
+		}
+	}
+}

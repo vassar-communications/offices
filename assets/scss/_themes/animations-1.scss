@@ -1,0 +1,30 @@
+
+.animations-1 {
+	@keyframes fade-shift-down {
+		from {
+			opacity: 0;
+			transform: translateY(var(--translate-distance, -0.4em));
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	.u-NavSite__level--1 {
+		li {
+			opacity: 0;
+			animation-name: fade-shift-down;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+			@include sequential-delay();
+		}
+	}
+	
+	.u-lHeader h1 {
+		--translate-distance: 0.1em;
+		opacity: 0;
+		animation-name: fade-shift-down;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+}

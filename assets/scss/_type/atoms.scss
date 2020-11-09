@@ -1,0 +1,347 @@
+/*
+@font-face {
+	font-family: 'SourceSansVar';
+	src: url('../fonts/SourceSansVariable-Roman.ttf') format('truetype');
+}
+*/
+
+@import url("https://use.typekit.net/fla5eof.css");
+
+@font-face{
+    font-family: 'Source Sans Variable';
+    font-weight: 200 900;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('../fonts/WOFF2/VAR/SourceSansVariable-Roman.ttf.woff2') format('woff2'),
+         url('../fonts/WOFF/VAR/SourceSansVariable-Roman.ttf.woff') format('woff'),
+         url('../fonts/VAR/SourceSansVariable-Roman.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Source Sans Variable';
+    font-weight: 200 900;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('../fonts/WOFF2/VAR/SourceSansVariable-Italic.ttf.woff2') format('woff2'),
+         url('../fonts/WOFF/VAR/SourceSansVariable-Italic.ttf.woff') format('woff'),
+         url('../fonts/VAR/SourceSansVariable-Italic.ttf') format('truetype');
+}
+
+// html
+.PageContentInner {
+	@extend %sans-serif;
+	font-size: 1.2em;
+	
+	@media screen and (min-width: $small) {
+		font-size: calc(1em + 0.5 * ((100vw - 20em) / 60));
+	}
+	@media screen and (min-width: $large) {
+		font-size: calc(0.8em + 0.5 * ((100vw - 20em) / 60));
+	}
+}
+
+b {
+	font-weight: normal;
+}
+em, i {
+	@include varfont-weight(340, 500, true);
+}
+
+$typography: (
+	serif-display: (
+		all: (
+			font-family: $serif-display,
+		),
+		medium: (
+			font-size: 1.6em,
+			line-height: 1.1,			
+		),
+		medium-condensed: (
+			font-size: 1.6em,
+			line-height: 1,			
+		),
+		large: (
+			font-size: 2.2em,
+			line-height: 1.1,
+			letter-spacing: -0.016em,
+		),
+		large-bold: (
+			font-size: 2.2em,
+			line-height: 1.1,
+			letter-spacing: -0.016em,
+			font-weight: bold,
+		),
+		large-bold-condensed: (
+			font-size: 2.2em,
+			font-weight: bold,
+			line-height: 1,
+		),
+		xxlarge-bold: (
+			font-size: (3em, 3.6em),
+			font-weight: 700,
+			letter-spacing: -0.01em,
+			line-height: 0.92,
+			padding-bottom: 0.1em,	//	line-height crops descenders without this
+		),
+	),
+	serif: (
+		all: (
+			font-family: freight-text-pro,
+		),
+		regular: (
+			font-size: (1em, 1em),
+		),
+	),
+	sans-serif: (
+		all: (
+			font-family: 'Source Sans Variable',
+		),
+		xsmall: (
+			font-size: (0.8em, 0.9em, 0.8em),
+		),
+		xsmall-regular: (
+			font-size: (0.8em, 0.9em, 0.8em),
+			font-variation-settings: (
+				("wght" 370),
+			),
+		),
+		xsmall-medium: (
+			font-size: (0.8em, 0.9em, 0.8em),
+			font-variation-settings: (
+				("wght" 500),
+			),
+			line-height: 1.2,
+		),
+		xsmall-condensed: (
+			font-size: (0.8em, 0.9em, 0.8em),
+			line-height: 1.24,
+			font-variation-settings: (
+				("wght" 370),
+			),
+		),
+		xsmall-bold: (
+			font-size: (0.8em, 0.9em, 0.8em),
+			font-variation-settings: (
+				("wght" 600),
+			),
+			line-height: 1.2,
+		),
+		xsmall-caps: (
+			font-size: 0.7em,
+			letter-spacing: 0.07em,
+			text-transform: uppercase,
+			font-variation-settings: (
+				("wght" 400),
+			),
+		),
+		small: (
+			font-size: 0.9em,
+		),
+		small-condensed: (
+			font-size: 0.9em,
+			line-height: 1.32,
+		),
+		small-bold: (
+			font-size: 0.9em,
+			font-variation-settings: (
+				("wght" 600),
+			),
+		),
+		small-smallcaps-bold: (
+		   font-weight: bold,
+		   text-transform: uppercase,
+		   font-size: 0.8em,
+		   letter-spacing: 0.1em,
+		),
+		medsmall-regular: (
+			font-size: 0.9em,
+			font-variation-settings: (
+				("wght" 400),
+			),
+		),
+		medsmall-bold-caps: (
+			font-size: 0.9em,
+			font-variation-settings: (
+				("wght" 600),
+			),
+		   text-transform: uppercase,
+		   letter-spacing: 0.1em,
+		),
+		medsmall-light: (
+			font-size: 0.9em,
+			font-variation-settings: (
+				("wght" 360),
+			),
+		),
+		regular: (
+			font-size: 1em,
+			font-variation-settings: (
+				("wght" 360),
+			),
+		),
+		regular-condensed: (
+			font-size: 1em,
+			line-height: 1.26,
+			font-variation-settings: (
+				("wght" 360),
+			),
+		),
+		regular-medbold: (
+			font-size: 1em,
+			font-variation-settings: (
+				("wght" 670),
+			),
+		),
+	),
+);
+
+
+%condensed {
+	font-family: "acumin-pro-extra-condensed";
+	
+	&-large {
+		@extend %condensed;
+		font-size: 4em;
+		letter-spacing: -0.014em;
+	}
+	&-xlarge {
+		@extend %condensed;
+		font-size: 4.8em;
+		letter-spacing: -0.014em;
+	}
+}
+
+%sans-serif {
+	font-family: 'Source Sans Variable';
+	
+	
+	&-xxxsmall {
+		@extend %sans-serif;
+		font-size: 0.7em;
+		
+		&-caps {
+			@extend %sans-serif;
+			font-size: 0.65em;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+		}
+	}
+	&-xxsmall {
+		@extend %sans-serif;
+		font-size: 0.75em;
+		
+		&-caps {
+			@extend %sans-serif;
+			font-size: 0.7em;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+		}
+	}
+	&-xsmall {
+		@extend %sans-serif;
+		font-size: 0.8em;
+		line-height: 1.3;
+	
+		&-weight-regular {
+			@include varfont-weight(400, 400);
+		}
+		
+		&-caps {
+			@extend %sans-serif;
+			font-size: 0.67em;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+		}
+	}
+	&-small-unuseed {
+		@extend %sans-serif;
+		font-size: 0.86em;
+		
+		&-caps {
+			@extend %sans-serif;
+			font-size: 0.8em;
+			letter-spacing: 0.07em;
+			text-transform: uppercase;
+		}
+		&-condensed {
+			@extend %sans-serif;
+			line-height: 1.2;
+		}
+		&-xbold {
+			@extend %sans-serif;
+			@include varfont-weight(670, 600);
+			
+		}
+	}
+	&-normal {
+		@extend %sans-serif;
+		font-size: 1em;
+	}
+	&-weight {
+		&-100 {
+			@extend %sans-serif;
+			font-weight: 100;
+		}
+		&-medium {
+			@extend %sans-serif;
+			@include varfont-weight(500, 500);	
+		}
+		&-bold {
+			@extend %sans-serif;
+			@include varfont-weight(600, 600);			
+		}
+		&-black {
+			@extend %sans-serif;
+			@include varfont-weight(700, 700);	
+		}
+	}
+	&-medium {
+		@extend %sans-serif;
+		font-size: 1.2em;
+	}
+	&-large {
+		@extend %sans-serif;
+		font-size: 1.7em;			
+	}
+	&-xlarge {
+		@extend %sans-serif;
+		font-size: 2em;			
+	}
+	&-xxlarge {
+		@extend %sans-serif;
+		font-size: 2.6em;
+		letter-spacing: -0.016em;
+		line-height: 1;
+	}
+	&-xxxlarge {
+		@extend %sans-serif;
+		font-size: 4em;
+	}
+	
+	&-regular {
+		@extend %sans-serif;
+		@include varfont-weight();
+	}
+	&-bold {
+		@extend %sans-serif;
+		@include varfont-weight(600, 600);	
+	}
+	&-xbold {
+		@extend %sans-serif;
+		@include varfont-weight(800, 800);
+	}
+	
+	&-condensed {
+		font-family: var(--sans-serif-condensed);		
+	}
+
+	&-xcondensed {
+		font-family: var(--sans-serif-xcondensed);		
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+@mixin bg-cream() {
+	background-color: $cream;
+	background-image: url(../images/pattern-quad-gold.png);
+	background-size: 2em;
+}

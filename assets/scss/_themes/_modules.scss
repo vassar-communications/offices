@@ -1,0 +1,48 @@
+/*	Modules
+	=======	
+	This file contains thematic elements - colors, animations, etc - for all the LazyBlocks modules.
+*/
+
+
+/*	Module basics
+	-------------
+	These styles apply to most or all modules.
+	
+*/
+
+
+.module--box {
+	background: #f7fbfb;
+}
+
+
+.module__sub-title {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding-bottom: 0.2em;
+
+	&.small-caps {
+		position: relative;
+		border: none;
+
+		/*		
+		&:after {
+			border-top: 1px solid #d2e5e6;
+			content: "";
+			height: 1px;
+			margin-left: 0.6em;
+			position: absolute;
+			top: 0.5em;
+			width: 100%;
+		}
+		*/
+	}
+}
+
+
+
+/*	Module-specific styling
+	-----------------------
+	
+	Modules should be as generically constructed as possible. I don't see many situations where a specific module would require a custom visual treatment, but if there is one, put its colors/animations here.
+
+*/
