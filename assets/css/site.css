@@ -975,6 +975,13 @@ div[class^=wp-block-lazyblock-] td {
 	}
 }
 */
+@media screen and (min-width: 70em) {
+  *:not(.size-small).alignleft,
+*:not(.size-small).alignright {
+    width: 50%;
+  }
+}
+
 .margin-0 {
   margin: 0;
 }
@@ -996,6 +1003,15 @@ div[class^=wp-block-lazyblock-] td {
 @media screen and (min-width: 70em) {
   .size-thumbnail {
     width: 25% !important;
+  }
+}
+
+.size-small {
+  width: 40%;
+}
+@media screen and (min-width: 70em) {
+  .size-small {
+    width: 30%;
   }
 }
 
@@ -1279,13 +1295,6 @@ https://flickity.metafizzy.co
 }
 .wp-block-gallery .blocks-gallery-item {
   width: 100% !important;
-}
-
-@media screen and (min-width: 70em) {
-  .alignleft,
-.alignright {
-    width: 50%;
-  }
 }
 
 .size-medium {

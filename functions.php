@@ -24,6 +24,26 @@ function local_scripts() {
 add_action( 'wp_enqueue_scripts', 'local_scripts' );
 
 
+function custom_image_size() {
+    // Set default values for the upload media box
+    update_option('image_default_align', 'left' );
+    update_option('image_default_size', 'thumbnail' );
+
+}
+add_action('after_setup_theme', 'custom_image_size');
+
+
+add_image_size( 'small', 220, 150 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
+
+add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+ 
+function my_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'small' => __( 'Small' ),
+    ) );
+}
+
+
 
 /*	LAZYBLOCKS 
 	==========
