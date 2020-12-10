@@ -1,38 +1,50 @@
 td {
+    padding: 1em;
+	vertical-align: top;
+	padding: 0.2em 0;
+
 	@include small() {
     	border-top: 1px solid #eee;
+    	padding: 0.4em;
     }
 }
 th {
 	background: #eee;
+	vertical-align: top;
+	padding: 1em;
+	border-top: 1px solid #fff;
+	text-align: left;
 }
+
 tr {
-	display: block;
 	border-top: 1px solid #eee;
+	padding: 0.4em 0;
 
 	@include small() {
-		display: table-row;
+//		display: table-row;
     	border-top: none;
+    	padding: 0;
     }
 }
 
 .wp-block-table {
     margin: 1em 0;
+    overflow-x: scroll;
+	width: 100%;
 }
 
 table {
     border-spacing: 0;
 	width: 100%;
 }
-td {
-    padding: 0.3em 0;
-	vertical-align: top;
-}
-th {
-   text-align: left;
-   padding: 0.3em 0.4em;
-}
-table { //.responsive {
+table.responsive {
+	tr {
+		display: block;
+
+		@include small() {
+			display: table-row;
+		}
+	}
 	th {
 		display: none;
 

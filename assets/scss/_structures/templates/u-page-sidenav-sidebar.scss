@@ -18,6 +18,13 @@
 
 */
 
+
+.menu-close,
+.menu-toggle {
+	display: none;
+}
+
+/*
 .menu-toggle {
 	background: #fff;
 	border-radius: 0.2em;
@@ -76,7 +83,7 @@
 	    display: block;
     }
 }
-
+*/
 
 #secondary {
 	display: none;
@@ -90,6 +97,21 @@
 	}
 }
 
+.u-lHeader {
+	align-items: flex-end;
+	display: flex;
+	
+	padding-top: 7em;
+}
+
+.u-lHeader,
+.u-NavSite__main {
+	background: #fbf4ec;
+
+	@include break(small) {
+		padding-top: 3em;
+	}
+}
 
 // .u-NavSite__secondary 
 
@@ -139,15 +161,30 @@ html:not(.home) {
 	}
 }
 
+.u-Masthead__caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1em;
+    max-width: 20em;
+    background: #000;
+    font-size: 0.7em;
+    color: #aaa;
+    z-index: 2;
+}
+
 //	this should apply to all top-level pages
 
 //.page-parent,
 html:not(.page-child) {
+	
+
+
 	.u-lHeader {
 		align-items: center;
 		display: flex;
 		justify-content: left;
-		padding: 16em 2em 2em;
+		padding: 22em 2em 2em;
 		
 		@include break(medium) {
 			grid-area: masthead;
@@ -168,6 +205,11 @@ html {
 		.nav-menu,
 		.site-title {
 			margin: 0;
+		}
+		.site-title {
+			a {
+				padding-bottom: 0.2em;
+			}
 		}
 		.u-NavSite__secondary,
 		.u-lMain {
@@ -372,10 +414,15 @@ html {
 				}
 				.u-lHeader {
 					grid-column: 1 / span 3;
-					padding: 2em;
+//					padding: 2em;
+					background: #fbf4ec;
+					padding-top: 3em;
+
 				}
 				.u-NavSite__main {
 					grid-column: 4 / span 8;
+					background: #fbf4ec;
+//					padding-top: 3em;
 				}
 			}
 		}
@@ -390,9 +437,13 @@ html {
 					.u-lHeader {
 						grid-column: 1 / span 3;
 						padding: 2em;
+						background: #fbf4ec;
+						padding-top: 3em;
 					}
 					.u-NavSite__main {
 						grid-column: 4 / span 8;
+						background: #fbf4ec;
+						padding-top: 3em;
 					}
 				}
 			}

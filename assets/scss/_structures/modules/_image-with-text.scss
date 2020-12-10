@@ -1,0 +1,30 @@
+.wp-block-media-text {
+    display: grid;
+    grid-template-columns: 8em 1fr;
+    grid-gap: 1.4em;
+    margin-bottom: 1em;
+    
+    &:only-child,
+    &:last-child {
+	    margin-bottom: 0;
+    }
+
+	&.has-media-on-the-right {
+		direction: rtl;
+	}
+	&__content {
+		text-align: left;
+	}
+}
+
+
+
+/*
+
+	The following settings do not do anything:
+	
+	"Vertical alignment". In Offices, all content is aligned to the top.
+
+	"Stack on mobile". This will happen automatically, and does not need to be specified.
+
+*/

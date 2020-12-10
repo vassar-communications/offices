@@ -1,5 +1,3 @@
-$hp__banner-size: 22em;
-
 .home {
 
 	.PageContentInner {
@@ -9,7 +7,9 @@ $hp__banner-size: 22em;
 	        "content"
 	        "footer";
 	}
-
+	.u-Masthead__caption {
+		z-index: 10;
+	}
 	.u-NavSite__main {
 		grid-column: 1 / span 8;
 	}
@@ -22,94 +22,59 @@ $hp__banner-size: 22em;
 
 	.u-NavSite__main {
 //		padding: 2em 0 3em 0;
-		padding-bottom: 2em;
+		margin-bottom: 2em;
 	}
 	.menu-item-home {
 		display: none !important;
 	}
 	
-//	&.centered-content {
-		.site-title {
-			color: #fff;
-			margin: 0;
-			padding: 0 !important;
-		}
-		.u-Masthead {
-			position: absolute;
-			
-			
-			position: relative;
-			
-			top: 0;
-			width: 100%;
-			height: 22em;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			z-index: 3;
-
-			&:after {
-				content: "";
-				position: absolute;
-				width: 100%;
-				height: $hp__banner-size;
-			}
-	
-			&:before {
-				background-size: cover;
-				background-position: center center;
-				content: "";
-				height: $hp__banner-size;
-				position: absolute;
-				width: 100%;
+	.u-Masthead {
+		position: relative;
 		
-				& {
-					background-image: var(--banner);
-				}
-			}
+		top: 0;
+		width: 100%;
+		height: 28em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 3;
 
-			&:before {
-				filter: grayscale(1);
-				mix-blend-mode: multiply;
-				z-index: 2;
-			}
-			&:after {
-				background: $grad-rose; //$grad-lightburg-red;
-				z-index: 1;
-			}
-
-
+		&:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
 		}
-		/*
-		.PageContentInner {
-			&:before {
-				filter: grayscale(1);
-				mix-blend-mode: multiply;
-				z-index: 2;
-			}
-			&:after {
-				background: $grad-rose; //$grad-lightburg-red;
-				z-index: 1;
-			}
+
+		&:before {
+			content: "";
+			height: 100%;
+			position: absolute;
+			width: 100%;
+			z-index: 1;
 		}
-		*/
-//	}	
-	
+	}
+
 	.page__title {
 		display: none;
 	}
 	.u-lHeader {
 		padding: 0 0 2em 0;
+		position: relative;
 		grid-column: 1 / span 8;
 		
 		@include break(small) {
 			padding: 0;
 		}
 	}
+
 	.site-title {
+		margin: 0;
+		padding: 0 !important;
 		padding-left: 3em;
 		position: relative;
-		z-index: 2;		
+		z-index: 3;
 
 		a {
 			display: block;
@@ -124,28 +89,6 @@ $hp__banner-size: 22em;
 		width: 85%;
 	}
 	.PageContentInner {
-//		padding-top: $hp__banner-size;
 		position: relative;
-	
-/*		&:after {
-			content: "";
-			position: absolute;
-			width: 100%;
-			height: $hp__banner-size;
-		}
-
-		&:before {
-			background-size: cover;
-			background-position: center center;
-			content: "";
-			height: $hp__banner-size;
-			position: absolute;
-			width: 100%;
-	
-			& {
-				background-image: var(--banner);
-			}
-		}
-*/
 	}
 }

@@ -3,9 +3,31 @@
 }
 
 .wp-block-columns {
-	@include break(medium) {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 2em;
+	@include break(small) {
+		display: flex;
+		
+		.wp-block-column {
+			padding-right: 1em;
+			width: 100%;
+			
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+//		display: grid;
+//		grid-template-columns: 1fr 1fr;
+//		grid-gap: 2em;
+	}
+
+	.wp-block-image {
+		/*	On http://offices.vassar.edu/international-programs/, they have a three-col layout with
+			image tiles. I don't think lots of content looks good in more than two columns - it's way
+			too narrow. The one scenario where you might want to use three columns is image tiles, and
+			in that case, the images should go all the way across the column.
+		*/
+		
+		&.size-large {
+		    width: 100%;
+		}
 	}
 }

@@ -1,0 +1,100 @@
+/*	UNIVERSAL NAV OVERRIDES
+	=======================
+
+	
+*/
+
+#vcF, #vcH {
+	position: absolute;
+	width: 100%;
+	
+	#primary-menu {
+		font-size: unset;
+	}
+}
+
+.g-Masthead__ID {
+	a {
+		display: block;
+		transition: 0.4s all ease;
+		
+		svg {
+			fill: #eee !important;
+			transition: 0.4s all ease;
+		}
+		
+		&:hover {
+			background: transparent !important;
+			
+			svg {
+				opacity: 0.6;
+			}
+		}
+	}
+}
+
+#vcF .g-Masthead__ID,
+#vcH .g-Masthead__ID {
+    color: #fefefe;
+    background: #000;
+    width: 11em;
+    position: absolute;
+    z-index: 2000;
+    padding: 1.4em 0.6em 0.6em;
+    left: 0.8em;
+}
+
+@include break(small, max) {
+	ul#primary-menu {
+		margin: 0;
+		padding: 0;
+	    position: relative !important;
+	    top: 0 !important;
+	}
+	#vcH #g-navigation .u-NavSite--global .menu-main-navigation-container {
+		background: $cream;
+		margin-top: 2em;
+		padding: 2em !important;	
+	}
+}
+
+#vcH .menu-main-navigation-container {
+	@include break(small) {
+		display: none !important;
+	}
+	
+	a {
+		@include font(sans-serif, regular);
+		padding: 0.2em;
+	}
+}
+
+
+@media screen and (min-width: 37.5em) {
+	#vcF #g-Search, #vcH #g-Search {
+	    z-index: 10 !important;
+	}
+}
+
+.u-NavSite--global {
+    display: flex;
+}
+.menu-main-navigation-container {
+    order: 1;
+}
+.u-NavSite__sec--action {
+    order: 2;
+}
+.u-NavSite__sec--roles {
+    order: 3;
+}
+.u-NavSite__sec--landing {
+    order: 4;
+}
+
+
+
+
+
+
+

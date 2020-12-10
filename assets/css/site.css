@@ -49,6 +49,10 @@ html {
 
 	Still looking into this, but it's fine.	
 
+	THIS SHOULD BE BUILT ON TOP OF BELTPACK. This includes a break() mixin without
+	the second parameter, and that's blocking the more advanced break() mixin in Beltpack.
+	Go through this and remove everything that's already in Beltpack.
+
 */
 /* ---- */
 /*
@@ -58,6 +62,10 @@ html {
 	that refer to it will not throw errors.
 
 	Still looking into this, but it's fine.	
+
+	THIS SHOULD BE BUILT ON TOP OF BELTPACK. This includes a break() mixin without
+	the second parameter, and that's blocking the more advanced break() mixin in Beltpack.
+	Go through this and remove everything that's already in Beltpack.
 
 */
 /* ---- */
@@ -435,6 +443,56 @@ template {
 }
 
 /*
+	BASIC TYPOGRAPHIC STYLES
+
+	This is the primary typographic system for Offices. The idea:
+
+	-	Define a set of basic styles once.
+	-	See at a glance which styles already exist in the system.
+
+
+	-	The fact that everything exists in a single Sass map means that at some point in the future,
+		it would be possible to dynamically generate a style guide with samples of all defined styles.
+
+
+	How it works
+	------------
+
+	To add a new style, ////
+
+
+
+	What you can do
+	---------------
+
+	-	You can specify different sizes for different breakpoints without using media queries.
+
+			font-size: ([mobile], [medium], [large]),
+
+		You don't need to include a value for each one. If a value for a particular breakpoint isn't
+		specified, the value from the previous one will continue to remain in effect.
+
+	-	You can also combine different styles as needed for situations where what you need hasn't already
+		been specified. If you need xsmall and condensed, and xsmall-condensed doesn't exist,
+		but xsmall and condensed do, you could call @include font(sans-serif, xsmall condensed).
+
+	-	You can also specify styles for particular combinations [describe]
+
+
+	Notes:
+
+	-	All rules should end with commas, not semicolons.
+	-	A few CSS rules have multiple components, like font-variation-settings: "wght" 500. In that case,
+		the rule needs to be contained in parentheses:
+
+			font-variation-settings: (
+				("wght" 500),
+			),
+
+
+
+*/
+/*
 @font-face {
 	font-family: 'SourceSansVar';
 	src: url('../fonts/SourceSansVariable-Roman.ttf') format('truetype');
@@ -592,13 +650,6 @@ p:only-child {
   margin-bottom: 0;
 }
 
-th {
-  font-family: Source Sans Variable;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  letter-spacing: 0.1em;
-}
 .post__title {
   font-family: freight-big-pro;
   font-size: 2.2em;
@@ -635,6 +686,10 @@ th {
 .post__date {
     font-size: 0.8em;
   }
+}
+
+blockquote cite {
+  font-size: 90%;
 }
 
 .comment-content {
@@ -730,6 +785,15 @@ figcaption {
   padding-left: 0.4em !important;
   word-spacing: 0.3em;
   text-align: center;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   .home .site-title {
@@ -758,20 +822,7 @@ figcaption {
 }
 .module__sub-title {
   font-family: Source Sans Variable;
-  font-size: 0.8em;
-  font-variation-settings: "wght" 600;
-  line-height: 1.2;
   margin-bottom: 0.4em;
-}
-@media screen and (min-width: 40em) {
-  .module__sub-title {
-    font-size: 0.9em;
-  }
-}
-@media screen and (min-width: 60em) {
-  .module__sub-title {
-    font-size: 0.8em;
-  }
 }
 .module__sub-title.small-caps {
   font-family: Source Sans Variable;
@@ -902,19 +953,6 @@ div[class^=wp-block-lazyblock-] td {
 
 .wp-block-lazyblock-linked-list li a {
   font-family: Source Sans Variable;
-  font-size: 0.8em;
-  font-variation-settings: "wght" 600;
-  line-height: 1.2;
-}
-@media screen and (min-width: 40em) {
-  .wp-block-lazyblock-linked-list li a {
-    font-size: 0.9em;
-  }
-}
-@media screen and (min-width: 60em) {
-  .wp-block-lazyblock-linked-list li a {
-    font-size: 0.8em;
-  }
 }
 .wp-block-lazyblock-linked-list .item__desc {
   font-family: Source Sans Variable;
@@ -975,6 +1013,47 @@ div[class^=wp-block-lazyblock-] td {
 	}
 }
 */
+th {
+  font-family: Source Sans Variable;
+  font-size: 0.8em;
+  font-variation-settings: "wght" 600;
+}
+@media screen and (min-width: 40em) {
+  th {
+    font-size: 0.9em;
+  }
+}
+@media screen and (min-width: 60em) {
+  th {
+    font-size: 0.8em;
+  }
+}
+th p {
+  all: unset;
+}
+
+td {
+  font-family: Source Sans Variable;
+  font-size: 0.9em;
+  line-height: 1.32;
+}
+td p, td li {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+*:not(.size-small).alignleft,
+*:not(.size-small).alignright {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
 @media screen and (min-width: 70em) {
   *:not(.size-small).alignleft,
 *:not(.size-small).alignright {
@@ -999,6 +1078,15 @@ div[class^=wp-block-lazyblock-] td {
 
 .size-thumbnail {
   width: 33% !important;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 70em) {
   .size-thumbnail {
@@ -1008,6 +1096,15 @@ div[class^=wp-block-lazyblock-] td {
 
 .size-small {
   width: 40%;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 70em) {
   .size-small {
@@ -1021,6 +1118,15 @@ div[class^=wp-block-lazyblock-] td {
 
 .size-large {
   width: 100%;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 70em) {
   .size-large {
@@ -1146,6 +1252,70 @@ article.type-post .post-edit-link {
   grid-area: post-content;
 }
 
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+details {
+  transition: 0.2s all ease;
+  margin-bottom: 0.3em;
+  padding: 0 1em;
+}
+details summary {
+  background: #f3eadf;
+  border-radius: 0.3em;
+  padding: 1em 1.8em 1em 2.2em;
+  margin-left: -1em;
+  margin-right: -1em;
+  margin-bottom: 0.2em;
+}
+details summary:hover {
+  background: #e4d9cb;
+  cursor: pointer;
+}
+details summary:before {
+  position: absolute;
+  margin-left: -1em;
+  -webkit-text-stroke: 1px;
+  position: absolute;
+  content: "+";
+  font-weight: normal;
+  transition: 0.2s all ease;
+}
+details[open] {
+  background: #eee;
+  padding: 1em;
+}
+details[open] summary {
+  background: #951829;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: #fff;
+  margin-top: -1em !important;
+  margin-bottom: 1em;
+}
+details[open] summary:before, details[open] summary:after {
+  transform: rotate(45deg) scale(1.1);
+}
+details summary {
+  display: block;
+  transition: 0.2s all ease;
+}
+details summary ~ * {
+  animation: sweep 0.2s ease-in-out;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+
 .faq__index {
   width: 60%;
 }
@@ -1153,6 +1323,81 @@ article.type-post .post-edit-link {
   list-style: none;
 }
 
+#table-of-contents {
+  padding: 1.4em;
+  background: #f8f7f6;
+  font-size: 90%;
+}
+#table-of-contents a {
+  text-decoration: none;
+}
+#table-of-contents ul {
+  list-style: none;
+  padding: 0;
+}
+#table-of-contents ul li {
+  margin-bottom: 0.2em;
+}
+#table-of-contents ul ul {
+  border-left: 3px solid #d0c1c1;
+  padding-left: 0.6em;
+  margin-top: 0.4em;
+  margin-bottom: 0.6em;
+}
+
+.toc__topLink {
+  position: sticky;
+  top: calc(100% - 2.6em);
+  right: 0;
+  margin-right: -3em;
+  width: 100%;
+  display: block;
+  background: #eee;
+  left: 0;
+  padding: 0.8em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: 0.4em;
+  box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  margin-bottom: -4em;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+.wp-block-media-text {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  grid-gap: 1.4em;
+  margin-bottom: 1em;
+}
+.wp-block-media-text:only-child, .wp-block-media-text:last-child {
+  margin-bottom: 0;
+}
+.wp-block-media-text.has-media-on-the-right {
+  direction: rtl;
+}
+.wp-block-media-text__content {
+  text-align: left;
+}
+
+/*
+
+	The following settings do not do anything:
+
+	"Vertical alignment". In Offices, all content is aligned to the top.
+
+	"Stack on mobile". This will happen automatically, and does not need to be specified.
+
+*/
 /*! Flickity v2.2.1
 https://flickity.metafizzy.co
 ---------------------------------------------- */
@@ -1299,6 +1544,15 @@ https://flickity.metafizzy.co
 
 .size-medium {
   width: 50%;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 40em) {
   .size-medium {
@@ -1399,29 +1653,41 @@ div[class^=wp-block-lazyblock-] {
   flex-wrap: wrap;
 }
 
+td {
+  padding: 1em;
+  vertical-align: top;
+  padding: 0.2em 0;
+}
 @media screen and (min-width: 40em) {
   td {
     border-top: 1px solid #eee;
+    padding: 0.4em;
   }
 }
 
 th {
   background: #eee;
+  vertical-align: top;
+  padding: 1em;
+  border-top: 1px solid #fff;
+  text-align: left;
 }
 
 tr {
-  display: block;
   border-top: 1px solid #eee;
+  padding: 0.4em 0;
 }
 @media screen and (min-width: 40em) {
   tr {
-    display: table-row;
     border-top: none;
+    padding: 0;
   }
 }
 
 .wp-block-table {
   margin: 1em 0;
+  overflow-x: scroll;
+  width: 100%;
 }
 
 table {
@@ -1429,29 +1695,27 @@ table {
   width: 100%;
 }
 
-td {
-  padding: 0.3em 0;
-  vertical-align: top;
-}
-
-th {
-  text-align: left;
-  padding: 0.3em 0.4em;
-}
-
-table th {
-  display: none;
-}
-@media screen and (min-width: 40em) {
-  table th {
-    display: table-cell;
-  }
-}
-table td {
+table.responsive tr {
   display: block;
 }
 @media screen and (min-width: 40em) {
-  table td {
+  table.responsive tr {
+    display: table-row;
+  }
+}
+table.responsive th {
+  display: none;
+}
+@media screen and (min-width: 40em) {
+  table.responsive th {
+    display: table-cell;
+  }
+}
+table.responsive td {
+  display: block;
+}
+@media screen and (min-width: 40em) {
+  table.responsive td {
     display: table-cell;
   }
 }
@@ -1498,13 +1762,23 @@ table td {
   z-index: 130;
   left: 0;
   background: black;
-  padding: 0.2em 0.4em;
   color: #fff;
   min-height: 3rem;
+  padding: 1em;
+  padding-right: calc(100% - 56ch);
 }
 
 .blocks-gallery-item {
   height: 58vw;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 70em) {
   .blocks-gallery-item {
@@ -1562,6 +1836,115 @@ table td {
   height: 100%;
 }
 
+/*	UNIVERSAL NAV OVERRIDES
+	=======================
+
+
+*/
+#vcF, #vcH {
+  position: absolute;
+  width: 100%;
+}
+#vcF #primary-menu, #vcH #primary-menu {
+  font-size: unset;
+}
+
+.g-Masthead__ID a {
+  display: block;
+  transition: 0.4s all ease;
+}
+.g-Masthead__ID a svg {
+  fill: #eee !important;
+  transition: 0.4s all ease;
+}
+.g-Masthead__ID a:hover {
+  background: transparent !important;
+}
+.g-Masthead__ID a:hover svg {
+  opacity: 0.6;
+}
+
+#vcF .g-Masthead__ID,
+#vcH .g-Masthead__ID {
+  color: #fefefe;
+  background: #000;
+  width: 11em;
+  position: absolute;
+  z-index: 2000;
+  padding: 1.4em 0.6em 0.6em;
+  left: 0.8em;
+}
+
+/*	Sets up a media query. This expects that all of a project's breakpoints will
+	    be stored in a map named $breakpoints, as follows:
+
+$breakpoints: (
+	"small": 30em,
+	"medium": 50em,
+	"large": 70em
+);	
+	*/
+@media screen and (max-width: 40em) {
+  ul#primary-menu {
+    margin: 0;
+    padding: 0;
+    position: relative !important;
+    top: 0 !important;
+  }
+
+  #vcH #g-navigation .u-NavSite--global .menu-main-navigation-container {
+    background: #fbf4ec;
+    margin-top: 2em;
+    padding: 2em !important;
+  }
+}
+#vcH .menu-main-navigation-container {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  #vcH .menu-main-navigation-container {
+    display: none !important;
+  }
+}
+#vcH .menu-main-navigation-container a {
+  font-family: Source Sans Variable;
+  font-size: 1em;
+  font-variation-settings: "wght" 360;
+  padding: 0.2em;
+}
+@media screen and (min-width: 37.5em) {
+  #vcF #g-Search, #vcH #g-Search {
+    z-index: 10 !important;
+  }
+}
+.u-NavSite--global {
+  display: flex;
+}
+
+.menu-main-navigation-container {
+  order: 1;
+}
+
+.u-NavSite__sec--action {
+  order: 2;
+}
+
+.u-NavSite__sec--roles {
+  order: 3;
+}
+
+.u-NavSite__sec--landing {
+  order: 4;
+}
+
 .cols-3-lg {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2em;
@@ -1591,12 +1974,38 @@ table td {
   margin-top: 1em;
 }
 
-@media screen and (min-width: 60em) {
+.wp-block-columns {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
   .wp-block-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2em;
+    display: flex;
   }
+  .wp-block-columns .wp-block-column {
+    padding-right: 1em;
+    width: 100%;
+  }
+  .wp-block-columns .wp-block-column:last-child {
+    padding-right: 0;
+  }
+}
+.wp-block-columns .wp-block-image {
+  /*	On http://offices.vassar.edu/international-programs/, they have a three-col layout with
+  	image tiles. I don't think lots of content looks good in more than two columns - it's way
+  	too narrow. The one scenario where you might want to use three columns is image tiles, and
+  	in that case, the images should go all the way across the column.
+  */
+}
+.wp-block-columns .wp-block-image.size-large {
+  width: 100%;
 }
 
 @keyframes slidein {
@@ -1617,77 +2026,71 @@ table td {
 }
 
 */
+.menu-close,
 .menu-toggle {
-  background: #fff;
-  border-radius: 0.2em;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  border-top: 2px solid #eee;
-  display: inline-block;
-  padding: 0.6em 1em;
-  z-index: 10;
-  box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+/*
+.menu-toggle {
+	background: #fff;
+	border-radius: 0.2em;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	border-top: 2px solid #eee;
+
+	display: inline-block;
+	padding: 0.6em 1em;
+	z-index: 10;
+	box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.2);
 }
 
 .menu-close,
 .menu-toggle {
-  position: absolute;
-  right: 0.6em;
-  top: 0;
-}
-@media screen and (min-width: 40em) {
-  .menu-close,
-.menu-toggle {
-    right: 2em;
-    top: 2em;
-  }
-}
+    position: absolute;
+	right: 0.6em;
+	top: 0;
 
-@media screen and (min-width: 40em) {
-  .menu-toggle {
-    display: none;
-  }
+    @include break(small) {
+	    right: 2em;
+	    top: 2em;
+    }
+}
+@include break(small) {
+	.menu-toggle {
+		display: none;
+	}
 }
 .menu-close {
-  display: none;
-  top: 2em;
-  z-index: 10;
+	display: none;
+	top: 2em;
+	z-index: 10;
 }
-
 #menu {
-  transition: all 0.4s ease;
-  top: -100%;
+	transition: all 0.4s ease;
+	top: -100%;
 }
-
 #menu:target {
-  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  padding: 5em 0 3em 0;
-  z-index: 10;
-  /*	Generates a frosted-glass background, with a
-  	fallback for browsers that don't support it.
-  */
-  background: rgba(255, 255, 255, 0.96);
-}
-@supports (backdrop-filter: blur(10px)) {
-  #menu:target {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-  }
-}
-@media screen and (min-width: 40em) {
-  #menu:target {
-    padding-top: 0;
-  }
-}
-#menu:target .menu-close {
-  display: block;
-}
+	box-shadow: 0 12px 12px rgba(0,0,0,0.3);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    padding: 5em 0 3em 0;
+    z-index: 10;
 
+	@include bp__frosted-glass(white);
+
+	@include break(small) {
+		padding-top: 0;
+	}
+
+	.menu-close {
+	    display: block;
+    }
+}
+*/
 #secondary {
   display: none;
 }
@@ -1695,10 +2098,45 @@ table td {
 .nav-menu {
   border-bottom: 9px solid #f8f7f6;
   padding-left: 0;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   .nav-menu {
     float: right;
+  }
+}
+
+.u-lHeader {
+  align-items: flex-end;
+  display: flex;
+  padding-top: 7em;
+}
+
+.u-lHeader,
+.u-NavSite__main {
+  background: #fbf4ec;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  .u-lHeader,
+.u-NavSite__main {
+    padding-top: 3em;
   }
 }
 
@@ -1736,11 +2174,32 @@ nav li {
   }
 }
 
+.u-Masthead__caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  max-width: 20em;
+  background: #000;
+  font-size: 0.7em;
+  color: #aaa;
+  z-index: 2;
+}
+
 html:not(.page-child) .u-lHeader {
   align-items: center;
   display: flex;
   justify-content: left;
-  padding: 16em 2em 2em;
+  padding: 22em 2em 2em;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html:not(.page-child) .u-lHeader {
@@ -1764,6 +2223,9 @@ html:not(.home) .nav-menu,
 html:not(.home) .site-title {
   margin: 0;
 }
+html:not(.home) .site-title a {
+  padding-bottom: 0.2em;
+}
 html:not(.home) .u-NavSite__secondary,
 html:not(.home) .u-lMain {
   margin-top: 2.4em;
@@ -1782,6 +2244,15 @@ html .site-description {
 html .u-lMain {
   padding: 2em 2em 6em 2em;
   padding-top: 0;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html .u-lMain {
@@ -1789,6 +2260,17 @@ html .u-lMain {
     grid-column: 1/span 8;
     padding-right: 2em;
   }
+}
+html .u-lContent {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 70em) {
   html .u-lContent {
@@ -1804,11 +2286,31 @@ html .u-NavSite__main {
   grid-area: nav-top;
   line-height: 1.4;
   padding: 0;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html .u-NavSite__main {
     grid-column: 1/span 8;
   }
+}
+html .u-NavSite__main .menu {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html .u-NavSite__main .menu {
@@ -1853,6 +2355,26 @@ html .sub-menu {
   padding: 0.2em 0 0 0.6em;
   margin-bottom: 0.2em;
 }
+html.page.page-parent:not(.has-subnav) .PageContentInner, html.page:not(.has-subnav) .PageContentInner {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
 @media screen and (min-width: 40em) {
   html.page.page-parent:not(.has-subnav) .PageContentInner, html.page:not(.has-subnav) .PageContentInner {
     display: grid;
@@ -1867,6 +2389,26 @@ html .sub-menu {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: auto auto auto;
   }
+}
+html.page.has-subnav .PageContentInner {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 40em) {
   html.page.has-subnav .PageContentInner {
@@ -1889,6 +2431,15 @@ html.page.has-subnav .PageContentInner .u-NavSite__level--1 {
 }
 html.page.has-subnav .u-NavSite__secondary {
   grid-area: nav-secondary;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html.page.has-subnav .u-NavSite__secondary {
@@ -1897,12 +2448,43 @@ html.page.has-subnav .u-NavSite__secondary {
     padding-right: 2em;
   }
 }
+html.page.has-subnav .u-lContent {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
 @media screen and (min-width: 70em) {
   html.page.has-subnav .u-lContent {
     margin: 0;
     max-width: 34em;
     width: 100%;
   }
+}
+html.page.has-subnav .u-lMain {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html.page.has-subnav .u-lMain {
@@ -1922,11 +2504,31 @@ html.page-child {
 }
 html.page-child .u-NavSite__main .menu {
   text-align: center;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html.page-child .u-NavSite__main .menu {
     text-align: right;
   }
+}
+html.page-child:not(.has-subnav) {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html.page-child:not(.has-subnav) .PageContentInner {
@@ -1934,11 +2536,24 @@ html.page-child .u-NavSite__main .menu {
   }
   html.page-child:not(.has-subnav) .u-lHeader {
     grid-column: 1/span 3;
-    padding: 2em;
+    background: #fbf4ec;
+    padding-top: 3em;
   }
   html.page-child:not(.has-subnav) .u-NavSite__main {
     grid-column: 4/span 8;
+    background: #fbf4ec;
   }
+}
+html.page-child.has-subnav .PageContentInner {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 60em) {
   html.page-child.has-subnav .PageContentInner {
@@ -1947,9 +2562,13 @@ html.page-child .u-NavSite__main .menu {
   html.page-child.has-subnav .PageContentInner .u-lHeader {
     grid-column: 1/span 3;
     padding: 2em;
+    background: #fbf4ec;
+    padding-top: 3em;
   }
   html.page-child.has-subnav .PageContentInner .u-NavSite__main {
     grid-column: 4/span 8;
+    background: #fbf4ec;
+    padding-top: 3em;
   }
 }
 
@@ -1974,23 +2593,11 @@ html.page-child .u-NavSite__main .menu {
 		}
 	}
 */
-.home {
-  /*
-  .PageContentInner {
-  	&:before {
-  		filter: grayscale(1);
-  		mix-blend-mode: multiply;
-  		z-index: 2;
-  	}
-  	&:after {
-  		background: $grad-rose; //$grad-lightburg-red;
-  		z-index: 1;
-  	}
-  }
-  */
-}
 .home .PageContentInner {
   grid-template-areas: "masthead" "nav-top" "content" "footer";
+}
+.home .u-Masthead__caption {
+  z-index: 10;
 }
 .home .u-NavSite__main {
   grid-column: 1/span 8;
@@ -2002,22 +2609,16 @@ html.page-child .u-NavSite__main .menu {
   text-align: center !important;
 }
 .home .u-NavSite__main {
-  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
 .home .menu-item-home {
   display: none !important;
 }
-.home .site-title {
-  color: #fff;
-  margin: 0;
-  padding: 0 !important;
-}
 .home .u-Masthead {
-  position: absolute;
   position: relative;
   top: 0;
   width: 100%;
-  height: 22em;
+  height: 28em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2027,26 +2628,14 @@ html.page-child .u-NavSite__main .menu {
   content: "";
   position: absolute;
   width: 100%;
-  height: 22em;
-}
-.home .u-Masthead:before {
-  background-size: cover;
-  background-position: center center;
-  content: "";
-  height: 22em;
-  position: absolute;
-  width: 100%;
-}
-.home .u-Masthead:before {
-  background-image: var(--banner);
-}
-.home .u-Masthead:before {
-  filter: grayscale(1);
-  mix-blend-mode: multiply;
+  height: 100%;
   z-index: 2;
 }
-.home .u-Masthead:after {
-  background: linear-gradient(45deg, #d0953d 0%, #ab5762 100%);
+.home .u-Masthead:before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
   z-index: 1;
 }
 .home .page__title {
@@ -2054,7 +2643,17 @@ html.page-child .u-NavSite__main .menu {
 }
 .home .u-lHeader {
   padding: 0 0 2em 0;
+  position: relative;
   grid-column: 1/span 8;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 40em) {
   .home .u-lHeader {
@@ -2062,9 +2661,11 @@ html.page-child .u-NavSite__main .menu {
   }
 }
 .home .site-title {
+  margin: 0;
+  padding: 0 !important;
   padding-left: 3em;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 .home .site-title a {
   display: block;
@@ -2079,26 +2680,6 @@ html.page-child .u-NavSite__main .menu {
 }
 .home .PageContentInner {
   position: relative;
-  /*		&:after {
-  			content: "";
-  			position: absolute;
-  			width: 100%;
-  			height: $hp__banner-size;
-  		}
-
-  		&:before {
-  			background-size: cover;
-  			background-position: center center;
-  			content: "";
-  			height: $hp__banner-size;
-  			position: absolute;
-  			width: 100%;
-
-  			& {
-  				background-image: var(--banner);
-  			}
-  		}
-  */
 }
 
 article.post {
@@ -2112,6 +2693,14 @@ article.post {
 blockquote,
 pre {
   background: #f1f5f7;
+}
+
+blockquote cite {
+  opacity: 0.8;
+}
+blockquote cite:before {
+  content: "—";
+  margin-right: 0.2em;
 }
 
 .u-lContent h2 {
@@ -2327,6 +2916,20 @@ a:hover {
 	Modules should be as generically constructed as possible. I don't see many situations where a specific module would require a custom visual treatment, but if there is one, put its colors/animations here.
 
 */
+.home .site-title {
+  color: #fff;
+}
+.home .u-Masthead:before {
+  background: linear-gradient(45deg, #d0953d 0%, #ab5762 100%);
+}
+.home .u-Masthead:after {
+  background-image: var(--page-header-image);
+  background-size: cover;
+  background-position: center center;
+  filter: grayscale(1);
+  mix-blend-mode: multiply;
+}
+
 /*	Top-level menu items
 	-------------------- */
 .u-NavSite__main a {
@@ -2397,6 +3000,15 @@ a:hover {
   color: #fff;
   padding-left: 0.4em !important;
   text-decoration: none;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
 }
 @media screen and (min-width: 40em) {
   .menu-item:not(.current-menu-item):hover > a {
@@ -2414,7 +3026,6 @@ a:hover {
   transition-property: opacity, transform;
 }
 .site-title a:hover, .site-title a:visited:hover {
-  background: none !important;
   opacity: 0.8;
   transform: scale(0.94);
 }
@@ -2433,12 +3044,15 @@ a:hover {
   z-index: 10;
 }
 
-.page-parent .u-lHeader {
+.page-parent .u-lHeader,
+.page:not(.home):not(.page-child) .u-lHeader {
   background: var(--page-header-image);
   background-size: cover;
+  background-position: center center;
   position: relative;
 }
-.page-parent .u-lHeader:after {
+.page-parent .u-lHeader:after,
+.page:not(.home):not(.page-child) .u-lHeader:after {
   position: absolute;
   content: "";
   height: 30%;
@@ -2449,9 +3063,6 @@ a:hover {
   width: 100%;
 }
 
-.page-child .u-lHeader {
-  padding: 2em;
-}
 .page-child .u-lHeader,
 .page-child .u-NavSite__main {
   position: relative;
@@ -2467,6 +3078,14 @@ a:hover {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.page-child .site-title a {
+  color: #454545;
+  background: linear-gradient(45deg, #641A2B 0%, #ed1c24 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
 }
 
 .site-info {
@@ -2486,6 +3105,11 @@ a:hover {
   color: #fff;
 }
 
+tr:first-child th {
+  background: #aaa;
+  color: #fff;
+}
+
 /* unibar overrides */
 .u-NavSite--global {
   position: relative !important;
@@ -2500,26 +3124,15 @@ a.ac-skipLink.ac-NavAnchor--menu.icon {
 }
 
 /*	Nav */
+/*
 .menu-toggle:before {
-  content: "☰";
-  font-size: 2em;
+    content: '\2630 ';
+    font-size: 2em;
 }
-
 .menu-toggle__text {
-  /*	This hides text visually, without concealing it from screen readers.
-  	https://webaim.org/techniques/css/invisiblecontent/#techniques	*/
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+	@include hide-visually();
 }
-
+*/
 .page__title {
   padding-left: 0.1em;
 }

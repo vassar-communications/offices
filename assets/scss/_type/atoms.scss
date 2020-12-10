@@ -1,4 +1,57 @@
 /*
+	BASIC TYPOGRAPHIC STYLES
+
+	This is the primary typographic system for Offices. The idea:
+	
+	-	Define a set of basic styles once.
+	-	See at a glance which styles already exist in the system.
+	
+	
+	-	The fact that everything exists in a single Sass map means that at some point in the future,
+		it would be possible to dynamically generate a style guide with samples of all defined styles.
+
+
+	How it works
+	------------
+
+	To add a new style, ////
+
+	
+
+	What you can do
+	---------------
+	
+	-	You can specify different sizes for different breakpoints without using media queries.
+	
+			font-size: ([mobile], [medium], [large]),
+			
+		You don't need to include a value for each one. If a value for a particular breakpoint isn't
+		specified, the value from the previous one will continue to remain in effect.
+	
+	-	You can also combine different styles as needed for situations where what you need hasn't already
+		been specified. If you need xsmall and condensed, and xsmall-condensed doesn't exist,
+		but xsmall and condensed do, you could call @include font(sans-serif, xsmall condensed).
+	
+	-	You can also specify styles for particular combinations [describe]
+	
+	
+	Notes:
+	
+	-	All rules should end with commas, not semicolons.
+	-	A few CSS rules have multiple components, like font-variation-settings: "wght" 500. In that case,
+		the rule needs to be contained in parentheses:
+			
+			font-variation-settings: (
+				("wght" 500),
+			),
+	
+	
+
+*/
+
+
+
+/*
 @font-face {
 	font-family: 'SourceSansVar';
 	src: url('../fonts/SourceSansVariable-Roman.ttf') format('truetype');
@@ -119,12 +172,10 @@ $typography: (
 				("wght" 370),
 			),
 		),
-		xsmall-bold: (
-			font-size: (0.8em, 0.9em, 0.8em),
+		bold: (
 			font-variation-settings: (
 				("wght" 600),
 			),
-			line-height: 1.2,
 		),
 		xsmall-caps: (
 			font-size: 0.7em,
@@ -136,6 +187,13 @@ $typography: (
 		),
 		small: (
 			font-size: 0.9em,
+		),
+		caps: (
+			text-transform: uppercase,
+			color: #f00,
+		),
+		condensed: (
+			line-height: 1.32,
 		),
 		small-condensed: (
 			font-size: 0.9em,
@@ -191,6 +249,13 @@ $typography: (
 			font-variation-settings: (
 				("wght" 670),
 			),
+		),
+		medium: (
+			font-size: 1.3em,
+		),
+		smallcaps: (
+			font-variant: small-caps,
+			text-transform: lowercase,
 		),
 	),
 );

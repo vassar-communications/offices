@@ -2,6 +2,18 @@ blockquote,
 pre {
 	background: $xlight-gray-cool;
 }
+
+blockquote {
+	cite {
+	    opacity: 0.8;
+
+		&:before {
+		    content: '—';
+		    margin-right: 0.2em
+		}
+	}
+}
+
 .u-lContent {
 	h2 {
 		color: $VC__vassarBurgundy;

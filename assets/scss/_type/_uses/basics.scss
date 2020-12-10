@@ -62,6 +62,3 @@ p {
 p:only-child {
     margin-bottom: 0;
 }
-th {
-	@include font(sans-serif, small-smallcaps-bold);
-}

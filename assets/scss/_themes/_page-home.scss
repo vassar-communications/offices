@@ -1,0 +1,18 @@
+.home {
+	.site-title {
+		color: #fff;
+	}
+	.u-Masthead {
+		&:before {
+			background: $grad-rose;
+		}
+		&:after {
+			background-image: var(--page-header-image);
+			background-size: cover;
+			background-position: center center;
+			filter: grayscale(1);
+			mix-blend-mode: multiply;
+	
+		}
+	}
+}

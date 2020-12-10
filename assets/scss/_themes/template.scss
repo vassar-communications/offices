@@ -7,13 +7,11 @@
 		transition-property: opacity, transform;
 		
 		&:hover {
-			background: none !important;
 			opacity: 0.8;
 			transform: scale(0.94);
 		}
 	}
 }
-
 :root:not(.home) {
 	.u-NavSite__main {
 		background: $cream;
@@ -36,10 +34,16 @@
 }
 
 
-.page-parent {
+//	Top-level pages have background images
+//	and yes, that second line is not pretty, but WP doesn't have a class for "this is a top-level
+//	page without any children".
+
+.page-parent,
+.page:not(.home):not(.page-child) {
 	.u-lHeader {
 		background: var(--page-header-image);
 		background-size: cover;
+		background-position: center center;
 	    position: relative;
 
 		&:after {
@@ -54,10 +58,11 @@
 		}
 	}
 }
+
+
+//	Sub-pages do not have background images
+
 .page-child {
-	.u-lHeader {
-		padding: 2em;
-	}
 	.u-lHeader,
 	.u-NavSite__main {
 	    position: relative;		
@@ -72,6 +77,18 @@
 		    bottom: 0;
 		    left: 0;
 		    width: 100%;
+		}
+	}
+}
+
+.page-child {
+	.site-title {
+		a {
+			color: #454545;
+			background: linear-gradient(45deg, #641A2B 0%, #ed1c24 100%);
+			-webkit-background-clip: text;
+			color: transparent;
+			position: relative;
 		}
 	}
 }

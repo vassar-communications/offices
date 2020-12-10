@@ -5,3 +5,72 @@
 		list-style: none;
 	}
 }
+
+#table-of-contents {
+    padding: 1.4em;
+    background: $VC--vassarVeryLightGray;
+    font-size: 90%;
+
+	a {
+	    text-decoration: none;
+	}
+	ul {
+	    list-style: none;
+	    padding: 0;
+
+		li {
+		    margin-bottom: 0.2em
+		}
+		ul {
+		    border-left: 3px solid #d0c1c1;
+		    padding-left: 0.6em;
+		    margin-top: 0.4em;
+		    margin-bottom: 0.6em;
+		}
+	}
+}
+
+.toc__topLink {
+    position: sticky;
+    top: calc(100% - 2.6em);
+    right: 0;
+    margin-right: -3em;
+    width: 100%;
+    display: block;
+    background: #eee;
+    left: 0;
+    padding: 0.8em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 0.4em;
+    box-shadow: 0 0 0.2em rgba(0,0,0,0.2);
+    border: 1px solid #ccc;
+    margin-bottom: -4em;
+
+    @include break(medium) {
+//	    right: 0;
+//	    float: right;
+//	    margin-right: -3em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

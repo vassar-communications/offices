@@ -1,0 +1,15 @@
+th {
+	@include font(sans-serif, xsmall bold);
+	
+	p {
+		all: unset;
+	}
+}
+td {
+	@include font(sans-serif, small condensed);
+		
+	p, li {
+		font-size: inherit;
+		line-height: inherit;
+	}
+}
