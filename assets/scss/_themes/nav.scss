@@ -3,7 +3,8 @@
 /*	Top-level menu items
 	-------------------- */
 
-.u-NavSite__main {
+.u-NavSite__main,
+.menu-main-navigation-container {
 	a {
 		@include links($VC__vassarBurgundy, $VC__vassarBurgundy, $VC__vassarLinkPink, $VC__vassarLinkPink);
 		text-decoration: none;
@@ -67,3 +68,35 @@
 		}
 	}
 }
+
+#vcF #g-navigation .u-NavSite,
+#vcH #g-navigation .u-NavSite {
+	transition-duration: 0.4s;
+}
+.g-Search {
+	z-index: 130;
+}
+/*	Mobile universal nav menu */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+

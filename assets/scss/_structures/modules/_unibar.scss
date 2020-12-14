@@ -1,8 +1,10 @@
 /*	UNIVERSAL NAV OVERRIDES
 	=======================
 
-	
+	These adjust the main unibar styling to accommodate for differences on Offices (Offices has
+	different breakpoints than the central styling, for example)
 */
+
 
 #vcF, #vcH {
 	position: absolute;
@@ -39,8 +41,8 @@
     background: #000;
     width: 11em;
     position: absolute;
-    z-index: 2000;
-    padding: 1.4em 0.6em 0.6em;
+    z-index: 120;
+    padding: 1em 0.8em 0.6em;
     left: 0.8em;
 }
 
@@ -70,7 +72,7 @@
 }
 
 
-@media screen and (min-width: 37.5em) {
+@include break(small) {
 	#vcF #g-Search, #vcH #g-Search {
 	    z-index: 10 !important;
 	}
@@ -92,6 +94,54 @@
     order: 4;
 }
 
+
+
+#vcF #g-navigation:target .u-NavSite,
+#vcF #navigation:target .u-NavSite,
+#vcH #g-navigation:target .u-NavSite,
+#vcH #navigation:target .u-NavSite {
+    padding-top: 3.75rem !important;
+    transition-duration: 0.4s;
+}
+#vcF .g-Search__open, #vcF .g-Search__submit, #vcH .g-Search__open, #vcH .g-Search__submit {
+    margin-right: -.0875rem;
+    margin-right: -.16rem;
+}
+@include break(small) {
+	#vcF #g-Search:target, #vcH #g-Search:target {
+	    width: calc( 100% - 12.6vw);
+	    z-index: 130;
+	}
+}
+.g-Masthead * {
+    transition-duration: 0.2s !important;
+}
+#vcF #g-Search:before, #vcH #g-Search:before {
+	display: none;
+}
+
+@media screen and (max-width: $small) {
+	#vcH #g-navigation .u-NavSite--global .menu-main-navigation-container {
+	    margin-top: 0.6em;
+	}
+	#vcH .menu-main-navigation-container a {
+		font-size: 1.4em;
+	}
+	.current_page_ancestor {
+	    border-left: 2px solid rgba(0,0,0,0.6) !important;
+	    /* background: rgba(0,0,0,0.1) !important; */
+	}
+	.current_page_ancestor li a {
+	    font-size: 120% !important;
+	}
+	.current_page_ancestor > a {
+	    background: rgba(0,0,0,0.6) !important;
+	    color: #fff !important;
+	}
+	.current-menu-item a {
+	    color: #fff !important;
+	}
+}
 
 
 

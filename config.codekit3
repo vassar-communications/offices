@@ -9,6 +9,14 @@
 	],
 "creatorBuild": "32186",
 "files": {
+	"/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.gitignore",
+		"oF": 0
+		},
 	"/_config.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -938,6 +946,19 @@
 		"oS": 0,
 		"sct": 0
 		},
+	"/assets/scss/_structures/modules/_dropdown.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/scss/_structures/css/_dropdown.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
 	"/assets/scss/_structures/modules/_figures.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -947,6 +968,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/assets/scss/_structures/css/_figures.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
+	"/assets/scss/_structures/modules/_image-with-text.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/scss/_structures/css/_image-with-text.css",
 		"oF": 0,
 		"oS": 0,
 		"sct": 0
@@ -999,6 +1033,32 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/assets/scss/_structures/css/_mailchimp.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
+	"/assets/scss/_structures/modules/_tables.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/scss/_structures/css/_tables.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
+	"/assets/scss/_structures/modules/_unibar.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/scss/_structures/css/_unibar.css",
 		"oF": 0,
 		"oS": 0,
 		"sct": 0
@@ -1077,19 +1137,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/assets/scss/_structures/css/flickity.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 0
-		},
-	"/assets/scss/_structures/modules/table.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/scss/_structures/css/table.css",
 		"oF": 0,
 		"oS": 0,
 		"sct": 0
@@ -1302,19 +1349,6 @@
 		"oS": 0,
 		"sct": 0
 		},
-	"/assets/scss/_themes/_colors-page-inner-UNUSED.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"ec": 1,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/scss/css/_colors-page-inner-UNUSED.css",
-		"oF": 0,
-		"oS": 0,
-		"sct": 0
-		},
 	"/assets/scss/_themes/_file-extensions.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1350,6 +1384,32 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/assets/scss/css/_modules.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
+	"/assets/scss/_themes/_page-home.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/scss/css/_page-home.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
+	"/assets/scss/_themes/_tables.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/scss/css/_tables.css",
 		"oF": 0,
 		"oS": 0,
 		"sct": 0
@@ -1505,6 +1565,19 @@
 		"oS": 0,
 		"sct": 0
 		},
+	"/assets/scss/_type/_uses/_blockquote.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/scss/_type/css/_blockquote.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
 	"/assets/scss/_type/_uses/_figure.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1553,6 +1626,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/assets/scss/_type/css/_page__title.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
+	"/assets/scss/_type/_uses/_tables.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/scss/_type/css/_tables.css",
 		"oF": 0,
 		"oS": 0,
 		"sct": 0

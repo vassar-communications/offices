@@ -601,6 +601,9 @@ h2 {
 h3 {
   margin: 1.8em 0 0.2em 0;
 }
+h3 strong {
+  font-variation-settings: "wght" 700;
+}
 
 h2 + h3 {
   margin-top: 0.6em;
@@ -1839,7 +1842,8 @@ table.responsive td {
 /*	UNIVERSAL NAV OVERRIDES
 	=======================
 
-
+	These adjust the main unibar styling to accommodate for differences on Offices (Offices has
+	different breakpoints than the central styling, for example)
 */
 #vcF, #vcH {
   position: absolute;
@@ -1870,8 +1874,8 @@ table.responsive td {
   background: #000;
   width: 11em;
   position: absolute;
-  z-index: 2000;
-  padding: 1.4em 0.6em 0.6em;
+  z-index: 120;
+  padding: 1em 0.8em 0.6em;
   left: 0.8em;
 }
 
@@ -1920,7 +1924,16 @@ $breakpoints: (
   font-variation-settings: "wght" 360;
   padding: 0.2em;
 }
-@media screen and (min-width: 37.5em) {
+/*	Sets up a media query. This expects that all of a project's breakpoints will
+	    be stored in a map named $breakpoints, as follows:
+
+$breakpoints: (
+	"small": 30em,
+	"medium": 50em,
+	"large": 70em
+);	
+	*/
+@media screen and (min-width: 40em) {
   #vcF #g-Search, #vcH #g-Search {
     z-index: 10 !important;
   }
@@ -1945,6 +1958,69 @@ $breakpoints: (
   order: 4;
 }
 
+#vcF #g-navigation:target .u-NavSite,
+#vcF #navigation:target .u-NavSite,
+#vcH #g-navigation:target .u-NavSite,
+#vcH #navigation:target .u-NavSite {
+  padding-top: 3.75rem !important;
+  transition-duration: 0.4s;
+}
+
+#vcF .g-Search__open, #vcF .g-Search__submit, #vcH .g-Search__open, #vcH .g-Search__submit {
+  margin-right: -0.0875rem;
+  margin-right: -0.16rem;
+}
+
+/*	Sets up a media query. This expects that all of a project's breakpoints will
+	    be stored in a map named $breakpoints, as follows:
+
+$breakpoints: (
+	"small": 30em,
+	"medium": 50em,
+	"large": 70em
+);	
+	*/
+@media screen and (min-width: 40em) {
+  #vcF #g-Search:target, #vcH #g-Search:target {
+    width: calc( 100% - 12.6vw);
+    z-index: 130;
+  }
+}
+.g-Masthead * {
+  transition-duration: 0.2s !important;
+}
+
+#vcF #g-Search:before, #vcH #g-Search:before {
+  display: none;
+}
+
+@media screen and (max-width: 40em) {
+  #vcH #g-navigation .u-NavSite--global .menu-main-navigation-container {
+    margin-top: 0.6em;
+  }
+
+  #vcH .menu-main-navigation-container a {
+    font-size: 1.4em;
+  }
+
+  .current_page_ancestor {
+    border-left: 2px solid rgba(0, 0, 0, 0.6) !important;
+    /* background: rgba(0,0,0,0.1) !important; */
+  }
+
+  .current_page_ancestor li a {
+    font-size: 120% !important;
+  }
+
+  .current_page_ancestor > a {
+    background: rgba(0, 0, 0, 0.6) !important;
+    color: #fff !important;
+  }
+
+  .current-menu-item a {
+    color: #fff !important;
+  }
+}
 .cols-3-lg {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2em;
@@ -2502,6 +2578,40 @@ html.page-child {
   	These guys shouldn't have photo banners.
   */
 }
+html.page-child .u-Masthead {
+  width: 100%;
+  text-align: center;
+  padding: 0 1em 1em;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  html.page-child .u-Masthead {
+    padding-top: 2em;
+  }
+}
+@media screen and (min-width: 60em) {
+  html.page-child .u-Masthead {
+    text-align: left;
+    padding: 0;
+  }
+}
 html.page-child .u-NavSite__main .menu {
   text-align: center;
   /*	Sets up a media query. This expects that all of a project's breakpoints will
@@ -2932,41 +3042,62 @@ a:hover {
 
 /*	Top-level menu items
 	-------------------- */
-.u-NavSite__main a {
+.u-NavSite__main a,
+.menu-main-navigation-container a {
   text-decoration: none;
 }
-.u-NavSite__main a {
+.u-NavSite__main a,
+.menu-main-navigation-container a {
   color: #861f41;
 }
-.u-NavSite__main a:visited {
+.u-NavSite__main a:visited,
+.menu-main-navigation-container a:visited {
   color: #861f41;
 }
-.u-NavSite__main a:hover, .u-NavSite__main a:visited:hover {
+.u-NavSite__main a:hover, .u-NavSite__main a:visited:hover,
+.menu-main-navigation-container a:hover,
+.menu-main-navigation-container a:visited:hover {
   color: #ce1e46;
 }
-.u-NavSite__main a:active, .u-NavSite__main a:focus {
+.u-NavSite__main a:active, .u-NavSite__main a:focus,
+.menu-main-navigation-container a:active,
+.menu-main-navigation-container a:focus {
   color: #ce1e46;
 }
 .u-NavSite__main .current_page_item > a,
-.u-NavSite__main .current-menu-ancestor > a {
+.u-NavSite__main .current-menu-ancestor > a,
+.menu-main-navigation-container .current_page_item > a,
+.menu-main-navigation-container .current-menu-ancestor > a {
   background: #861f41;
 }
 .u-NavSite__main .current_page_item > a,
-.u-NavSite__main .current-menu-ancestor > a {
+.u-NavSite__main .current-menu-ancestor > a,
+.menu-main-navigation-container .current_page_item > a,
+.menu-main-navigation-container .current-menu-ancestor > a {
   color: #fff;
 }
 .u-NavSite__main .current_page_item > a:visited,
-.u-NavSite__main .current-menu-ancestor > a:visited {
+.u-NavSite__main .current-menu-ancestor > a:visited,
+.menu-main-navigation-container .current_page_item > a:visited,
+.menu-main-navigation-container .current-menu-ancestor > a:visited {
   color: #fff;
 }
 .u-NavSite__main .current_page_item > a:hover, .u-NavSite__main .current_page_item > a:visited:hover,
 .u-NavSite__main .current-menu-ancestor > a:hover,
-.u-NavSite__main .current-menu-ancestor > a:visited:hover {
+.u-NavSite__main .current-menu-ancestor > a:visited:hover,
+.menu-main-navigation-container .current_page_item > a:hover,
+.menu-main-navigation-container .current_page_item > a:visited:hover,
+.menu-main-navigation-container .current-menu-ancestor > a:hover,
+.menu-main-navigation-container .current-menu-ancestor > a:visited:hover {
   color: #fff;
 }
 .u-NavSite__main .current_page_item > a:active, .u-NavSite__main .current_page_item > a:focus,
 .u-NavSite__main .current-menu-ancestor > a:active,
-.u-NavSite__main .current-menu-ancestor > a:focus {
+.u-NavSite__main .current-menu-ancestor > a:focus,
+.menu-main-navigation-container .current_page_item > a:active,
+.menu-main-navigation-container .current_page_item > a:focus,
+.menu-main-navigation-container .current-menu-ancestor > a:active,
+.menu-main-navigation-container .current-menu-ancestor > a:focus {
   color: #fff;
 }
 
@@ -3020,6 +3151,16 @@ a:hover {
   color: #fff;
 }
 
+#vcF #g-navigation .u-NavSite,
+#vcH #g-navigation .u-NavSite {
+  transition-duration: 0.4s;
+}
+
+.g-Search {
+  z-index: 130;
+}
+
+/*	Mobile universal nav menu */
 .site-title a, .site-title a:visited {
   color: #fff;
   transition: 0.4s all ease;

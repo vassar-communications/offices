@@ -225,12 +225,12 @@ if ( function_exists( 'lazyblocks' ) ) :
             'editor_callback' => '',
             'editor_css' => '',
             'frontend_html' => '<div class="module">
-        <h2 class=\'module__title\'>{{title}}</h2>
+        <h2 class="module__title">{{title}}</h2>
         <div class="content">
             <ul>
     {{#each content}}
         <li><a href="{{item_link}}">{{item_text}}</a>
-            {{#if item_description}}<div class=\'item__desc\'>{{item_description}}</div>{{/if}}
+            {{#if item_description}}<div class="item__desc">{{item_description}}</div>{{/if}}
     </li>
     {{/each}}
     </ul>
@@ -796,7 +796,7 @@ if ( function_exists( 'lazyblocks' ) ) :
                         <a href="tel:+1845437{{person_extension}}">845-437-{{person_extension}}</a>
                     {{/if}}
                     {{#if person_office}}
-                <p class=\'person__office\'>{{person_office}}</p>
+                <p class="person__office">{{person_office}}</p>
                     {{/if}}
                 </td>
             </tr>
@@ -968,7 +968,7 @@ if ( function_exists( 'lazyblocks' ) ) :
     
         <div class="module__text deadlines__date">{{{note_content}}}</div>
             {{#if note_readmore}}
-            <a class=\'module__readmore\' href=\'{{note_readmore}}\'>Read more</a>
+            <a class="module__readmore" href="{{note_readmore}}">Read more</a>
             {{/if}}
         </div>
     
@@ -1161,7 +1161,7 @@ if ( function_exists( 'lazyblocks' ) ) :
     <tr>
         <td class="module__text deadlines__date">{{deadlines_date}}</td>
             {{#if deadlines_description}}
-            <td class=\'module__text\'>{{{deadlines_description}}}</td>
+            <td class="module__text">{{{deadlines_description}}}</td>
             {{/if}}
     </tr>    
     {{/each}}
@@ -1388,7 +1388,7 @@ if ( function_exists( 'lazyblocks' ) ) :
         
         <div class="module__text hours--time">{{time_period_hours}}</div>
             {{#if time_period_description}}
-            <div class=\'item__text\'>{{time_period_description}}</div>
+            <div class="item__text">{{time_period_description}}</div>
             {{/if}}
     </div>    
     

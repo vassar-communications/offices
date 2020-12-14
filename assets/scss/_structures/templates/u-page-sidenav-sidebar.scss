@@ -177,9 +177,6 @@ html:not(.home) {
 
 //.page-parent,
 html:not(.page-child) {
-	
-
-
 	.u-lHeader {
 		align-items: center;
 		display: flex;
@@ -393,6 +390,24 @@ html {
 		/*	Subpage. This is a page that's a child of a top-level section.
 			These guys shouldn't have photo banners.
 		*/
+
+//		@media screen and (max-width: $medium) {
+		.u-Masthead {
+		    width: 100%;
+		    text-align: center;
+		    padding: 0 1em 1em;
+		    
+			@include break(small) {
+				padding-top: 2em;
+			}
+			@include break(medium) {
+				text-align: left;
+				padding: 0;
+			}
+		}
+//		}
+
+
 
 		.u-NavSite__main {
 			.menu {
