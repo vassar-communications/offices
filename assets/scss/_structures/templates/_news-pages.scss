@@ -1,0 +1,12 @@
+/*	News section
+	============
+
+	The following applies the page template styling to blog posts.
+*/
+
+.archive,
+.blog,
+.single-post {
+	@extend .page;
+	@extend .page-child;
+}

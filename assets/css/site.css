@@ -2084,6 +2084,266 @@ $breakpoints: (
   width: 100%;
 }
 
+.home .PageContentInner {
+  grid-template-areas: "masthead" "nav-top" "content" "footer";
+}
+.home .u-Masthead__caption {
+  z-index: 10;
+}
+.home .u-NavSite__main {
+  grid-column: 1/span 8;
+}
+.home .menu {
+  margin: 0 auto !important;
+  max-width: 46em;
+  padding-left: 0;
+  text-align: center !important;
+}
+.home .u-NavSite__main {
+  margin-bottom: 2em;
+}
+.home .menu-item-home {
+  display: none !important;
+}
+.home .u-Masthead {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 28em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.home .u-Masthead:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.home .u-Masthead:before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.home .page__title {
+  display: none;
+}
+.home .u-lHeader {
+  padding: 0 0 2em 0;
+  position: relative;
+  grid-column: 1/span 8;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  .home .u-lHeader {
+    padding: 0;
+  }
+}
+.home .site-title {
+  margin: 0;
+  padding: 0 !important;
+  padding-left: 3em;
+  position: relative;
+  z-index: 3;
+}
+.home .site-title a {
+  display: block;
+}
+.home .nav-menu {
+  border: none !important;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.06);
+  margin-right: -1em;
+  padding-left: 0;
+  padding: 0 2em 1em 1em;
+  width: 85%;
+}
+.home .PageContentInner {
+  position: relative;
+}
+
+.page.page-parent:not(.has-subnav) .PageContentInner, .page:not(.has-subnav) .PageContentInner, .archive:not(.has-subnav) .PageContentInner,
+.blog:not(.has-subnav) .PageContentInner,
+.single-post:not(.has-subnav) .PageContentInner {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  .page.page-parent:not(.has-subnav) .PageContentInner, .page:not(.has-subnav) .PageContentInner, .archive:not(.has-subnav) .PageContentInner,
+.blog:not(.has-subnav) .PageContentInner,
+.single-post:not(.has-subnav) .PageContentInner {
+    display: grid;
+    grid-template-areas: "masthead" "nav-top" "content" "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+}
+@media screen and (min-width: 60em) {
+  .page.page-parent:not(.has-subnav) .PageContentInner, .page:not(.has-subnav) .PageContentInner, .archive:not(.has-subnav) .PageContentInner,
+.blog:not(.has-subnav) .PageContentInner,
+.single-post:not(.has-subnav) .PageContentInner {
+    grid-template-areas: "masthead masthead" "nav-top nav-top" "content content" "footer footer";
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+}
+.page.has-subnav .PageContentInner, .has-subnav.archive .PageContentInner,
+.has-subnav.blog .PageContentInner,
+.has-subnav.single-post .PageContentInner {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  .page.has-subnav .PageContentInner, .has-subnav.archive .PageContentInner,
+.has-subnav.blog .PageContentInner,
+.has-subnav.single-post .PageContentInner {
+    display: grid;
+    grid-template-areas: "masthead" "nav-top" "nav-secondary" "content" "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+  }
+}
+@media screen and (min-width: 60em) {
+  .page.has-subnav .PageContentInner, .has-subnav.archive .PageContentInner,
+.has-subnav.blog .PageContentInner,
+.has-subnav.single-post .PageContentInner {
+    grid-template-areas: "masthead nav-top" "nav-secondary content" "footer footer";
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "masthead masthead" "nav-top nav-top" "nav-secondary content" "footer footer";
+  }
+}
+.page.has-subnav .PageContentInner .u-NavSite__level--1, .has-subnav.archive .PageContentInner .u-NavSite__level--1,
+.has-subnav.blog .PageContentInner .u-NavSite__level--1,
+.has-subnav.single-post .PageContentInner .u-NavSite__level--1 {
+  width: 70%;
+}
+.page.has-subnav .u-NavSite__secondary, .has-subnav.archive .u-NavSite__secondary,
+.has-subnav.blog .u-NavSite__secondary,
+.has-subnav.single-post .u-NavSite__secondary {
+  grid-area: nav-secondary;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .page.has-subnav .u-NavSite__secondary, .has-subnav.archive .u-NavSite__secondary,
+.has-subnav.blog .u-NavSite__secondary,
+.has-subnav.single-post .u-NavSite__secondary {
+    grid-column: 1/span 2;
+    grid-row: 3;
+    padding-right: 2em;
+  }
+}
+.page.has-subnav .u-lContent, .has-subnav.archive .u-lContent,
+.has-subnav.blog .u-lContent,
+.has-subnav.single-post .u-lContent {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 70em) {
+  .page.has-subnav .u-lContent, .has-subnav.archive .u-lContent,
+.has-subnav.blog .u-lContent,
+.has-subnav.single-post .u-lContent {
+    margin: 0;
+    max-width: 34em;
+    width: 100%;
+  }
+}
+.page.has-subnav .u-lMain, .has-subnav.archive .u-lMain,
+.has-subnav.blog .u-lMain,
+.has-subnav.single-post .u-lMain {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .page.has-subnav .u-lMain, .has-subnav.archive .u-lMain,
+.has-subnav.blog .u-lMain,
+.has-subnav.single-post .u-lMain {
+    grid-row: 3;
+    grid-column: 3/span 7;
+  }
+}
+@media screen and (min-width: 70em) {
+  .page.has-subnav .u-lMain, .has-subnav.archive .u-lMain,
+.has-subnav.blog .u-lMain,
+.has-subnav.single-post .u-lMain {
+    display: flex;
+  }
+}
+
 @keyframes slidein {
   from {
     top: -100%;
@@ -2092,81 +2352,11 @@ $breakpoints: (
     top: 0;
   }
 }
-/*
-
-.site-title {
-    text-align: center;
-}
-.u-Masthead {
-	padding: 0 6em;
-}
-
-*/
 .menu-close,
 .menu-toggle {
   display: none;
 }
 
-/*
-.menu-toggle {
-	background: #fff;
-	border-radius: 0.2em;
-	border-top-right-radius: 0;
-	border-top-left-radius: 0;
-	border-top: 2px solid #eee;
-
-	display: inline-block;
-	padding: 0.6em 1em;
-	z-index: 10;
-	box-shadow: 0 0.2em 0.2em rgba(0,0,0,0.2);
-}
-
-.menu-close,
-.menu-toggle {
-    position: absolute;
-	right: 0.6em;
-	top: 0;
-
-    @include break(small) {
-	    right: 2em;
-	    top: 2em;
-    }
-}
-@include break(small) {
-	.menu-toggle {
-		display: none;
-	}
-}
-.menu-close {
-	display: none;
-	top: 2em;
-	z-index: 10;
-}
-#menu {
-	transition: all 0.4s ease;
-	top: -100%;
-}
-#menu:target {
-	box-shadow: 0 12px 12px rgba(0,0,0,0.3);
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    min-height: 100vh;
-    padding: 5em 0 3em 0;
-    z-index: 10;
-
-	@include bp__frosted-glass(white);
-
-	@include break(small) {
-		padding-top: 0;
-	}
-
-	.menu-close {
-	    display: block;
-    }
-}
-*/
 #secondary {
   display: none;
 }
@@ -2262,7 +2452,30 @@ nav li {
   z-index: 2;
 }
 
-html:not(.page-child) .u-lHeader {
+/*	Home alone
+	========== */
+html.home .u-lHeader {
+  padding: 0;
+}
+
+/*	All pages that aren't home
+	========================== */
+html:not(.home) .nav-menu,
+html:not(.home) .site-title {
+  margin: 0;
+}
+html:not(.home) .site-title a {
+  padding-bottom: 0.2em;
+}
+html:not(.home) .u-NavSite__secondary,
+html:not(.home) .u-lMain {
+  margin-top: 2.4em;
+}
+
+/*	All top-level pages
+	(home + page parents)
+	===================== */
+html:not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader {
   align-items: center;
   display: flex;
   justify-content: left;
@@ -2278,33 +2491,17 @@ html:not(.page-child) .u-lHeader {
   	*/
 }
 @media screen and (min-width: 60em) {
-  html:not(.page-child) .u-lHeader {
+  html:not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader {
     grid-area: masthead;
     grid-column: 1/span 8;
   }
 }
 
-html.home .u-lHeader {
-  padding: 0;
-}
-
+/*	All pages
+	=========
+*/
 html {
   min-height: 100vh;
-  /*	Standard page
-  	=============
-  	The following applies to every page in the site.
-  */
-}
-html:not(.home) .nav-menu,
-html:not(.home) .site-title {
-  margin: 0;
-}
-html:not(.home) .site-title a {
-  padding-bottom: 0.2em;
-}
-html:not(.home) .u-NavSite__secondary,
-html:not(.home) .u-lMain {
-  margin-top: 2.4em;
 }
 html .menu-menu-1-container,
 html .menu-main-navigation-container {
@@ -2431,154 +2628,99 @@ html .sub-menu {
   padding: 0.2em 0 0 0.6em;
   margin-bottom: 0.2em;
 }
-html.page.page-parent:not(.has-subnav) .PageContentInner, html.page:not(.has-subnav) .PageContentInner {
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
 
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
+.PageContent .u-lFooter {
+  display: none;
+}
 
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-}
-@media screen and (min-width: 40em) {
-  html.page.page-parent:not(.has-subnav) .PageContentInner, html.page:not(.has-subnav) .PageContentInner {
-    display: grid;
-    grid-template-areas: "masthead" "nav-top" "content" "footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-  }
-}
-@media screen and (min-width: 60em) {
-  html.page.page-parent:not(.has-subnav) .PageContentInner, html.page:not(.has-subnav) .PageContentInner {
-    grid-template-areas: "masthead masthead" "nav-top nav-top" "content content" "footer footer";
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: auto auto auto;
-  }
-}
-html.page.has-subnav .PageContentInner {
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
-
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
-
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-}
-@media screen and (min-width: 40em) {
-  html.page.has-subnav .PageContentInner {
-    display: grid;
-    grid-template-areas: "masthead" "nav-top" "nav-secondary" "content" "footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
-  }
-}
-@media screen and (min-width: 60em) {
-  html.page.has-subnav .PageContentInner {
-    grid-template-areas: "masthead nav-top" "nav-secondary content" "footer footer";
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: auto auto auto auto auto;
-    grid-template-areas: "masthead masthead" "nav-top nav-top" "nav-secondary content" "footer footer";
-  }
-}
-html.page.has-subnav .PageContentInner .u-NavSite__level--1 {
-  width: 70%;
-}
-html.page.has-subnav .u-NavSite__secondary {
-  grid-area: nav-secondary;
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
-
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-}
-@media screen and (min-width: 60em) {
-  html.page.has-subnav .u-NavSite__secondary {
-    grid-column: 1/span 2;
-    grid-row: 3;
-    padding-right: 2em;
-  }
-}
-html.page.has-subnav .u-lContent {
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
-
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-}
-@media screen and (min-width: 70em) {
-  html.page.has-subnav .u-lContent {
-    margin: 0;
-    max-width: 34em;
-    width: 100%;
-  }
-}
-html.page.has-subnav .u-lMain {
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
-
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
-
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-}
-@media screen and (min-width: 60em) {
-  html.page.has-subnav .u-lMain {
-    grid-row: 3;
-    grid-column: 3/span 7;
-  }
-}
-@media screen and (min-width: 70em) {
-  html.page.has-subnav .u-lMain {
-    display: flex;
-  }
-}
-html.page-child {
+.page-child, .archive,
+.blog,
+.single-post {
   /*	Subpage. This is a page that's a child of a top-level section.
   	These guys shouldn't have photo banners.
   */
 }
-html.page-child .u-Masthead {
+.page-child .u-lHeader, .archive .u-lHeader,
+.blog .u-lHeader,
+.single-post .u-lHeader {
+  grid-column: 1/span 3;
+  padding: 2em;
+  background: #fbf4ec;
+  padding-top: 3em;
+}
+.page-child .u-NavSite__main, .archive .u-NavSite__main,
+.blog .u-NavSite__main,
+.single-post .u-NavSite__main {
+  padding-top: 3em;
+}
+.page-child:not(.has-subnav), .archive:not(.has-subnav),
+.blog:not(.has-subnav),
+.single-post:not(.has-subnav) {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .page-child:not(.has-subnav) .PageContentInner, .archive:not(.has-subnav) .PageContentInner,
+.blog:not(.has-subnav) .PageContentInner,
+.single-post:not(.has-subnav) .PageContentInner {
+    grid-template-areas: "masthead nav-top" "content content" "footer footer";
+  }
+  .page-child:not(.has-subnav) .u-lHeader, .archive:not(.has-subnav) .u-lHeader,
+.blog:not(.has-subnav) .u-lHeader,
+.single-post:not(.has-subnav) .u-lHeader {
+    grid-column: 1/span 3;
+    background: #fbf4ec;
+    padding-top: 3em;
+  }
+  .page-child:not(.has-subnav) .u-NavSite__main, .archive:not(.has-subnav) .u-NavSite__main,
+.blog:not(.has-subnav) .u-NavSite__main,
+.single-post:not(.has-subnav) .u-NavSite__main {
+    grid-column: 4/span 8;
+    background: #fbf4ec;
+  }
+}
+.page-child.has-subnav .PageContentInner, .has-subnav.archive .PageContentInner,
+.has-subnav.blog .PageContentInner,
+.has-subnav.single-post .PageContentInner {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .page-child.has-subnav .PageContentInner, .has-subnav.archive .PageContentInner,
+.has-subnav.blog .PageContentInner,
+.has-subnav.single-post .PageContentInner {
+    grid-template-areas: "masthead nav-top" "nav-secondary content" "footer footer";
+  }
+  .page-child.has-subnav .PageContentInner .u-lHeader, .has-subnav.archive .PageContentInner .u-lHeader,
+.has-subnav.blog .PageContentInner .u-lHeader,
+.has-subnav.single-post .PageContentInner .u-lHeader {
+    grid-column: 1/span 3;
+    background: #fbf4ec;
+  }
+  .page-child.has-subnav .PageContentInner .u-NavSite__main, .has-subnav.archive .PageContentInner .u-NavSite__main,
+.has-subnav.blog .PageContentInner .u-NavSite__main,
+.has-subnav.single-post .PageContentInner .u-NavSite__main {
+    grid-column: 4/span 8;
+    background: #fbf4ec;
+  }
+}
+.page-child .u-Masthead, .archive .u-Masthead,
+.blog .u-Masthead,
+.single-post .u-Masthead {
   width: 100%;
   text-align: center;
   padding: 0 1em 1em;
@@ -2602,17 +2744,23 @@ html.page-child .u-Masthead {
   	*/
 }
 @media screen and (min-width: 40em) {
-  html.page-child .u-Masthead {
+  .page-child .u-Masthead, .archive .u-Masthead,
+.blog .u-Masthead,
+.single-post .u-Masthead {
     padding-top: 2em;
   }
 }
 @media screen and (min-width: 60em) {
-  html.page-child .u-Masthead {
+  .page-child .u-Masthead, .archive .u-Masthead,
+.blog .u-Masthead,
+.single-post .u-Masthead {
     text-align: left;
     padding: 0;
   }
 }
-html.page-child .u-NavSite__main .menu {
+.page-child .u-NavSite__main .menu, .archive .u-NavSite__main .menu,
+.blog .u-NavSite__main .menu,
+.single-post .u-NavSite__main .menu {
   text-align: center;
   /*	Sets up a media query. This expects that all of a project's breakpoints will
   	    be stored in a map named $breakpoints, as follows:
@@ -2625,173 +2773,18 @@ html.page-child .u-NavSite__main .menu {
   	*/
 }
 @media screen and (min-width: 60em) {
-  html.page-child .u-NavSite__main .menu {
+  .page-child .u-NavSite__main .menu, .archive .u-NavSite__main .menu,
+.blog .u-NavSite__main .menu,
+.single-post .u-NavSite__main .menu {
     text-align: right;
   }
 }
-html.page-child:not(.has-subnav) {
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
 
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-}
-@media screen and (min-width: 60em) {
-  html.page-child:not(.has-subnav) .PageContentInner {
-    grid-template-areas: "masthead nav-top" "content content" "footer footer";
-  }
-  html.page-child:not(.has-subnav) .u-lHeader {
-    grid-column: 1/span 3;
-    background: #fbf4ec;
-    padding-top: 3em;
-  }
-  html.page-child:not(.has-subnav) .u-NavSite__main {
-    grid-column: 4/span 8;
-    background: #fbf4ec;
-  }
-}
-html.page-child.has-subnav .PageContentInner {
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
+/*	News section
+	============
 
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-}
-@media screen and (min-width: 60em) {
-  html.page-child.has-subnav .PageContentInner {
-    grid-template-areas: "masthead nav-top" "nav-secondary content" "footer footer";
-  }
-  html.page-child.has-subnav .PageContentInner .u-lHeader {
-    grid-column: 1/span 3;
-    padding: 2em;
-    background: #fbf4ec;
-    padding-top: 3em;
-  }
-  html.page-child.has-subnav .PageContentInner .u-NavSite__main {
-    grid-column: 4/span 8;
-    background: #fbf4ec;
-    padding-top: 3em;
-  }
-}
-
-.PageContent .u-lFooter {
-  display: none;
-}
-
-/*
-	.widget-area {
-		@include small() {
-			column-count: 2;
-
-			.widget {
-				display: inline-block;
-				width: 100%;
-			}
-		}
-		@include large() {
-			column-count: 1;
-			padding-left: 2.4em;
-			width: 30%;
-		}
-	}
+	The following applies the page template styling to blog posts.
 */
-.home .PageContentInner {
-  grid-template-areas: "masthead" "nav-top" "content" "footer";
-}
-.home .u-Masthead__caption {
-  z-index: 10;
-}
-.home .u-NavSite__main {
-  grid-column: 1/span 8;
-}
-.home .menu {
-  margin: 0 auto !important;
-  max-width: 46em;
-  padding-left: 0;
-  text-align: center !important;
-}
-.home .u-NavSite__main {
-  margin-bottom: 2em;
-}
-.home .menu-item-home {
-  display: none !important;
-}
-.home .u-Masthead {
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 28em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
-.home .u-Masthead:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-.home .u-Masthead:before {
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-}
-.home .page__title {
-  display: none;
-}
-.home .u-lHeader {
-  padding: 0 0 2em 0;
-  position: relative;
-  grid-column: 1/span 8;
-  /*	Sets up a media query. This expects that all of a project's breakpoints will
-  	    be stored in a map named $breakpoints, as follows:
-
-  $breakpoints: (
-  	"small": 30em,
-  	"medium": 50em,
-  	"large": 70em
-  );	
-  	*/
-}
-@media screen and (min-width: 40em) {
-  .home .u-lHeader {
-    padding: 0;
-  }
-}
-.home .site-title {
-  margin: 0;
-  padding: 0 !important;
-  padding-left: 3em;
-  position: relative;
-  z-index: 3;
-}
-.home .site-title a {
-  display: block;
-}
-.home .nav-menu {
-  border: none !important;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.06);
-  margin-right: -1em;
-  padding-left: 0;
-  padding: 0 2em 1em 1em;
-  width: 85%;
-}
-.home .PageContentInner {
-  position: relative;
-}
-
 article.post {
   border-bottom: 1px solid #ddd;
 }
@@ -3186,14 +3179,20 @@ a:hover {
 }
 
 .page-parent .u-lHeader,
-.page:not(.home):not(.page-child) .u-lHeader {
+.page:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader,
+.archive:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader,
+.blog:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader,
+.single-post:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader {
   background: var(--page-header-image);
   background-size: cover;
   background-position: center center;
   position: relative;
 }
 .page-parent .u-lHeader:after,
-.page:not(.home):not(.page-child) .u-lHeader:after {
+.page:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader:after,
+.archive:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader:after,
+.blog:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader:after,
+.single-post:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader:after {
   position: absolute;
   content: "";
   height: 30%;
@@ -3204,13 +3203,23 @@ a:hover {
   width: 100%;
 }
 
-.page-child .u-lHeader,
-.page-child .u-NavSite__main {
+.page-child .u-lHeader, .archive .u-lHeader,
+.blog .u-lHeader,
+.single-post .u-lHeader,
+.page-child .u-NavSite__main,
+.archive .u-NavSite__main,
+.blog .u-NavSite__main,
+.single-post .u-NavSite__main {
   position: relative;
   background: #fbf4ec;
 }
-.page-child .u-lHeader:after,
-.page-child .u-NavSite__main:after {
+.page-child .u-lHeader:after, .archive .u-lHeader:after,
+.blog .u-lHeader:after,
+.single-post .u-lHeader:after,
+.page-child .u-NavSite__main:after,
+.archive .u-NavSite__main:after,
+.blog .u-NavSite__main:after,
+.single-post .u-NavSite__main:after {
   position: absolute;
   content: "";
   background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
@@ -3221,7 +3230,9 @@ a:hover {
   width: 100%;
 }
 
-.page-child .site-title a {
+.page-child .site-title a, .archive .site-title a,
+.blog .site-title a,
+.single-post .site-title a {
   color: #454545;
   background: linear-gradient(45deg, #641A2B 0%, #ed1c24 100%);
   -webkit-background-clip: text;

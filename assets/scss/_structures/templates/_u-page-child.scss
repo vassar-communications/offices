@@ -1,0 +1,80 @@
+.page-child {
+	.u-lHeader {
+		grid-column: 1 / span 3;
+		padding: 2em;
+		background: #fbf4ec;
+		padding-top: 3em;
+	}
+	.u-NavSite__main {
+		padding-top: 3em;
+	}
+
+	&:not(.has-subnav) {
+		@include break(medium) {
+			.PageContentInner {
+				grid-template-areas:
+			        "masthead nav-top"
+			        "content content"
+			        "footer footer";
+			}
+			.u-lHeader {
+				grid-column: 1 / span 3;
+//					padding: 2em;
+				background: #fbf4ec;
+				padding-top: 3em;
+
+			}
+			.u-NavSite__main {
+				grid-column: 4 / span 8;
+				background: #fbf4ec;
+//					padding-top: 3em;
+			}
+		}
+	}
+	&.has-subnav {
+		.PageContentInner {
+			@include break(medium) {
+				grid-template-areas:
+			        "masthead nav-top"
+			        "nav-secondary content"
+			        "footer footer";
+
+				.u-lHeader {
+					grid-column: 1 / span 3;
+					background: #fbf4ec;
+				}
+				.u-NavSite__main {
+					grid-column: 4 / span 8;
+					background: #fbf4ec;
+				}
+			}
+		}
+	}
+
+	/*	Subpage. This is a page that's a child of a top-level section.
+		These guys shouldn't have photo banners.
+	*/
+
+	.u-Masthead {
+	    width: 100%;
+	    text-align: center;
+	    padding: 0 1em 1em;
+	    
+		@include break(small) {
+			padding-top: 2em;
+		}
+		@include break(medium) {
+			text-align: left;
+			padding: 0;
+		}
+	}
+	.u-NavSite__main {
+		.menu {
+			text-align: center;
+			
+			@include break(medium) {
+				text-align: right;
+			}
+		}
+	}
+}

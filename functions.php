@@ -24,6 +24,37 @@ function local_scripts() {
 add_action( 'wp_enqueue_scripts', 'local_scripts' );
 
 
+//  Add breadcrumb trail
+
+add_action( 'vassarparent__before_header', 'vassarparent__make_breadcrumb_trail', 10, 3 );
+
+function vassarparent__make_breadcrumb_trail() {
+    /*  NOTE! If the breadcrumbs aren't appearing on an archive page, make sure the permalink settings of that site have "news" in the permalink pattern. This has to be set on a site-by-site basis; archive pages without /news in their URLs won't display the breadcrumb trail.
+    */
+    if(is_single() || is_archive()) {
+        //  Get the subdirectory of this office
+        $the_subdirectory = $_SERVER['REQUEST_URI'];
+        $the_subdirectory = explode('/', $the_subdirectory);
+        $the_subdirectory = '/'.$the_subdirectory[1].'/';
+
+        //  Grab the year and month
+        $the_date_path = get_the_date('Y F');
+        $the_month_directory = get_the_date('m');
+        $the_date_path = explode(' ', $the_date_path);
+        
+        //  Set up the paths
+        $the_base_url = $the_subdirectory.'news/';
+        $the_year_url = $the_base_url.$the_date_path[0];
+        $the_month_url = $the_base_url.$the_date_path[0].'/'.$the_month_directory;
+        
+        //  And here's our markup
+        $the_final_path = '<ul class="news-breadcrumb"><li><a href="'.$the_base_url.'">News</a></li><li><a href="'.$the_year_url.'">'.$the_date_path[0].'</a></li><li><a href="'.$the_month_url.'">'.$the_date_path[1].'</a></li></ul>';
+        echo $the_final_path;
+    }
+}
+
+
+
 function custom_image_size() {
     // Set default values for the upload media box
     update_option('image_default_align', 'left' );

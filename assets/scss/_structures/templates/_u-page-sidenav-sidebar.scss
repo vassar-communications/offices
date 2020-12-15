@@ -1,0 +1,260 @@
+@keyframes slidein {
+	from {
+		top: -100%;
+	}
+	to {
+		top: 0;
+	}
+}
+
+.menu-close,
+.menu-toggle {
+	display: none;
+}
+
+
+#secondary {
+	display: none;
+}
+.nav-menu {
+	border-bottom: 9px solid #f8f7f6;
+	padding-left: 0;
+	
+	@include break(medium) {
+		float: right;
+	}
+}
+
+.u-lHeader {
+	align-items: flex-end;
+	display: flex;
+	
+	padding-top: 7em;
+}
+
+.u-lHeader,
+.u-NavSite__main {
+	background: #fbf4ec;
+
+	@include break(small) {
+		padding-top: 3em;
+	}
+}
+
+ul.children {
+	display: none;
+}
+
+.page_item_has_children.current_page_item a + .children,
+.page_item_has_children.current_page_ancestor a + .children {
+	display: block;
+}
+
+
+nav {
+	a {
+		text-decoration: none;
+	}
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+.site-info {
+	margin-top: 6em;
+	padding: 4em;
+	text-align: center;
+}
+.u-NavSite__secondary {
+	display: none;
+    max-width: 22em;
+	
+	@include small() {
+		display: block;
+	}
+}
+
+.u-Masthead__caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1em;
+    max-width: 20em;
+    background: #000;
+    font-size: 0.7em;
+    color: #aaa;
+    z-index: 2;
+}
+
+
+/*	Home alone
+	========== */
+
+html.home {
+	.u-lHeader {
+		padding: 0;
+	}
+}
+
+
+/*	All pages that aren't home
+	========================== */
+
+html:not(.home) {
+	.nav-menu,
+	.site-title {
+		margin: 0;
+	}
+	.site-title {
+		a {
+			padding-bottom: 0.2em;
+		}
+	}
+	.u-NavSite__secondary,
+	.u-lMain {
+		margin-top: 2.4em;
+	}
+}
+
+
+
+
+/*	All top-level pages
+	(home + page parents)
+	===================== */
+
+html:not(.page-child) {
+	.u-lHeader {
+		align-items: center;
+		display: flex;
+		justify-content: left;
+		padding: 22em 2em 2em;
+		
+		@include break(medium) {
+			grid-area: masthead;
+			grid-column: 1 / span 8;
+		}
+	}
+}
+
+
+
+/*	All pages
+	=========
+*/
+
+html {
+	min-height: 100vh;
+
+	.menu-menu-1-container,
+	.menu-main-navigation-container {
+		padding: 1.8em;
+	}
+
+	.page__title {
+		display: inline-block;
+		padding-bottom: 0.2em;
+	}
+	.site-description {
+		display: none;
+	}
+
+	.u-lMain {
+		padding: 2em 2em 6em 2em;
+		padding-top: 0;
+		
+		@include break(medium) {
+			grid-area: content;
+			grid-column: 1 / span 8;
+			padding-right: 2em;
+		}
+	}
+	.u-lContent {
+		@include break(large) {
+			margin: 0 auto;
+			max-width: 38em;
+		}
+	}
+
+	.u-lFooter {
+		grid-area: footer;
+	}
+
+	.u-NavSite__main {
+		padding-top: 2em;
+		grid-area: nav-top;
+		line-height: 1.4;
+		padding: 0;
+
+		@include break(medium) {
+			grid-column: 1 / span 8;
+		}
+	
+		.menu {
+			@include break(medium) {
+				text-align: center;
+				padding-left: 0;
+				max-width: 50em;
+				margin: 0 auto;
+			}
+
+			 li {
+				@include small() {				 
+					display: inline-block;
+				}
+				
+				a {
+					padding: 0.1em 0.4em;
+				}
+		
+				.sub-menu {
+					@include small() {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+
+
+	.menu-item {
+		a {
+			display: block;
+			padding: 0.2em 0;
+		}
+	}
+	.sub-menu {
+	    display: none;
+	}
+	.current-page-ancestor,
+	.current-page-parent,
+	.current-menu-item {
+		& > a {
+			padding: 0.4em 0 0.3em 0.5em;
+		}
+		& > .sub-menu {
+		    display: block;
+		}
+	}			
+	.sub-menu {
+		border-left: 1px solid #000;
+		padding: 0.2em 0 0 0.6em;
+		margin-bottom: 0.2em;
+	}
+
+}
+
+
+
+.PageContent {
+	//	This is the default footer for the theme.
+	//	In this case, the actual site footer is going to be provided by the
+	//	universal nav plugin.
+	.u-lFooter {
+		display: none;
+	}
+}
