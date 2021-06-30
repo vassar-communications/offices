@@ -1,6 +1,7 @@
-
+.wp-block-image {
+    margin-bottom: 1em;
+}
 .size-medium {
-	
 	width: 50%;
 
 	@include break(small) {
@@ -11,3 +12,9 @@
 	margin: 0;
 }
 
+.cols-2,
+.cols-3 {
+	figure {
+		width: 100%;
+	}
+}

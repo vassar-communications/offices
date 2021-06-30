@@ -60,6 +60,10 @@ b, strong {
 .has-intro-font-size {
 	@include font(serif-display, medium);
 }
+.has-small-font-size {
+	@include font(sans-serif, small);
+}
+
 p {
 	margin-top: 0;
 }

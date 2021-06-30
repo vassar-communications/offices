@@ -151,9 +151,12 @@ html {
 
 	.menu-menu-1-container,
 	.menu-main-navigation-container {
-		padding: 1.8em;
-	}
+		padding: 0.8em;
 
+		@include break(large) {
+			padding: 1.8em;
+		}
+	}
 	.page__title {
 		display: inline-block;
 		padding-bottom: 0.2em;

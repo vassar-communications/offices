@@ -75,6 +75,19 @@ function my_custom_sizes( $sizes ) {
 }
 
 
+/*	ADDITIONAL FILE TYPES
+	===================== */
+
+function additional_file_types($mime_types){
+    $mime_types['keynote'] = 'application/x-iwork-keynote-sffkey';
+    $mime_types['pages'] = 'application/x-iwork-pages-sffpages';
+    $mime_types['numbers'] = 'application/x-iwork-numbers-sffnumbers';
+    
+    return $mime_types;
+}
+add_filter('upload_mimes', 'additional_file_types', 1, 1);
+
+
 
 /*	LAZYBLOCKS 
 	==========

@@ -97,7 +97,9 @@ b {
 	font-weight: normal;
 }
 em, i {
-	@include varfont-weight(340, 500, true);
+//	@include varfont-weight(340, 500, true);
+//	commented out 04/28/2021 because italic text in bold text didn't
+//	match the weight of the parent item
 }
 
 $typography: (
@@ -130,7 +132,7 @@ $typography: (
 			line-height: 1,
 		),
 		xxlarge-bold: (
-			font-size: (3em, 3.6em),
+			font-size: (3em, 2.6em),
 			font-weight: 700,
 			letter-spacing: -0.01em,
 			line-height: 0.92,

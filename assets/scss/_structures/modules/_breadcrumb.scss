@@ -1,0 +1,19 @@
+.news-breadcrumb {
+    list-style: none;
+    padding: 0;
+
+
+	li {
+	    display: inline;
+	    font-size: 90%;
+
+		&:before {
+		    content: '/';
+		    color: #ccc;
+		    margin: 0 0.4em;
+		}
+		&:first-child:before {
+		    display: none;
+		}
+	}
+}

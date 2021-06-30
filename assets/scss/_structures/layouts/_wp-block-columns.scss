@@ -4,10 +4,14 @@
 
 .wp-block-columns {
 	@include break(small) {
-		display: flex;
-		
+//		display: flex;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1em;
+
 		.wp-block-column {
-			padding-right: 1em;
+//			padding-right: 1em;
 			width: 100%;
 			
 			&:last-child {

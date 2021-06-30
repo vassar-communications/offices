@@ -1,3 +1,42 @@
+.u-lHeader {
+    margin-bottom: 2em;
+    
+    @include break(small) {
+	    margin-bottom: 0;
+    }
+}
+.site-title {
+    padding-bottom: 1.6em !important;
+
+    @include break(medium) {
+	    padding-bottom: 1em !important;
+	    padding-left: 1em !important;
+    }
+}
+
+.u-Masthead__caption {
+	display: none;
+
+    @include break(small) {
+		display: block;
+    }
+}
+
+
+.page__title {
+	margin-bottom: 0.8em;
+}
+
+
+.u-NavSite__main {
+    @include break(medium) {
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: flex-end;
+	}
+}
+
+
 @import "_u-page-home";
 @import "_u-page-parent";
 @import "_u-page-sidenav-sidebar";

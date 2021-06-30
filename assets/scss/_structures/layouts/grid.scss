@@ -1,3 +1,9 @@
+.cols-2\:med {
+	@include break(medium) {
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1em;
+	}
+}
 .cols-1-sm {
 	
 }
@@ -6,6 +12,27 @@
 	grid-gap: 2em;
 }
 
-.grid {
+.layout\:grid {
 	display: grid;
+	
+	.wp-block-column {
+		//	overrides padding I was using to space the flex-based columns
+		padding: 0 !important;
+	}
+}
+
+.gridGap\:none {
+	grid-gap: 0;
+}
+.gridGap\:small {
+	grid-gap: 0.4em;
+}
+.gridGap\:regular {
+	grid-gap: 1em;
+}
+.gridGap\:medium {
+	grid-gap: 1.4em;
+}
+.gridGap\:large {
+	grid-gap: 2em;
 }

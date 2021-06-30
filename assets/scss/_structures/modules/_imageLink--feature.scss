@@ -1,0 +1,64 @@
+.imageLink--feature {
+	border-radius: 0.3em;
+	overflow: hidden;
+    position: relative;
+    line-height: 0;
+    margin-bottom: 1em;
+    
+    figcaption,
+    figcaption a,
+    img {
+        transition: 0.4s all ease;
+    }
+    
+    &:hover {
+        img {
+    	    transform: scale(1.1);
+        }
+        
+        figcaption {
+	        a {
+	            opacity: 0;
+	        }
+        }
+    }
+
+    figcaption {
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+
+		a {
+	        align-items: center;
+	        background: rgba(0,0,0,0.46);
+	        color: #fff;
+	        display: flex;
+	        font-size: 1.8em;
+	        justify-content: center;
+	        height: 100%;
+	        opacity: 1;
+	        padding: 2em;
+	        position: relative;
+	        text-align: center;
+	        text-decoration: none;
+	        width: 100%;
+			font-family: $serif-display;
+			letter-spacing: 0.03em;
+	        
+	        &:link,
+	        &:visited {
+		        color: #fff;
+	        }
+		}
+    }
+}
+
+
+
+
+
+
+
+
