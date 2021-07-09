@@ -44,6 +44,20 @@ hr {
 }
 
 
+@mixin burgundy-reverse() {
+	@include linkColors($VC__vassarBurgundy, $VC__vassarGray, #fff, #fff, transparent, $VC__vassarBurgundy);
+	
+	a {
+		text-decoration: underline;
+	}
+
+	&:hover {
+		text-decoration: underline $VC__vassarGray;
+	}
+}
+
+
+
 /*	This file doesn't do anything except bind variables to specific elements on the page. The actual colors are set in the palette files.
 
 */
@@ -77,7 +91,8 @@ html {
 
 a {
 	@include burgundy-to-pink();
-	transition: 0.4s color ease;
+
+	transition: 0.4s all ease;
 }
 
 .page__title {
@@ -116,9 +131,16 @@ a {
 
 .entry__content {
 	a {
-		@include links($VC__vassarLinkPink, $VC__vassarGray, #000, $VC__vassarLinkPink);
+//		@include links($VC__vassarLinkPink, $VC__vassarGray, #000, $VC__vassarLinkPink);
+		@include burgundy-reverse();
 		
+		&:hover {
+			text-decoration: none;
 		
+			&:after {
+				color: rgba(255,255,255,0.4);
+			}
+		}
 	}
 }
 

@@ -1,0 +1,14 @@
+.no-sidebar .u-lMain {
+  display: flex;
+  grid-row: 2;
+  grid-column: 3/span 5;
+  padding-right: 0;
+}
+.no-sidebar .u-lContent {
+  max-width: none;
+  padding-right: 0;
+  width: 100%;
+}
+.no-sidebar .widget-area {
+  display: none;
+}

@@ -4,7 +4,7 @@
     {
       "name" : "Process All Remaining Files and Folders",
       "stepType" : 1,
-      "uuidString" : "75F9BF80-B67B-43CB-A381-0D3997FC369C"
+      "uuidString" : "76557684-BEEE-46EC-806E-5F3424627C02"
     }
   ],
   "creatorBuild" : "34127",
@@ -43,6 +43,30 @@
       "oA" : 0,
       "oAP" : "\/.gitignore",
       "oF" : 0
+    },
+    "\/assets\/css\/site-prev-min.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/css\/site-prev-min-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/assets\/css\/site-prev.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/css\/site-prev-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/assets\/css\/site.css" : {
       "aP" : 1,
@@ -544,7 +568,7 @@
       "oAP" : "\/assets\/images\/banner-2.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -557,7 +581,7 @@
       "oAP" : "\/assets\/images\/banner.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -570,7 +594,7 @@
       "oAP" : "\/assets\/images\/banners\/1.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -583,7 +607,7 @@
       "oAP" : "\/assets\/images\/banners\/2.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -596,7 +620,7 @@
       "oAP" : "\/assets\/images\/banners\/3.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -609,7 +633,7 @@
       "oAP" : "\/assets\/images\/banners\/4.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -622,7 +646,7 @@
       "oAP" : "\/assets\/images\/banners\/5.jpg",
       "oF" : 0,
       "oIPL" : 0,
-      "opt" : 0,
+      "opt" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -633,8 +657,8 @@
       "oA" : 0,
       "oAP" : "\/assets\/images\/pattern-quad-darkgold.png",
       "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -646,8 +670,8 @@
       "oA" : 0,
       "oAP" : "\/assets\/images\/pattern-quad-gold.png",
       "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -659,8 +683,8 @@
       "oA" : 0,
       "oAP" : "\/assets\/images\/pattern-quad-white.png",
       "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
@@ -670,23 +694,37 @@
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
+      "mi" : 0,
+      "oA" : 1,
       "oAP" : "\/assets\/js\/site-min-min.js",
       "oF" : 0,
-      "sC" : 3,
+      "sC" : 0,
       "tS" : 0
     },
     "\/assets\/js\/site.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
+      "mi" : 0,
+      "oA" : 1,
       "oAP" : "\/assets\/js\/site-min.js",
       "oF" : 0,
-      "sC" : 3,
+      "sC" : 0,
       "tS" : 0
+    },
+    "\/assets\/removed\/z-UNUSED-animations-1.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/z-UNUSED-animations-1.css",
+      "oF" : 1,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
     },
     "\/assets\/scss\/_basics\/_all.scss" : {
       "aP" : 0,
@@ -1066,6 +1104,20 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/scss\/_structures\/modules\/_faqs.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/scss\/_structures\/css\/_faqs.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/scss\/_structures\/modules\/_figures.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -1248,20 +1300,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/assets\/scss\/_structures\/modules\/faqs.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/assets\/scss\/_structures\/css\/faqs.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/assets\/scss\/_structures\/modules\/flickity.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -1430,6 +1468,20 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/scss\/_structures\/templates\/_u-page-sidenav-sidebar-backup.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/scss\/_structures\/css\/_u-page-sidenav-sidebar-backup.css",
+      "oF" : 1,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/scss\/_structures\/templates\/_u-page-sidenav-sidebar.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -1472,19 +1524,29 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/assets\/scss\/_structures\/templates\/u-page-sidenav-sidebar-backup.scss" : {
-      "aP" : 0,
+    "\/assets\/scss\/_structures\/templates\/css\/u-page-nosidenav-sidebar.css" : {
+      "aP" : 1,
       "bl" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/assets\/scss\/_structures\/css\/u-page-sidenav-sidebar-backup.css",
+      "oAP" : "\/assets\/scss\/_structures\/templates\/css\/u-page-nosidenav-sidebar-min.css",
       "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
+      "pg" : 0
+    },
+    "\/assets\/scss\/_structures\/templates\/css\/u-page-sidenav-nosidebar.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/scss\/_structures\/templates\/css\/u-page-sidenav-nosidebar-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/assets\/scss\/_themes\/_all.scss" : {
       "aP" : 0,
@@ -1621,20 +1683,6 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/assets\/scss\/css\/_tables.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/assets\/scss\/_themes\/animations-1.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/scss\/css\/animations-1.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -2084,6 +2132,20 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/scss\/_universal-nav-styles.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_universal-nav-styles.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/scss\/site.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -2146,6 +2208,14 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/template-parts\/content-embed.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/template-parts\/content-embed.php",
+      "oF" : 0
+    },
     "\/template-parts\/format-link.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2162,11 +2232,12 @@
 
   },
   "projectAttributes" : {
-    "creationDate" : 626718627.67249799,
+    "creationDate" : 647444658.85710096,
     "displayValue" : "offices",
     "displayValueWasSetByUser" : 0,
-    "iconImageName" : "brackets-cafe",
-    "iconImageWasSetByUser" : 0
+    "iconImageName" : "brackets_green",
+    "iconImageWasSetByUser" : 0,
+    "lastBuiltDate" : 647447602.07217002
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -3083,7 +3154,7 @@
       },
       "no-magic-numbers" : {
         "active" : 0,
-        "optionString" : "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
+        "optionString" : "{'ignore': [], 'ignoreArrayIndexes': true, 'ignoreDefaultValues': false, 'enforceConst': false, 'detectObjects': false}"
       },
       "no-misleading-character-class" : {
         "active" : 0
@@ -3275,7 +3346,7 @@
       },
       "no-underscore-dangle" : {
         "active" : 0,
-        "optionString" : "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'allowAfterThisConstructor': false, 'enforceInMethodNames': false}"
+        "optionString" : "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'allowAfterThisConstructor': false, 'enforceInMethodNames': false, 'allowFunctionParams': true}"
       },
       "no-unexpected-multiline" : {
         "active" : 1
@@ -3307,7 +3378,7 @@
       },
       "no-unused-expressions" : {
         "active" : 0,
-        "optionString" : "{'allowShortCircuit': false, 'allowTernary': false, 'allowTaggedTemplates': false}"
+        "optionString" : "{'allowShortCircuit': false, 'allowTernary': false, 'allowTaggedTemplates': false, 'enforceForJSX': false}"
       },
       "no-unused-labels" : {
         "active" : 1
@@ -3495,7 +3566,7 @@
       },
       "sort-imports" : {
         "active" : 0,
-        "optionString" : "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
+        "optionString" : "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'], 'allowSeparatedGroups': false}"
       },
       "sort-keys" : {
         "active" : 0,
@@ -3943,7 +4014,7 @@
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 0,
-      "minifierStyle" : 1,
+      "minifierStyle" : 0,
       "outputStyle" : 0,
       "sourceMapStyle" : 0,
       "syntaxCheckerStyle" : 1,
@@ -4002,16 +4073,16 @@
       "webpRGBQuality" : 75
     },
     "languageDefaultsJS" : {
-      "autoOutputAction" : 0,
+      "autoOutputAction" : 1,
       "autoOutputPathFilenamePattern" : "*-min.js",
       "autoOutputPathRelativePath" : "\/min",
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 0,
       "bundleFormat" : 0,
-      "minifierStyle" : 1,
+      "minifierStyle" : 0,
       "sourceMapStyle" : 0,
-      "syntaxCheckerStyle" : 3,
+      "syntaxCheckerStyle" : 0,
       "transpilerStyle" : 0
     },
     "languageDefaultsJSON" : {
@@ -4021,7 +4092,7 @@
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 0,
-      "orderOutput" : 0,
+      "orderOutput" : 1,
       "outputStyle" : 1
     },
     "languageDefaultsKIT" : {
@@ -4050,7 +4121,7 @@
       "rewriteURLStyle" : 0,
       "shouldRunAutoprefixer" : 0,
       "shouldRunBless" : 0,
-      "sourceMapStyle" : 1,
+      "sourceMapStyle" : 0,
       "strictImports" : 0,
       "strictUnits" : 0
     },
@@ -4106,7 +4177,7 @@
       "autoOutputPathStyle" : 0,
       "compileDebug" : 1,
       "htmlMinifierStyle" : 0,
-      "outputStyle" : 0,
+      "outputStyle" : 1,
       "shouldRunCacheBuster" : 0
     },
     "languageDefaultsSASS" : {
