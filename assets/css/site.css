@@ -2132,6 +2132,11 @@ body {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.u-VCard--site .org {
+  font: 600 2rem/1.1 "freight-big-pro", "Georgia", "Times", "Times New Roman", serif !important;
+  text-transform: none !important;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -2798,6 +2803,7 @@ p:only-child {
   font-size: 2.2em;
   font-weight: bold;
   line-height: 1;
+  font-size: 1.8em;
 }
 .minimal-post-on-frontpage .entry__content p {
   font-family: Source Sans Variable;
@@ -4018,6 +4024,19 @@ table.responsive td {
 .blocks-gallery-item img {
   object-fit: cover;
   height: 100%;
+}
+.blocks-gallery-item .blocks-gallery-item__caption a:link,
+.blocks-gallery-item .blocks-gallery-item__caption a:visited {
+  color: #aaa;
+  text-decoration-color: #aaa;
+}
+.blocks-gallery-item .blocks-gallery-item__caption a:link:hover,
+.blocks-gallery-item .blocks-gallery-item__caption a:visited:hover,
+.blocks-gallery-item .blocks-gallery-item__caption a:link:active,
+.blocks-gallery-item .blocks-gallery-item__caption a:visited:active {
+  background: #eee;
+  color: #000;
+  text-decoration: none;
 }
 
 .wp-block-lazyblock-directory {
@@ -5414,8 +5433,23 @@ a:hover {
 .entry__content a[href$=".pdf"]:after {
   content: "(PDF)";
 }
+.entry__content a[href$=".doc"]:after {
+  content: "(Word doc)";
+}
+.entry__content a[href$=".docx"]:after {
+  content: "(Word doc)";
+}
 .entry__content a[href$=".xls"]:after {
   content: "(Excel spreadsheet)";
+}
+.entry__content a[href$=".xlsx"]:after {
+  content: "(Excel spreadsheet)";
+}
+.entry__content a[href$=".ppt"]:after {
+  content: "(PowerPoint)";
+}
+.entry__content a[href$=".pptx"]:after {
+  content: "(PowerPoint)";
 }
 
 /*	Modules

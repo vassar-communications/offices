@@ -6,6 +6,7 @@
 .minimal-post-on-frontpage {
 	.post__title {
 		@include font(serif-display, large-bold-condensed);
+		font-size: 1.8em;
 	}	
 	.entry__content {
 		p {

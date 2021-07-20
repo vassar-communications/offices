@@ -34,7 +34,22 @@
 	a[href$=".pdf"]:after {
 		content: "(PDF)";
 	}
+	a[href$=".doc"]:after {
+		content: "(Word doc)";
+	}
+	a[href$=".docx"]:after {
+		content: "(Word doc)";
+	}
 	a[href$=".xls"]:after {
 		content: "(Excel spreadsheet)";
+	}
+	a[href$=".xlsx"]:after {
+		content: "(Excel spreadsheet)";
+	}
+	a[href$=".ppt"]:after {
+		content: "(PowerPoint)";
+	}
+	a[href$=".pptx"]:after {
+		content: "(PowerPoint)";
 	}
 }

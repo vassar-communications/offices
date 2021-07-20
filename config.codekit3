@@ -690,6 +690,22 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/assets\/includes\/footer_markup.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/includes\/footer_markup.php",
+      "oF" : 0
+    },
+    "\/assets\/includes\/header_markup.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/includes\/header_markup.php",
+      "oF" : 0
+    },
     "\/assets\/js\/site-min.js" : {
       "bF" : 0,
       "ft" : 64,

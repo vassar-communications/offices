@@ -28,18 +28,11 @@
 	}
 }
 .blocks-gallery-item {
-//	height: 44vw;
-	
-//	@include break(medium) {
 		height: 58vw;
-//	}
 
 	@include break(large) {
 		height: 38vw;
 	}
-	
-//padding-bottom: 56.25%; /* 16:9 */
-//  height: 0;
 
 	figure {
 		height: 100%;
@@ -50,4 +43,19 @@
 		object-fit: cover;
 		height: 100%;		
 	}
+	.blocks-gallery-item__caption a:link,
+	.blocks-gallery-item__caption a:visited {
+		color: #aaa;
+		text-decoration-color: #aaa;
+	}
+	.blocks-gallery-item__caption a:link:hover,
+	.blocks-gallery-item__caption a:visited:hover,
+	.blocks-gallery-item__caption a:link:active,
+	.blocks-gallery-item__caption a:visited:active {
+		background: #eee;
+		color: #000;
+		text-decoration: none;
+	}
 }
+
+
