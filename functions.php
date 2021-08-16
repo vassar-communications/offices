@@ -43,12 +43,12 @@ function vassarparent__make_breadcrumb_trail() {
         $the_date_path = explode(' ', $the_date_path);
         
         //  Set up the paths
-        $the_base_url = $the_subdirectory.'news/';
+        $the_base_url = $the_subdirectory; //.'news/';
         $the_year_url = $the_base_url.$the_date_path[0];
         $the_month_url = $the_base_url.$the_date_path[0].'/'.$the_month_directory;
         
         //  And here's our markup
-        $the_final_path = '<ul class="news-breadcrumb"><li><a href="'.$the_base_url.'">News</a></li><li><a href="'.$the_year_url.'">'.$the_date_path[0].'</a></li><li><a href="'.$the_month_url.'">'.$the_date_path[1].'</a></li></ul>';
+        $the_final_path = '<ul class="news-breadcrumb"><li><a href="'.$the_base_url.'news/">News</a></li><li><a href="'.$the_year_url.'">'.$the_date_path[0].'</a></li><li><a href="'.$the_month_url.'">'.$the_date_path[1].'</a></li></ul>';
         echo $the_final_path;
     }
 }

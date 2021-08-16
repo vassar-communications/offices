@@ -44,30 +44,6 @@
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
-    "\/assets\/css\/site-prev-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/css\/site-prev-min-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/assets\/css\/site-prev.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/css\/site-prev-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/assets\/css\/site.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -1232,6 +1208,20 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/scss\/_structures\/modules\/_recent-posts.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/scss\/_structures\/css\/_recent-posts.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/scss\/_structures\/modules\/_tables.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -1539,30 +1529,6 @@
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
-    },
-    "\/assets\/scss\/_structures\/templates\/css\/u-page-nosidenav-sidebar.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/scss\/_structures\/templates\/css\/u-page-nosidenav-sidebar-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/assets\/scss\/_structures\/templates\/css\/u-page-sidenav-nosidebar.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/scss\/_structures\/templates\/css\/u-page-sidenav-nosidebar-min.css",
-      "oF" : 0,
-      "pg" : 0
     },
     "\/assets\/scss\/_themes\/_all.scss" : {
       "aP" : 0,

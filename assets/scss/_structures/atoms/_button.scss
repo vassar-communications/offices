@@ -4,3 +4,22 @@ input[type="button"] {
 	background: #888;
 	border-radius: 0.4em;
 }
+
+.wp-block-button a.wp-block-button__link {
+	&:link,
+	&:visited {
+		background: $light-burgundy;
+		padding: 0.4em 0.8em;
+		border-radius: 0.4em;
+		/* margin: 0.6em 0; */
+		display: inline-block;
+		text-decoration: none;
+		transition: 0.3s all ease;
+		color: #fff;
+	
+		&:hover,
+		&:focus {
+			background: #000;
+		}
+	}
+}

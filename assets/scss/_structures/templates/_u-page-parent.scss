@@ -16,6 +16,11 @@
 			}
 		}
 	}
+	&.no-subnav {
+		.u-NavSite__secondary {
+			display: none;
+		}
+	}
 	&.has-subnav {
 		.PageContentInner {
 
