@@ -1,3 +1,10 @@
+## Aug 16, 2021 - v1.2
+
+### CSS
+
+* Added underscores to all files in _type/_uses folder.
+
+
 ## Aug 11, 2021 - v1.1
 
 ### PHP

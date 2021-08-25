@@ -12,18 +12,24 @@
 	}
 	.home & {
 		font-family: $serif-display;
-	    font-size: 2.8em;
-//	    padding-left: 0.2em;
-	    letter-spacing: -0.06em;
-	    font-style: italic;
-	    text-transform: uppercase;
-	    line-height: 0.76;
-		word-spacing: 0.3em;
-//		text-align: center;
-		
+		font-size: 2em;
+		letter-spacing: -0.02em;
+		font-weight: bold;
+		text-decoration: none;
+		display: block;
+		line-height: 1;
+
+		@include break(small) {
+			font-family: $serif-display;
+			font-size: 2.8em;
+			letter-spacing: -0.06em;
+			font-style: italic;
+			text-transform: uppercase;
+			line-height: 0.76;
+			word-spacing: 0.3em;
+		}
 		@include break(medium) {
 		    font-size: 3.4em;
-//		    text-align: left;
 		    font-weight: bold;
 		}
 	}

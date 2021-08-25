@@ -20,6 +20,10 @@ pre {
 h2 {
     margin: 1em 0 0.3em 0;
 	@include font(serif-display, medium-condensed);
+	
+	strong, b {
+	    font-family: inherit;
+	}
 }
 h3 {
 	margin: 1.8em 0 0.2em 0;

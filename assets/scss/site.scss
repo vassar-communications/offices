@@ -2,6 +2,17 @@
 
 @import "_universal-nav-styles";
 
+
+#vcH #g-navigation:target .u-NavSite__level--navLink {
+	display: block !important;
+    margin-top: 1em;
+}
+#vcH #g-navigation:target .u-NavSite__level--navLink .u-NavSite__item {
+    padding: 1em;
+    font-family: "Source Sans Variable", Helvetica, Arial, sans-serif;
+    font-variation-settings: "wght" 600;
+}
+
 @import "~beltpack";
 @import "~typeset";
 @import "_basics/_all";

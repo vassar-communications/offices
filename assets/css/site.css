@@ -2137,6 +2137,17 @@ body {
   text-transform: none !important;
 }
 
+#vcH #g-navigation:target .u-NavSite__level--navLink {
+  display: block !important;
+  margin-top: 1em;
+}
+
+#vcH #g-navigation:target .u-NavSite__level--navLink .u-NavSite__item {
+  padding: 1em;
+  font-family: "Source Sans Variable", Helvetica, Arial, sans-serif;
+  font-variation-settings: "wght" 600;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -2731,6 +2742,10 @@ h2 {
   font-size: 1.6em;
   line-height: 1;
 }
+h2 strong, h2 b {
+  font-family: inherit;
+}
+
 h3 {
   margin: 1.8em 0 0.2em 0;
 }
@@ -2917,12 +2932,12 @@ figcaption {
 
 .home .site-title {
   font-family: freight-big-pro;
-  font-size: 2.8em;
-  letter-spacing: -0.06em;
-  font-style: italic;
-  text-transform: uppercase;
-  line-height: 0.76;
-  word-spacing: 0.3em;
+  font-size: 2em;
+  letter-spacing: -0.02em;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  line-height: 1;
   /*	Sets up a media query. This expects that all of a project's breakpoints will
   	    be stored in a map named $breakpoints, as follows:
 
@@ -2932,6 +2947,26 @@ figcaption {
   	"large": 70em
   );	
   	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  .home .site-title {
+    font-family: freight-big-pro;
+    font-size: 2.8em;
+    letter-spacing: -0.06em;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 0.76;
+    word-spacing: 0.3em;
+  }
 }
 @media screen and (min-width: 60em) {
   .home .site-title {
