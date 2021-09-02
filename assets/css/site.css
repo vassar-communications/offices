@@ -3867,6 +3867,28 @@ https://flickity.metafizzy.co
   list-style-type: lower-alpha;
 }
 
+.list-unstyled {
+  padding: 0;
+  list-style: none;
+}
+
+.list-linkedList {
+  padding: 0;
+  list-style: none;
+}
+.list-linkedList a {
+  text-decoration: none;
+  display: block;
+  padding: 0.2em 0;
+  border-bottom: 1px solid #ddd;
+}
+.list-linkedList li {
+  margin: 0;
+}
+.list-linkedList li:last-child a {
+  border: none;
+}
+
 /*	Lazyblocks
 	==========
 
@@ -3997,6 +4019,10 @@ table.responsive td {
   table.responsive td {
     display: table-cell;
   }
+}
+
+.striped-rows tr:nth-child(2n+1) {
+  background: #eee;
 }
 
 .wp-block-latest-posts__list {
@@ -4427,6 +4453,18 @@ $breakpoints: (
 }
 .wp-block-columns .wp-block-image.size-large {
   width: 100%;
+}
+
+.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-gap-2 {
+  grid-gap: 2em;
+}
+
+.grid-gap-4 {
+  grid-gap: 4em;
 }
 
 .wp-block-group.has-background {

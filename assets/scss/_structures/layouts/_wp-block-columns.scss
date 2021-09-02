@@ -36,3 +36,12 @@
 		}
 	}
 }
+.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid-gap-2 {
+	grid-gap: 2em;
+}
+.grid-gap-4 {
+	grid-gap: 4em;
+}

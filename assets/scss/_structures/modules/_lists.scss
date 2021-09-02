@@ -15,3 +15,31 @@
 	    list-style-type: lower-alpha;
 	}
 }
+
+
+
+.list-unstyled {
+    padding: 0;
+    list-style: none;
+}
+
+
+.list-linkedList {
+    padding: 0;
+    list-style: none;
+
+	a {
+		text-decoration: none;
+		display: block;
+		padding: 0.2em 0;
+		border-bottom: 1px solid #ddd;
+	}
+	li {
+		margin: 0;
+
+		&:last-child a {
+			border: none;
+		}
+	}
+}
+

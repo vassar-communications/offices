@@ -60,3 +60,9 @@ table.responsive {
 		}
 	}
 }
+
+
+
+.striped-rows tr:nth-child(2n+1) {
+    background: #eee;
+}
