@@ -14,3 +14,27 @@
 		}
 	}
 }
+
+
+//	Noticed that Vimeo embeds didn't work properly. Not sure if this is specific to Vimeo,
+//	so I'm scoping it to Vimeo blocks so as not to break other non-Vimeo embeds.
+
+.is-provider-vimeo {
+	padding-bottom: unset;
+    height: unset;
+    
+    figcaption {
+    	margin-top: 0.8em;
+    }
+
+	.wp-block-embed__wrapper {
+		position: relative;
+		padding-bottom: 56.25%;
+		height: 0;
+	}
+	&.ratio-3x2 {
+		.wp-block-embed__wrapper {
+			padding-bottom: 66.25%
+		}
+	}
+}

@@ -3376,6 +3376,85 @@ pre p:only-child {
   display: none;
 }
 
+.button-field {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-gap: 0.4em;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  .button-field {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 60em) {
+  .button-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.4em;
+  }
+}
+.button-field li {
+  margin-bottom: 0;
+}
+.button-field a {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .button-field a {
+    min-height: 7rem;
+  }
+}
+.button-field a:link, .button-field a:visited {
+  height: 100%;
+  text-decoration: none;
+  transition: 0.4s all ease;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  color: #951829;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.1em 0.16em #eee;
+  padding: 10%;
+  border-top: 3px solid #951829;
+  font-size: 90%;
+  font-weight: bold;
+  font-variation-settings: "wght" 600;
+}
+.button-field a:link:hover, .button-field a:visited:hover {
+  color: #fff;
+  background: #951829;
+  border-color: #951829;
+}
+
 .cblock_address p {
   margin: 0;
 }
@@ -3597,6 +3676,11 @@ details summary::-webkit-details-marker {
   background: #951829 !important;
   color: #fff !important;
 }
+/* Added for forms */
+.mce-content-body {
+  font-family: "Source Sans Variable", sans-serif;
+}
+
 .wp-block-media-text {
   display: grid;
   grid-template-columns: 8em 1fr;
@@ -3957,7 +4041,7 @@ div[class^=wp-block-lazyblock-] {
 td {
   padding: 1em;
   vertical-align: top;
-  padding: 0.2em 0;
+  padding: 0.2em 0.8em 0 0.2em;
 }
 @media screen and (min-width: 40em) {
   td {
@@ -3987,7 +4071,8 @@ tr {
 
 .wp-block-table {
   margin: 1em 0;
-  overflow-x: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
 }
 
@@ -4126,6 +4211,10 @@ table.responsive td {
   text-decoration: none;
 }
 
+.wp-block-gallery.has-nested-images .wp-block-image {
+  width: 100%;
+}
+
 .wp-block-lazyblock-directory {
   margin: 2em 0 2em 0;
 }
@@ -4165,6 +4254,22 @@ table.responsive td {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.is-provider-vimeo {
+  padding-bottom: unset;
+  height: unset;
+}
+.is-provider-vimeo figcaption {
+  margin-top: 0.8em;
+}
+.is-provider-vimeo .wp-block-embed__wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.is-provider-vimeo.ratio-3x2 .wp-block-embed__wrapper {
+  padding-bottom: 66.25%;
 }
 
 /*	UNIVERSAL NAV OVERRIDES

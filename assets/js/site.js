@@ -52,7 +52,7 @@ $(document).ready(function(){
 	
 //	jQuery('.wp-block-gallery').flickity({
 	
-	$('.blocks-gallery-grid').flickity({
+	$('.blocks-gallery-grid, .wp-block-gallery.has-nested-images').flickity({
 	  // options
 	  cellAlign: 'left',
 	  contain: true

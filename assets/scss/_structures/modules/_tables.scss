@@ -1,7 +1,7 @@
 td {
     padding: 1em;
 	vertical-align: top;
-	padding: 0.2em 0;
+	padding: 0.2em 0.8em 0 0.2em;
 
 	@include small() {
     	border-top: 1px solid #eee;
@@ -29,7 +29,8 @@ tr {
 
 .wp-block-table {
     margin: 1em 0;
-    overflow-x: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
 	width: 100%;
 }
 
@@ -54,7 +55,7 @@ table.responsive {
 	}
 	td {
 		display: block;
-		
+
 		@include small() {
 			display: table-cell;
 		}

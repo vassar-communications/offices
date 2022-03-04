@@ -24,6 +24,25 @@ function local_scripts() {
 add_action( 'wp_enqueue_scripts', 'local_scripts' );
 
 
+
+/*	For https://offices.vassar.edu/dean-of-the-faculty/committees/
+	by Morgan
+*/
+//[dof-committee-listing]
+function dof_committee_listing_func( $atts ){
+    $committees_file_contents = file_get_contents($_SERVER['CONTEXT_DOCUMENT_ROOT'].'/wp-content/committees_export/committees-export.html');
+    if($committees_file_contents!==false){
+        //EVAL JSON
+        $committees_json = json_decode($committees_file_contents);
+        if( !is_null($committees_json) && $committees_json->success){
+            return html_entity_decode($committees_json->html);
+        }
+    }
+	return "<p>Error retrieving data.</p>";
+}
+add_shortcode( 'dof-committee-listing', 'dof_committee_listing_func' );
+
+
 //  Add breadcrumb trail
 
 add_action( 'vassarparent__before_header', 'vassarparent__make_breadcrumb_trail', 10, 3 );

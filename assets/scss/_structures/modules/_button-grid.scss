@@ -1,0 +1,51 @@
+.button-field {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-gap: 0.4em;
+
+  @include break(small) {
+    grid-template-columns: 1fr 1fr;
+}
+    @include break(medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 0.4em;
+    }
+
+  li {
+    margin-bottom: 0;
+  }
+  a {
+    @include break(medium) {
+      min-height: 7rem;
+    }
+
+    &:link,
+    &:visited {
+      height: 100%;
+      text-decoration: none;
+      transition: 0.4s all ease;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 0;
+      color: #951829;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0.1em 0.16em #eee;
+      padding: 10%;
+     border-top: 3px solid #951829;
+  	font-size: 90%;
+      font-weight: bold;
+      font-variation-settings: "wght" 600;
+
+      &:hover {
+        color: #fff;
+        background: #951829;
+        border-color: #951829;
+      }
+
+    }
+  }
+}

@@ -3,10 +3,10 @@
 }
 .wp-block-gallery {
 	margin-bottom: 3em;
-	
+
 	.flickity-enabled {
 		display: block !important;
-		
+
 		.blocks-gallery-item {
 			display: block !important;
 			margin: 0;
@@ -41,7 +41,7 @@
 	}
 	img {
 		object-fit: cover;
-		height: 100%;		
+		height: 100%;
 	}
 	.blocks-gallery-item__caption a:link,
 	.blocks-gallery-item__caption a:visited {
@@ -59,3 +59,11 @@
 }
 
 
+//  this is for the new gallery markup
+//  https://www.koberoku.com/content/why-wordpress-5-9-broke-your-galleries-and-how-to-fix-it/
+
+.wp-block-gallery.has-nested-images {
+  .wp-block-image {
+    width: 100%;
+  }
+}
