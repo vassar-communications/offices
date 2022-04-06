@@ -24,7 +24,6 @@ function local_scripts() {
 add_action( 'wp_enqueue_scripts', 'local_scripts' );
 
 
-
 /*	For https://offices.vassar.edu/dean-of-the-faculty/committees/
 	by Morgan
 */
@@ -60,14 +59,14 @@ function vassarparent__make_breadcrumb_trail() {
         $the_date_path = get_the_date('Y F');
         $the_month_directory = get_the_date('m');
         $the_date_path = explode(' ', $the_date_path);
-        
+
         //  Set up the paths
-        $the_base_url = $the_subdirectory; //.'news/';
+        $the_base_url = $the_subdirectory.'news/';
         $the_year_url = $the_base_url.$the_date_path[0];
         $the_month_url = $the_base_url.$the_date_path[0].'/'.$the_month_directory;
-        
+
         //  And here's our markup
-        $the_final_path = '<ul class="news-breadcrumb"><li><a href="'.$the_base_url.'news/">News</a></li><li><a href="'.$the_year_url.'">'.$the_date_path[0].'</a></li><li><a href="'.$the_month_url.'">'.$the_date_path[1].'</a></li></ul>';
+        $the_final_path = '<ul class="news-breadcrumb"><li><a href="'.$the_base_url.'">News</a></li><li><a href="'.$the_year_url.'">'.$the_date_path[0].'</a></li><li><a href="'.$the_month_url.'">'.$the_date_path[1].'</a></li></ul>';
         echo $the_final_path;
     }
 }
@@ -86,7 +85,7 @@ add_action('after_setup_theme', 'custom_image_size');
 add_image_size( 'small', 220, 150 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
- 
+
 function my_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'small' => __( 'Small' ),
@@ -101,16 +100,16 @@ function additional_file_types($mime_types){
     $mime_types['keynote'] = 'application/x-iwork-keynote-sffkey';
     $mime_types['pages'] = 'application/x-iwork-pages-sffpages';
     $mime_types['numbers'] = 'application/x-iwork-numbers-sffnumbers';
-    
+
     return $mime_types;
 }
 add_filter('upload_mimes', 'additional_file_types', 1, 1);
 
 
 
-/*	LAZYBLOCKS 
+/*	LAZYBLOCKS
 	==========
-	
+
 	LazyBlocks exports PHP to define blocks created via the plugin - all you need is the plugin to be active.
 */
 
@@ -307,7 +306,7 @@ if ( function_exists( 'lazyblocks' ) ) :
         'condition' => array(
         ),
     ) );
-    
+
 endif;
 
 if ( function_exists( 'lazyblocks' ) ) :
@@ -329,7 +328,7 @@ if ( function_exists( 'lazyblocks' ) ) :
             ),
         ),
     ) );
-    
+
 endif;
 
 
@@ -593,7 +592,7 @@ if ( function_exists( 'lazyblocks' ) ) :
         {{#each cblock_contact_item}}
         <div class="item">
         <h3 class="module__sub-title">{{cblock_name}}</h3>
-        
+
         <div class="contact__item item--address">{{{cblock_address}}}</div>
         <p class="contact__item item--phone">{{cblock_phone}}</p>
         {{#if cblock_link}}
@@ -615,7 +614,7 @@ if ( function_exists( 'lazyblocks' ) ) :
         'condition' => array(
         ),
     ) );
-    
+
     lazyblocks()->add_block( array(
         'id' => 42,
         'title' => 'Directory',
@@ -874,7 +873,7 @@ if ( function_exists( 'lazyblocks' ) ) :
         'condition' => array(
         ),
     ) );
-    
+
     lazyblocks()->add_block( array(
         'id' => 26,
         'title' => 'Note',
@@ -1028,13 +1027,13 @@ if ( function_exists( 'lazyblocks' ) ) :
             'frontend_html' => '<div class="module module--box module--note note--{{note_type}}">
         <h2 class="module__title">{{note_title}}</h2>
         <div class="module__content">
-    
+
         <div class="module__text deadlines__date">{{{note_content}}}</div>
             {{#if note_readmore}}
             <a class="module__readmore" href="{{note_readmore}}">Read more</a>
             {{/if}}
         </div>
-    
+
     </div>',
             'frontend_callback' => '',
             'frontend_css' => '',
@@ -1045,7 +1044,7 @@ if ( function_exists( 'lazyblocks' ) ) :
         'condition' => array(
         ),
     ) );
-    
+
     lazyblocks()->add_block( array(
         'id' => 21,
         'title' => 'Deadlines',
@@ -1218,7 +1217,7 @@ if ( function_exists( 'lazyblocks' ) ) :
             'frontend_html' => '<div class="module module--deadlines">
         <h2 class="module__title">{{title}}</h2>
         <div class="module__content">
-    
+
     <table>
     {{#each deadline}}
     <tr>
@@ -1226,14 +1225,14 @@ if ( function_exists( 'lazyblocks' ) ) :
             {{#if deadlines_description}}
             <td class="module__text">{{{deadlines_description}}}</td>
             {{/if}}
-    </tr>    
+    </tr>
     {{/each}}
     </table>
-    
+
         </div>
-    
+
         <a class="module__text hours--time" href="{{deadlines_more_link}}">Read more</a>
-    
+
     </div>',
             'frontend_callback' => '',
             'frontend_css' => '',
@@ -1244,7 +1243,7 @@ if ( function_exists( 'lazyblocks' ) ) :
         'condition' => array(
         ),
     ) );
-    
+
     lazyblocks()->add_block( array(
         'id' => 10,
         'title' => 'Hours',
@@ -1444,19 +1443,19 @@ if ( function_exists( 'lazyblocks' ) ) :
             'frontend_html' => '<div class="module module--hours">
         <h2 class="module__title">Hours</h2>
         <div class="content">
-    
+
     {{#each time_period}}
     <div class="module__subsection">
         <h3 class="module__sub-title small-caps">{{time_period_title}}</h3>
-        
+
         <div class="module__text hours--time">{{time_period_hours}}</div>
             {{#if time_period_description}}
             <div class="item__text">{{time_period_description}}</div>
             {{/if}}
-    </div>    
-    
+    </div>
+
     {{/each}}
-    
+
         </div>
     </div>',
             'frontend_callback' => '',
@@ -1468,5 +1467,5 @@ if ( function_exists( 'lazyblocks' ) ) :
         'condition' => array(
         ),
     ) );
-    
+
 endif;

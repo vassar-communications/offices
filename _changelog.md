@@ -1,3 +1,10 @@
+## Apr 5, 2022 - v1.3.1
+
+### PHP
+* functions.php
+	* Fixed a bug that was breaking links in the breadcrumb trail
+
+
 ## Mar 4, 2022 - v1.3
 
 ### CSS
