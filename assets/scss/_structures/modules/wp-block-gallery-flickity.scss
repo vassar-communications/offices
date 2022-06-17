@@ -67,3 +67,12 @@
     width: 100%;
   }
 }
+
+
+.wp-block-gallery {
+	display: block !important;
+
+	.blocks-gallery-item {
+		width: 100% !important;
+	}
+}

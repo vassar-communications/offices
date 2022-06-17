@@ -3889,13 +3889,6 @@ https://flickity.metafizzy.co
   opacity: 1;
 }
 
-.wp-block-gallery {
-  display: block;
-}
-.wp-block-gallery .blocks-gallery-item {
-  width: 100% !important;
-}
-
 .wp-block-image {
   margin-bottom: 1em;
 }
@@ -4213,6 +4206,13 @@ table.responsive td {
 
 .wp-block-gallery.has-nested-images .wp-block-image {
   width: 100%;
+}
+
+.wp-block-gallery {
+  display: block !important;
+}
+.wp-block-gallery .blocks-gallery-item {
+  width: 100% !important;
 }
 
 .wp-block-lazyblock-directory {
@@ -4540,7 +4540,7 @@ $breakpoints: (
   .wp-block-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
+    grid-gap: 1em !important;
   }
   .wp-block-columns .wp-block-column {
     width: 100%;
@@ -4570,6 +4570,10 @@ $breakpoints: (
 
 .grid-gap-4 {
   grid-gap: 4em;
+}
+
+.wp-block-columns.are-vertically-aligned-top {
+  align-items: start;
 }
 
 .wp-block-group.has-background {

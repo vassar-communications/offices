@@ -1,3 +1,15 @@
+## Jun 17, 2022 - v1.3.2
+
+### CSS
+* _wp-block-columns.scss
+	* Added fixes for a situation where column content was getting vertically centered; looks like WordPress is adding its own CSS, which is conflicting with the Offices styling.
+* flickity.scss
+	* Moved some Offices-specific styling out of this file, and into wp-block-gallery-flickity.scss. flickity.scss should contain only the vendor styling (the CSS that comes with Flickity); wp-block-gallery-flickity.scss contains the Offices styling.
+* wp-block-gallery-flickity.scss
+	* Added !important to display: block on .wp-block-gallery, to override a `display:flex` rule that WordPress was applying. That spurious flex rule might be related to the columns that can be applied to galleries in the admin side.
+
+
+
 ## Apr 5, 2022 - v1.3.1
 
 ### PHP
