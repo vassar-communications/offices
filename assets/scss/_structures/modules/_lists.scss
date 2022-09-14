@@ -19,8 +19,13 @@
 
 
 .list-unstyled {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
+
+  &.items-have-borders li {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4rem;
+  }
 }
 
 
@@ -42,4 +47,3 @@
 		}
 	}
 }
-

@@ -1,5 +1,5 @@
-*:not(.size-small).alignleft,
-*:not(.size-small).alignright {
+div:not(.size-small).alignleft,
+div:not(.size-small).alignright {
 	@include break(large) {
 		width: 50%;
 	}

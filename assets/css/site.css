@@ -2187,10 +2187,25 @@ html {
 	======= */
 /*
 	STRUCTURE
-	=========	
+	=========
 
-	This contains mixins that might be useful for layout stuff.	
+	This contains mixins that might be useful for layout stuff.
 */
+.breakout {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw !important;
+  transform: translateX(calc(50vw - 50%));
+  max-width: 100vw;
+  /*		width: 100vw;
+  		position: relative;
+  		left: 50%;
+  		right: 50%;
+  		margin-left: -50vw;
+  		margin-right: -50vw;
+  		max-width: none;	*/
+}
+
 /*
 
 	NOTE
@@ -2737,9 +2752,9 @@ pre {
 }
 
 h2 {
-  margin: 1em 0 0.3em 0;
+  margin: 1em 0 0.8em 0;
   font-family: freight-big-pro;
-  font-size: 1.6em;
+  font-size: 1.8em;
   line-height: 1;
 }
 h2 strong, h2 b {
@@ -2790,7 +2805,7 @@ li {
 
 .has-intro-font-size {
   font-family: freight-big-pro;
-  font-size: 1.6em;
+  font-size: 1.8em;
   line-height: 1.1;
 }
 .has-small-font-size {
@@ -3215,8 +3230,8 @@ td p, td li {
   line-height: inherit;
 }
 
-*:not(.size-small).alignleft,
-*:not(.size-small).alignright {
+div:not(.size-small).alignleft,
+div:not(.size-small).alignright {
   /*	Sets up a media query. This expects that all of a project's breakpoints will
   	    be stored in a map named $breakpoints, as follows:
 
@@ -3228,8 +3243,8 @@ td p, td li {
   	*/
 }
 @media screen and (min-width: 70em) {
-  *:not(.size-small).alignleft,
-*:not(.size-small).alignright {
+  div:not(.size-small).alignleft,
+div:not(.size-small).alignright {
     width: 50%;
   }
 }
@@ -3325,6 +3340,9 @@ input[type=button] {
   border-radius: 0.4em;
 }
 
+.wp-block-button a.wp-block-button__link {
+  font-family: "Source Sans Variable", Helvetica, Arial, sans-serif;
+}
 .wp-block-button a.wp-block-button__link:link, .wp-block-button a.wp-block-button__link:visited {
   background: #951829;
   padding: 0.4em 0.8em;
@@ -3334,6 +3352,7 @@ input[type=button] {
   text-decoration: none;
   transition: 0.3s all ease;
   color: #fff;
+  margin-bottom: 1rem;
 }
 .wp-block-button a.wp-block-button__link:link:hover, .wp-block-button a.wp-block-button__link:link:focus, .wp-block-button a.wp-block-button__link:visited:hover, .wp-block-button a.wp-block-button__link:visited:focus {
   background: #000;
@@ -3924,6 +3943,55 @@ https://flickity.metafizzy.co
   list-style: none;
 }
 
+.linked-list--inline {
+  padding: 0;
+  margin: 0 3rem 2rem 0;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+.linked-list--inline.has-background {
+  padding: 2rem;
+}
+@media screen and (max-width: 40em) {
+  .linked-list--inline {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 60em) {
+  .linked-list--inline {
+    width: fit-content;
+    max-width: 50%;
+  }
+}
+.linked-list--inline li {
+  list-style: none;
+  margin-bottom: 0;
+  border-top: 1px solid var(--list-border-color, #eee);
+}
+.linked-list--inline li:first-child {
+  border-top: none;
+}
+.linked-list--inline a {
+  display: block;
+  padding: 0.4rem;
+}
+
 .list-upper-roman {
   list-style-type: upper-roman;
 }
@@ -3947,6 +4015,10 @@ https://flickity.metafizzy.co
 .list-unstyled {
   padding: 0;
   list-style: none;
+}
+.list-unstyled.items-have-borders li {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4rem;
 }
 
 .list-linkedList {
@@ -4272,6 +4344,58 @@ table.responsive td {
   padding-bottom: 66.25%;
 }
 
+.group-sidebar {
+  background: #fbf4ec;
+  padding: 1.2rem;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .group-sidebar {
+    float: right;
+    font-size: 90%;
+    margin-left: 2.2rem;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 70em) {
+  .group-sidebar {
+    margin-right: -6rem;
+  }
+}
+
+.no-subnav .group-row {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  transform: translateX(calc(50vw - 50%));
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+.no-subnav .group-row .wp-block-group__inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 38em;
+}
+.no-subnav .group-row + .group-row {
+  margin-top: 0;
+}
+
 /*	UNIVERSAL NAV OVERRIDES
 	=======================
 
@@ -4540,7 +4664,8 @@ $breakpoints: (
   .wp-block-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em !important;
+    grid-gap: 2em !important;
+    align-items: start !important;
   }
   .wp-block-columns .wp-block-column {
     width: 100%;
@@ -4573,16 +4698,28 @@ $breakpoints: (
 }
 
 .wp-block-columns.are-vertically-aligned-top {
-  align-items: start;
+  align-items: start !important;
+}
+
+*:not(.wp-block-columns) + .wp-block-columns {
+  margin-top: 3rem;
 }
 
 .wp-block-group.has-background {
   padding: 2em;
-  margin-bottom: 1em;
 }
 
+/*
+.wp-block-group.has-background {
+    padding: 2em;
+    margin-bottom: 1em;
+}
 .has-very-light-gray-background-color {
-  background: #fbf4ec;
+    background: $cream;
+}
+*/
+html {
+  overflow-x: hidden;
 }
 
 .u-lHeader {
@@ -4661,6 +4798,18 @@ $breakpoints: (
     flex-direction: column;
     justify-content: flex-end;
   }
+}
+
+.u-lMain {
+  padding-bottom: 0;
+}
+
+.entry__content > .group-row:last-child {
+  padding-bottom: 6rem;
+}
+
+.entry__content > *:not(.group-row):last-child {
+  margin-bottom: 6rem;
 }
 
 .home .u-lHeader {
@@ -5132,7 +5281,7 @@ html .site-description {
   display: none;
 }
 html .u-lMain {
-  padding: 2em 2em 6em 2em;
+  padding: 2em 2em 0 2em;
   padding-top: 0;
   /*	Sets up a media query. This expects that all of a project's breakpoints will
   	    be stored in a map named $breakpoints, as follows:
@@ -5440,6 +5589,19 @@ html .sub-menu {
 
 	The following applies the page template styling to blog posts.
 */
+.has-cream-background-color {
+  background-color: #fbf4ec;
+}
+
+.has-white-background-color {
+  background-color: #fff;
+}
+
+.has-charcoal-background-color {
+  background-color: #333;
+  color: #ccc;
+}
+
 article.post {
   border-bottom: 1px solid #ddd;
 }
@@ -5461,9 +5623,6 @@ blockquote cite:before {
   margin-right: 0.2em;
 }
 
-.u-lContent h2 {
-  color: #951829;
-}
 .u-lContent h4 {
   color: #928580;
 }
@@ -6037,7 +6196,7 @@ p.has-background {
 
 .prevnext__name {
   font-family: freight-big-pro;
-  font-size: 1.6em;
+  font-size: 1.8em;
   line-height: 1.1;
 }
 .nav-links *:only-child {
@@ -6224,3 +6383,5 @@ span.edit-link {
     }
 }
 */
+
+/*# sourceMappingURL=site.css.map */

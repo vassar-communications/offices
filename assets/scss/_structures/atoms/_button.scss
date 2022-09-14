@@ -6,6 +6,9 @@ input[type="button"] {
 }
 
 .wp-block-button a.wp-block-button__link {
+
+	font-family: $sans-serif;
+
 	&:link,
 	&:visited {
 		background: $light-burgundy;
@@ -16,7 +19,8 @@ input[type="button"] {
 		text-decoration: none;
 		transition: 0.3s all ease;
 		color: #fff;
-	
+		margin-bottom: 1rem;
+
 		&:hover,
 		&:focus {
 			background: #000;

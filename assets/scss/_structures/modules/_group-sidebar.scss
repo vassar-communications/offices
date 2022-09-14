@@ -1,0 +1,14 @@
+.group-sidebar {
+  background: $cream;
+  padding: 1.2rem;
+
+  @include break(medium) {
+    float: right;
+    font-size: 90%;
+    margin-left: 2.2rem;
+    width: 50%;
+  }
+  @include break(large) {
+    margin-right: -6rem;
+  }
+}

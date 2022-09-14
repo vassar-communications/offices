@@ -16,7 +16,8 @@ blockquote {
 
 .u-lContent {
 	h2 {
-		color: $VC__vassarBurgundy;
+//		color: $VC__vassarBurgundy;
+//		color: #222;
 	}
 	h4 {
 		color: $VC__vassarGray-lighter;
@@ -33,7 +34,7 @@ hr {
 
 @mixin burgundy-to-pink() {
 	@include links($VC__vassarBurgundy, $VC__vassarGray, $VC__vassarLinkPink, $VC__vassarLinkPink);
-	
+
 	a {
 		text-decoration: underline;
 	}
@@ -46,7 +47,7 @@ hr {
 
 @mixin burgundy-reverse() {
 	@include linkColors($VC__vassarBurgundy, $VC__vassarGray, #fff, #fff, transparent, $VC__vassarBurgundy);
-	
+
 	a {
 		text-decoration: underline;
 	}
@@ -101,7 +102,7 @@ a {
 	@include bg-text($grad-darkburg-red);
 
 	position: relative;
-	
+
 	&:after {
 		content: "";
 		position: absolute;
@@ -133,10 +134,10 @@ a {
 	a {
 //		@include links($VC__vassarLinkPink, $VC__vassarGray, #000, $VC__vassarLinkPink);
 		@include burgundy-reverse();
-		
+
 		&:hover {
 			text-decoration: none;
-		
+
 			&:after {
 				color: rgba(255,255,255,0.4);
 			}
@@ -147,7 +148,7 @@ a {
 .home {
 	ul.nav-menu {
 	    position: relative;
-	    
+
 	    &:before {
 			background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 		    content: "";
@@ -159,9 +160,3 @@ a {
 	    }
 	}
 }
-
-
-
-
-
-

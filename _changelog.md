@@ -1,3 +1,24 @@
+## Sep 14, 2022 - v1.3.3
+
+### CSS
+* _button.scss, _placement.scss, _wp-block-columns.scss, _wp-block-group.scss, 
+	* Minor design adjustments
+* _group-row.scss
+	* This is a full-width section that can have different background colors applied to it, similar to the section designs already on Drupal and the new Alums and Admission sites.
+* _group-sidebar.scss
+	* This is a new module for supplemental content.
+* _linked-list--inline.scss
+	* This is a new module for horizontal lists of links.
+* _lists.scss
+	* Added an option so items can have light borders under them.
+* _backgrounds.scss
+	* This is intended for use on `group-row`. It provides the styling for a few different background colors.
+
+### PHP
+* functions.php
+	* Registered a few of Vassar's brand colors with the theme so they can be selected in the block editor.
+
+
 ## Jun 17, 2022 - v1.3.2
 
 ### CSS

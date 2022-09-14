@@ -1,6 +1,12 @@
+html {
+  // this is necessary because the breakout rows (group-row)
+  // sometimes cause a horizontal scrollbar
+  overflow-x: hidden;
+}
+
 .u-lHeader {
     margin-bottom: 2em;
-    
+
     @include break(small) {
 	    margin-bottom: 0;
     }
@@ -34,6 +40,22 @@
 	    flex-direction: column;
 	    justify-content: flex-end;
 	}
+}
+
+// This net block is intended to ensure enough space
+// between the page content and the footer.
+//
+// If the last item is a row with a background color, however,
+// there should be no space between the row and the footer.
+
+.u-lMain {
+  padding-bottom: 0;
+}
+.entry__content > .group-row:last-child {
+    padding-bottom: 6rem;
+}
+.entry__content > *:not(.group-row):last-child {
+    margin-bottom: 6rem;
 }
 
 

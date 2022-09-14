@@ -19,7 +19,7 @@
 .nav-menu {
 	border-bottom: 9px solid #f8f7f6;
 	padding-left: 0;
-	
+
 	@include break(medium) {
 		float: right;
 	}
@@ -28,7 +28,7 @@
 .u-lHeader {
 	align-items: flex-end;
 	display: flex;
-	
+
 	padding-top: 7em;
 }
 
@@ -71,7 +71,7 @@ nav {
 .u-NavSite__secondary {
 	display: none;
     max-width: 22em;
-	
+
 	@include small() {
 		display: block;
 	}
@@ -132,7 +132,7 @@ html:not(.page-child) {
 		display: flex;
 		justify-content: left;
 		padding: 22em 2em 2em;
-		
+
 		@include break(medium) {
 			grid-area: masthead;
 			grid-column: 1 / span 8;
@@ -165,7 +165,7 @@ html {
 	.u-lMain {
 		padding: 2em 2em 6em 2em;
 		padding-top: 0;
-		
+
 		@include break(medium) {
 			grid-area: content;
 			grid-column: 1 / span 8;
@@ -175,7 +175,7 @@ html {
 	.u-lContent {
 		@include break(large) {
 			margin: 0 auto;
-			max-width: 38em;
+			max-width: $page-content-maxWidth;
 		}
 	}
 
@@ -192,7 +192,7 @@ html {
 		@include break(medium) {
 			grid-column: 1 / span 8;
 		}
-	
+
 		.menu {
 			@include break(medium) {
 				text-align: center;
@@ -202,14 +202,14 @@ html {
 			}
 
 			 li {
-				@include small() {				 
+				@include small() {
 					display: inline-block;
 				}
-				
+
 				a {
 					padding: 0.1em 0.4em;
 				}
-		
+
 				.sub-menu {
 					@include small() {
 						display: none;
@@ -239,7 +239,7 @@ html {
 		& > .sub-menu {
 		    display: block;
 		}
-	}			
+	}
 	.sub-menu {
 		border-left: 1px solid #000;
 		padding: 0.2em 0 0 0.6em;
@@ -250,7 +250,7 @@ html {
 		&.page-parent:not(.has-subnav),
 		&:not(.has-subnav) {
 			.PageContentInner {
-		
+
 				@include break(small) {
 					display: grid;
 					grid-template-areas: "masthead" "nav-top" "content" "footer";
@@ -266,7 +266,7 @@ html {
 		}
 		&.has-subnav {
 			.PageContentInner {
-	
+
 				@include break(small) {
 					display: grid;
 					grid-template-areas: "masthead" "nav-top" "nav-secondary" "content" "footer";
@@ -279,14 +279,14 @@ html {
 					grid-template-rows: auto auto auto auto auto;
 					grid-template-areas: "masthead masthead" "nav-top nav-top" "nav-secondary content" "footer footer";
 				}
-	
+
 				.u-NavSite__level--1 {
 					width: 70%;
 				}
 			}
 			.u-NavSite__secondary {
 				grid-area: nav-secondary;
-			
+
 				@include break(medium) {
 					grid-column: 1 / span 2;
 					grid-row: 3;
@@ -321,7 +321,7 @@ html {
 		    width: 100%;
 		    text-align: center;
 		    padding: 0 1em 1em;
-		    
+
 			@include break(small) {
 				padding-top: 2em;
 			}
@@ -333,13 +333,13 @@ html {
 		.u-NavSite__main {
 			.menu {
 				text-align: center;
-				
+
 				@include break(medium) {
 					text-align: right;
 				}
 			}
 		}
-		
+
 		&:not(.has-subnav) {
 			@include break(medium) {
 				.PageContentInner {
@@ -409,7 +409,7 @@ html {
 	.widget-area {
 		@include small() {
 			column-count: 2;
-			
+
 			.widget {
 				display: inline-block;
 				width: 100%;
@@ -422,4 +422,3 @@ html {
 		}
 	}
 */
-

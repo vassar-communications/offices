@@ -1,0 +1,33 @@
+.linked-list--inline {
+  padding: 0;
+	margin: 0 3rem 2rem 0;
+
+  &.has-background {
+    padding: 2rem;
+  }
+
+  @include break(small, max) {
+    width: 100%;
+  }
+  @include break(medium) {
+    // width should be the natural width of the
+    // list, but no wider than 50% of the container
+    width: fit-content;
+    max-width: 50%;
+  }
+
+	li {
+    list-style: none;
+    margin-bottom: 0;
+    border-top: 1px solid var(--list-border-color, #eee);
+
+    &:first-child {
+      border-top: none
+    }
+	}
+	a {
+    display: block;
+		padding: 0.4rem;
+	}
+
+}

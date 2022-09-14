@@ -1469,3 +1469,29 @@ if ( function_exists( 'lazyblocks' ) ) :
     ) );
 
 endif;
+
+
+
+function my_theme_add_new_features() {
+    // The new colors we are going to add
+    $newColorPalette = [
+        [
+            'name' => esc_attr__('Extra Light Gray', 'default'),
+            'slug' => 'gray-xlight',
+            'color' => '#f5f5f5',
+        ],
+        [
+            'name' => esc_attr__('Cream', 'default'),
+            'slug' => 'cream',
+            'color' => '#fbf4ec',
+        ],
+				[
+            'name' => esc_attr__('White', 'default'),
+            'slug' => 'white',
+            'color' => '#ffffff',
+        ],
+    ];
+    // Apply the color palette containing the original colors and 2 new colors:
+    add_theme_support( 'editor-color-palette', $newColorPalette);
+}
+add_action( 'after_setup_theme', 'my_theme_add_new_features' );

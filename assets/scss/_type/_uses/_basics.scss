@@ -2,7 +2,7 @@
 	strong {
 		em, i {
 			font-weight: 600;
-			font-variation-settings: "wght" 600;		
+			font-variation-settings: "wght" 600;
 		}
 	}
 }
@@ -18,16 +18,16 @@ pre {
 	line-height: 1.4;
 }
 h2 {
-    margin: 1em 0 0.3em 0;
+    margin: 1em 0 0.8em 0;
 	@include font(serif-display, medium-condensed);
-	
+
 	strong, b {
 	    font-family: inherit;
 	}
 }
 h3 {
 	margin: 1.8em 0 0.2em 0;
-	
+
 	strong {
 	    font-variation-settings: "wght" 700;
 	}
@@ -46,11 +46,11 @@ li, td {
 	@extend %sans-serif-regular;
 }
 p {
-	@include font(sans-serif, regular);	
+	@include font(sans-serif, regular);
 }
 li {
 	@include font(sans-serif, regular-condensed);
-	
+
 	.u-lContent & {
 		margin-bottom: 0.3em;
 	}
