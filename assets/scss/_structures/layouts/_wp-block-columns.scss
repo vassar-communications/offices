@@ -4,10 +4,10 @@
 }
 
 .wp-block-columns {
-	@include break(small) {
-//		display: flex;
+	 display: block !important;
 
-		display: grid;
+	@include break(small) {
+		display: grid !important;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 2em !important;
 		align-items: start !important;

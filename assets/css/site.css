@@ -4012,6 +4012,15 @@ https://flickity.metafizzy.co
   list-style-type: lower-alpha;
 }
 
+.list-collection-unstyled-with-borders ul {
+  padding: 0;
+  list-style: none;
+}
+.list-collection-unstyled-with-borders li {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4rem;
+}
+
 .list-unstyled {
   padding: 0;
   list-style: none;
@@ -4650,6 +4659,7 @@ $breakpoints: (
 }
 
 .wp-block-columns {
+  display: block !important;
   /*	Sets up a media query. This expects that all of a project's breakpoints will
   	    be stored in a map named $breakpoints, as follows:
 
@@ -4662,7 +4672,7 @@ $breakpoints: (
 }
 @media screen and (min-width: 40em) {
   .wp-block-columns {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2em !important;
     align-items: start !important;

@@ -1,3 +1,11 @@
+## Sep 29, 2022 - v1.3.4
+
+### CSS
+* Column and list fixes
+
+### PHP
+* Edited footer content
+
 ## Sep 14, 2022 - v1.3.3
 
 ### CSS

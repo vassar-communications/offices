@@ -17,6 +17,17 @@
 }
 
 
+.list-collection-unstyled-with-borders {
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4rem;
+  }
+}
+
 
 .list-unstyled {
   padding: 0;
