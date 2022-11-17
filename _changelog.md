@@ -1,3 +1,15 @@
+## Nov 17, 2022 - v1.3.5
+
+### PHP
+* _config.php
+	* set `SITE__NO_TAGLINE_IN_TITLE` to `false`. When true, it was invoking a function that was meant to strip the tagline from the title, but resulted in the titles on archive pages being inaccurate (showing the title of the first post on the page instead of the archive title).
+* footer_markup.php
+	* Fixed TikTok link URL
+* functions.php
+	* Fixed a bug where links in the breadcrumb trail on news were broken
+	* Fixed another bug where a breadcrumb item for the month was erroneously appearing on archive pages for years
+
+
 ## Sep 29, 2022 - v1.3.4
 
 ### CSS

@@ -53,6 +53,15 @@ function vassarparent__make_breadcrumb_trail() {
         //  Get the subdirectory of this office
         $the_subdirectory = $_SERVER['REQUEST_URI'];
         $the_subdirectory = explode('/', $the_subdirectory);
+
+				// The following ensures that the 'month' breadcrumb item
+				// only appears on month archive pages
+
+        if( count($the_subdirectory) == 4 )
+            $archive_type = 'year';
+        else if( count($the_subdirectory) > 4 )
+            $archive_type = 'month';
+
         $the_subdirectory = '/'.$the_subdirectory[1].'/';
 
         //  Grab the year and month
@@ -61,12 +70,17 @@ function vassarparent__make_breadcrumb_trail() {
         $the_date_path = explode(' ', $the_date_path);
 
         //  Set up the paths
-        $the_base_url = $the_subdirectory.'news/';
+        $the_base_url = $the_subdirectory.'';
         $the_year_url = $the_base_url.$the_date_path[0];
         $the_month_url = $the_base_url.$the_date_path[0].'/'.$the_month_directory;
 
+        $month_crumb_markup = '';
+        if( $archive_type == 'month' ) {
+            $month_crumb_markup = '<li><a href="'.$the_month_url.'">'.$the_date_path[1].'</a></li>';
+        }
+
         //  And here's our markup
-        $the_final_path = '<ul class="news-breadcrumb"><li><a href="'.$the_base_url.'">News</a></li><li><a href="'.$the_year_url.'">'.$the_date_path[0].'</a></li><li><a href="'.$the_month_url.'">'.$the_date_path[1].'</a></li></ul>';
+        $the_final_path = '<ul class="news-breadcrumb"><li><a href="'.$the_base_url.'news">News</a></li><li><a href="'.$the_year_url.'">'.$the_date_path[0].'</a></li>'.$month_crumb_markup.'</ul>';
         echo $the_final_path;
     }
 }
@@ -1472,6 +1486,7 @@ endif;
 
 
 
+
 function my_theme_add_new_features() {
     // The new colors we are going to add
     $newColorPalette = [
@@ -1485,10 +1500,16 @@ function my_theme_add_new_features() {
             'slug' => 'cream',
             'color' => '#fbf4ec',
         ],
-				[
+		[
             'name' => esc_attr__('White', 'default'),
             'slug' => 'white',
             'color' => '#ffffff',
+        ],
+		[
+            'name' => esc_attr__('Charcoal', 'default'),
+            'slug' => 'charcoal',
+            'color' => '#333333',
+            'text-color' => '#aaa',
         ],
     ];
     // Apply the color palette containing the original colors and 2 new colors:

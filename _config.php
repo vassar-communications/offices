@@ -8,5 +8,6 @@ define("BLOG__USE_MINIPOST", true);
 define('POST__SHOW_READMORE_AFTER_EXCERPT', true);
 
 define('PAGE__HIDE_FEATURED_IMG', true);
-define('SITE__NO_TAGLINE_IN_TITLE', true);
+define('SITE__NO_TAGLINE_IN_TITLE', false);
+
 define('BLOG__POST_FORMATS', array( 'link' ));
