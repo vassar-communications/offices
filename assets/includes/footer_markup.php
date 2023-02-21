@@ -1,72 +1,291 @@
+<style>
+@font-face {
+  font-display: swap;
+  font-family: "Source Sans Variable";
+  font-weight: 200 900;
+  font-stretch: normal;
+  src: url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSansVariable-Roman.ttf.woff2") format("woff2"), url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSansVariable-Roman.ttf.woff") format("woff"), url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSansVariable-Roman.ttf") format("ttf");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Source Sans Variable";
+  font-weight: 200 900;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSans3VF-Italic.ttf.woff2") format("woff2"), url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSans3VF-Italic.ttf.woff") format("woff"), url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSans3VF-Italic.ttf") format("ttf");
+}
 
-<div id="vcF"><footer class="u-lFooter"><link href="//use.typekit.net/lhi5qgd.css" rel="stylesheet">
+.footer {
+  color: #fff;
+  /*  This is hidden right now. On Admission and Alums, it's
+      only revealed after the user has scrolled a little ways
+      down the page, since having it appear right at the top
+      of the page would be awkward. However, revealing it
+      requires additional scripting which might not be
+      available across our sites, so I'm leaving it hidden
+      for now.
+  */
+}
+.footer * {
+  /* "1rem" could mean different things on different sites */
+  font-size: 16px !important;
+}
+.footer .footer-section {
+  font-family: "Source Sans Variable";
+  padding: clamp(0.2rem, 4%, 4rem);
+  padding-top: calc(1.575rem + 3.9vw);
+}
+.footer a:link, .footer a:visited, .footer .btn-link:link, .footer .btn-link:visited {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.footer a:link:hover, .footer a:link:focus, .footer a:visited:hover, .footer a:visited:focus, .footer .btn-link:link:hover, .footer .btn-link:link:focus, .footer .btn-link:visited:hover, .footer .btn-link:visited:focus {
+  border-bottom-color: #fff;
+}
+.footer .theme-dark-burgundy {
+  background: #641a2b;
+}
+.footer .theme-darkest-burgundy {
+  background: #3d0f1a;
+}
+@media (min-width: 768px) {
+  .footer .footer__main-content-container {
+    display: flex;
+    gap: clamp(1rem, 4vw, 4rem);
+  }
+}
+.footer .footer-row {
+  margin: 1rem 0;
+}
+@media (min-width: 992px) {
+  .footer .link-collection {
+    display: flex;
+    gap: 0.8rem;
+  }
+}
+.footer .vassar-logo-svg {
+  fill: #fff;
+  width: 180px;
+}
+.footer .footer__main-content-primary {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer .footer__main-content-primary {
+    text-align: left;
+    width: 66%;
+  }
+}
+@media (min-width: 992px) {
+  .footer .footer__main-content-primary {
+    width: 75%;
+  }
+}
+@media (min-width: 768px) {
+  .footer .footer-feature-module {
+    text-align: left;
+    width: 33%;
+  }
+}
+@media (min-width: 992px) {
+  .footer .footer-feature-module {
+    width: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .footer .footer-feature-module {
+    max-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.footer .footer-feature-module img {
+  width: 100%;
+}
+.footer .footer-feature-module .module-link__label {
+  display: inline-block;
+  line-height: 1;
+  margin-top: 0.8rem;
+}
+.footer .footer-feature-module .feature-image-container {
+  display: block;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  line-height: 0;
+}
+.footer .footer-feature-module .footer-feature-module__link,
+.footer .footer-feature-module .footer-feature-module__link img {
+  transition: 0.4s all ease;
+}
+.footer .footer-feature-module .footer-feature-module__link:hover img {
+  transform: scale(1.04);
+  filter: brightness(110%);
+}
+.footer .btn-link.arrow-no-circle:after {
+  content: "→";
+  font-size: 1.4rem;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 0.6rem;
+}
+.footer .btn-link.arrow-circle:after {
+  content: "→";
+  border: 1px solid;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  justify-content: center;
+  padding-bottom: 0.12rem;
+  font-size: 1.4rem;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+.footer hr {
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 2rem 0;
+  opacity: 0.2;
+}
+.footer .inline-list {
+  padding-left: 0;
+  margin: 2rem 0;
+}
+.footer .inline-list li {
+  display: inline;
+  list-style: none;
+  margin-right: 0.8rem;
+}
+.footer .link-to-top {
+  position: fixed;
+  bottom: 2rem;
+  left: calc(50vw - 3.4rem);
+  padding: 0.1rem 0.6rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2rem;
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  opacity: 0;
+  transition: 0.4s all ease;
+  border: 1px solid #fff;
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.4);
+}
+.footer .pt-0 {
+  padding-top: 0 !important;
+}
+.footer .mt-0 {
+  margin-top: 0 !important;
+}
+.footer .text-center {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer .text-left-md {
+    text-align: left;
+  }
+}
 
-<ul class="SocialAccount__iconList">
-<li class="SocialAccount__iconContainer facebook">
-<a href="https://www.facebook.com/vassarcollege/" class="social-icon SocialAccount__iconTarget">                          <span><svg aria-labelledby="fb" role="img" viewBox="0 0 180 180" width="16" height="16"><title id="fb">Facebook</title><path d="M180 180V0H0v180h180z" fill="#3B5998"></path><path d="M124.2 180v-69.7h23.4l3.5-27h-26.8V65.7c0-8 2.2-13.2 13.5-13.2H152V28.3c-2.5-.3-11-1-21-1-20.6 0-35 12.6-35 35.8v20H72.8v27.3h23.5V180h28z" fill="#fff"></path></svg></span>
-</a>
+.social-icon-link svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.social-icon-link svg path {
+  fill: #fff;
+}
+</style>
 
-</li>
-<li class="SocialAccount__iconContainer twitter">
-<a href="https://twitter.com/vassar/" class="social-icon SocialAccount__iconTarget">                          <span><svg aria-labelledby="tw" role="img" viewBox="0 0 404 404" width="16" height="16"><title id="tw">Twitter</title><path fill="#55ACEE" d="M0 0h404v404H0z"></path><path d="M340 115c-10 4.4-21 7.4-32.2 8.8 11.5-7 20.4-18 24.6-31-10.8 6.4-22.8 11-35.6 13.6-10.2-11-24.7-17.7-40.8-17.7-31 0-56 25-56 56 0 4.4.5 8.6 1.5 12.7C155 155 113.8 132.8 86.2 99c-5 8.2-7.6 17.8-7.6 28 0 19.5 10 36.6 25 46.7-9.3-.3-18-2.8-25.5-7v.7c0 27 19.4 49.7 45 54.8-4.7 1.3-9.6 2-14.7 2-3.6 0-7-.4-10.6-1 7.2 22.2 27.8 38.4 52.3 38.8-19 15-43.3 24-69.5 24-4.5 0-9-.3-13.3-.8 24.7 16 54.2 25.2 85.8 25.2 103 0 159-85.3 159-159.2V144c11-8 20.4-17.8 28-29z" fill="#fff"></path></svg></span>
-</a>
 
-</li>
-<li class="SocialAccount__iconContainer instagram">
-<a href="https://www.instagram.com/vassarcollege/" class="social-icon SocialAccount__iconTarget">                          <span><svg aria-labelledby="ig" role="img" viewBox="0 0 500 500" width="16" height="16"><title id="ig">Instagram</title><rect x="42" y="42" fill="#fff" stroke="#000" stroke-miterlimit="10" width="413" height="413"></rect><path fill="#666" d="M0,250C0,131,0,84,42,42S130,0,250,0s166,0,208,42s42,89,42,208s0,166-42,208s-88,42-208,42s-166,0-208-42S0,369,0,250z M455,250c0-114,0-148-29-176c-29-29-62-29-176-29S102,45,74,74c-29,29-29,62-29,176s0,148,29,176c29,29,62,29,176,29s148,0,176-29 C455,397,455,364,455,250z M250,122c70.7000122,0,128,57.3000031,128,128s-57.2999878,128-128,128s-128-57.2999878-128-128 S179.3000031,122,250,122z M250,333c46,0,83-37,83-83s-37-83-83-83s-83,37-83,83S204,333,250,333z M413,117c0,16-13,30-30,30 c-16,0-30-14-30-30c0-17,14-30,30-30C400,87,413,100,413,117z"></path></svg></span>
-</a>
 
-</li>
-<li class="SocialAccount__iconContainer linkedin">
-<a href="https://www.linkedin.com/edu/school?id=19077" class="social-icon SocialAccount__iconTarget">                          <span><svg aria-labelledby="li" role="img" viewBox="0 0 272 272" width="16" height="16"><title id="li">Linkedin</title><path fill="#0065A1" d="M0 0h272v272H0z"></path><path d="M40.3 102h40.4v130H40.3V102zm20.2-64.5C73.5 37.5 84 48 84 61c0 12.8-10.5 23.3-23.5 23.3S37 73.8 37 61c0-13 10.6-23.5 23.5-23.5M106 232h40.4v-64.3c0-17 3.2-33.4 24.2-33.4 20.7 0 21 19.4 21 34.4V232H232v-71.3c0-35-7.6-62-48.5-62-19.6 0-32.8 11-38.2 21h-.6V102H106v130z" fill="#fff"></path></svg></span>
-</a>
+<footer class="footer">
 
-</li>
-<li class="SocialAccount__iconContainer youtube">
-<a href="https://www.youtube.com/vassar/" class="social-icon SocialAccount__iconTarget">                          <span><svg aria-labelledby="yt" role="img" viewBox="0 0 128 128" width="16" height="16"><title id="yt">Youtube</title><path fill="#E52D27" d="M0 0h128v128H0z"></path><path fill="#fff" d="M64 32.7s-18 0-30 .8c-1.6.2-5.2.3-8.5 3.7-2.6 2.6-3.4 8.5-3.4 8.5s-.8 7-.8 13.8V66c0 7 1 14 1 14s.7 5.7 3.3 8.3c3.3 3.5 7.5 3.3 9.4 3.7 6.8.7 29 1 29 1s18-.2 30-1c1.7-.2 5.3-.2 8.6-3.7 2.6-2.6 3.4-8.4 3.4-8.4s1-7 1-14v-6.5c0-7-1-13.8-1-13.8s-.8-6-3.4-8.5c-3.3-3.4-7-3.5-8.6-3.7-12-.8-30-.8-30-.8"></path><path fill="#E52D27" d="M55.5 73.6l23-12-23-12"></path></svg></span>
-</a>
+  <div class="footer-section text-light theme-dark-burgundy">
+    <div class="footer__main-content-container">
+      <div class="footer__main-content-primary text-center text-left-md">
+        <a class="logo" href="https://vassar.edu"><svg class="vassar-logo-svg" aria-labelledby="vassar-title" role="img" width="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2002 396">
+            <title id="vassar-title">Vassar</title>
+            <path d="M379 32a104 104 0 0 1 22-17l-1-6-56 1-69-1-1 6c7 3 16 8 22 16 6 9 13 21 13 43 0 31-14 74-44 136l-49 108h-1c-20-49-44-101-67-153l-30-69c-7-19-12-34-13-46 3-18 18-30 35-35l-1-6-71 1L1 9l-1 7c22 6 41 31 55 58a4241 4241 0 0 1 142 322h7l23-63 53-117c33-73 56-122 72-148 9-14 17-26 27-36zM493 0l-7 1-24 64-52 116c-31 69-56 122-74 152-8 14-16 24-25 33-9 8-15 13-22 16l1 6 51-1 74 1v-6c-7-3-16-7-22-15-8-9-14-20-14-41 0-20 8-49 20-78l73-1 78 1 22 54c7 18 13 34 13 47-2 17-18 28-34 33v6l67-1 38 1c-4-13-89-209-116-271L493 0zm-21 232l-67-1 19-44 50-111h1l67 154c-21 2-45 2-70 2zM819 183c-28-14-54-26-69-42a66 66 0 0 1-19-49c0-44 33-70 68-77 20 3 41 14 61 33a209 209 0 0 1 43 59l7-1c-3-31-5-69-9-89-22-7-56-14-95-14-34 0-64 9-87 28a95 95 0 0 0-34 77c0 31 13 53 29 69 18 20 45 32 75 48s59 31 73 49a54 54 0 0 1 12 34c0 39-33 66-74 73-20-4-43-12-69-33-19-17-38-39-49-63l-17 4c0 1 29 73 41 99 24 2 58 6 85 6 43 0 77-13 98-32 22-19 31-42 31-69 0-57-48-84-101-110zM2000 378a60 60 0 0 1-10 1c-19-5-53-27-78-53-33-36-68-84-89-122 41-16 79-51 79-102 0-32-13-54-37-71-28-18-61-22-106-22l-87 1-76-1-1 6c8 1 19 4 26 8a57 57 0 0 1 22 23c7 12 10 29 11 55l2 100v24l-2 69c-1 28-4 47-14 62l-1 1c-12 18-39 19-54 2-9-10-17-22-24-35A3434 3434 0 0 1 1419 0l-7 1-24 64-52 116c-31 69-55 122-73 152-9 14-16 24-26 33-8 8-15 13-21 16v6l51-1 74 1 1-6c-8-3-16-7-23-15-7-9-14-20-14-41 0-20 9-49 21-78l72-1 78 1 23 54c6 18 12 34 13 47-3 17-19 28-35 33l1 6 67-1h132l89 1v-7c-12-2-25-6-37-15-14-12-23-26-25-57-2-26-3-57-3-86v-15l71 2c27 50 55 96 88 134 14 16 27 26 42 35s33 12 53 12a176 176 0 0 0 47-7zm-602-146l-66-1 18-44 50-111h2l66 154c-21 2-45 2-70 2zm392-35c-32 0-67-3-89-8v-11c0-52 1-110 6-154a265 265 0 0 1 40-3c31 2 55 9 76 28 17 16 27 38 27 65 0 33-10 62-36 82l-24 1zM1113 183c-28-14-54-26-69-42a66 66 0 0 1-19-49c0-44 33-70 68-77 20 3 41 14 61 33a209 209 0 0 1 43 59l7-1c-3-31-5-69-9-89-22-7-56-14-95-14-34 0-64 9-87 28a95 95 0 0 0-34 77c0 31 13 53 29 69 18 20 45 32 75 48s59 31 73 49a54 54 0 0 1 12 34c0 39-33 66-74 73-20-4-43-12-69-33-19-17-38-39-48-63l-18 4c0 1 29 73 41 99 24 2 58 6 85 6 43 0 77-13 98-32 22-19 31-42 31-69 0-57-48-84-101-110z"></path>
+            <image alt="Vassar College" src="https://www.vassar.edu/assets/images/vassar-logo.png" width="402" height="80"></image>
+          </svg></a>
 
-</li>
-<li class="SocialAccount__iconContainer flickr">
-<a href="https://www.flickr.com/photos/vassarcollegemedia/" class="social-icon SocialAccount__iconTarget">                          <span><svg aria-labelledby="fl" role="img" viewBox="0 40 800 800" width="16" height="16"><title id="fl">Flickr</title><rect y="48" fill="#fff" stroke="#999" stroke-width="40" stroke-miterlimit="20" width="800" height="780"></rect><circle fill="#0161DA" cx="234" cy="440" r="136"></circle><circle fill="#FF0082" cx="566" cy="440" r="136"></circle></svg></span>
-</a>
+        <div class="footer-row">
+          <a class="social-icon-link" href="https://www.google.com/maps/place/Vassar+College/@41.6869086,-73.8936575,16.16z/data=!4m5!3m4!1s0x0:0xe3c87d640882d54c!8m2!3d41.6866781!4d-73.8936812">
 
-</li>
-<li class="SocialAccount__iconContainer tiktok">
-<a href="https://www.tiktok.com/@vassar_college" class="social-icon SocialAccount__iconTarget">                          <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 29 32" version="1.1" aria-labelledby="tt" role="img"><title id="tt">TikTok</title><g id="1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect width="100%" height="100%" fill="black"></rect><g id="2" transform="translate(3, 2.9) scale(0.85 0.85)" fill-rule="nonzero"><path d="M10.7907645,12.33 L10.7907645,11.11 C10.3672629,11.0428887 9.93950674,11.0061284 9.51076448,10.9999786 C5.35996549,10.9912228 1.68509679,13.6810205 0.438667694,17.6402658 C-0.807761399,21.5995112 0.663505842,25.9093887 4.07076448,28.28 C1.51848484,25.5484816 0.809799545,21.5720834 2.26126817,18.1270053 C3.71273679,14.6819273 7.05329545,12.4115428 10.7907645,12.33 L10.7907645,12.33 Z" fill="#25F4EE"></path><path d="M11.0207645,26.15 C13.3415287,26.1468776 15.2491662,24.3185414 15.3507645,22 L15.3507645,1.31 L19.1307645,1.31 C19.0536068,0.877682322 19.0167818,0.439130992 19.0207645,0 L13.8507645,0 L13.8507645,20.67 C13.764798,23.0003388 11.8526853,24.846212 9.52076448,24.85 C8.82390914,24.844067 8.13842884,24.6726969 7.52076448,24.35 C8.33268245,25.4749154 9.63346203,26.1438878 11.0207645,26.15 Z" fill="#25F4EE"></path><path d="M26.1907645,8.33 L26.1907645,7.18 C24.79964,7.18047625 23.4393781,6.76996242 22.2807645,6 C23.2964446,7.18071769 24.6689622,7.99861177 26.1907645,8.33 L26.1907645,8.33 Z" fill="#25F4EE"></path><path d="M22.2807645,6 C21.1394675,4.70033161 20.5102967,3.02965216 20.5107645,1.3 L19.1307645,1.3 C19.4909812,3.23268519 20.6300383,4.93223067 22.2807645,6 L22.2807645,6 Z" fill="#FE2C55"></path><path d="M9.51076448,16.17 C7.51921814,16.1802178 5.79021626,17.544593 5.31721201,19.4791803 C4.84420777,21.4137677 5.74860956,23.4220069 7.51076448,24.35 C6.55594834,23.0317718 6.42106871,21.2894336 7.16162883,19.8399613 C7.90218896,18.3904889 9.39306734,17.4787782 11.0207645,17.48 C11.4547752,17.4854084 11.8857908,17.5527546 12.3007645,17.68 L12.3007645,12.42 C11.8769919,12.3565056 11.4492562,12.3230887 11.0207645,12.32 L10.7907645,12.32 L10.7907645,16.32 C10.3736368,16.2081544 9.94244934,16.1576246 9.51076448,16.17 Z" fill="#FE2C55"></path><path d="M26.1907645,8.33 L26.1907645,12.33 C23.61547,12.3250193 21.107025,11.5098622 19.0207645,10 L19.0207645,20.51 C19.0097352,25.7544158 14.7551919,30.0000116 9.51076448,30 C7.56312784,30.0034556 5.66240321,29.4024912 4.07076448,28.28 C6.72698674,31.1368108 10.8608257,32.0771989 14.4914706,30.6505586 C18.1221155,29.2239183 20.5099375,25.7208825 20.5107645,21.82 L20.5107645,11.34 C22.604024,12.8399663 25.1155724,13.6445013 27.6907645,13.64 L27.6907645,8.49 C27.1865925,8.48839535 26.6839313,8.43477816 26.1907645,8.33 Z" fill="#FE2C55"></path><path d="M19.0207645,20.51 L19.0207645,10 C21.1134087,11.5011898 23.6253623,12.3058546 26.2007645,12.3 L26.2007645,8.3 C24.6792542,7.97871265 23.3034403,7.17147491 22.2807645,6 C20.6300383,4.93223067 19.4909812,3.23268519 19.1307645,1.3 L15.3507645,1.3 L15.3507645,22 C15.2751521,23.8467664 14.0381991,25.4430201 12.268769,25.9772302 C10.4993389,26.5114403 8.58570942,25.8663815 7.50076448,24.37 C5.73860956,23.4420069 4.83420777,21.4337677 5.30721201,19.4991803 C5.78021626,17.564593 7.50921814,16.2002178 9.50076448,16.19 C9.934903,16.1938693 10.3661386,16.2612499 10.7807645,16.39 L10.7807645,12.39 C7.0223379,12.4536691 3.65653929,14.7319768 2.20094561,18.1976761 C0.745351938,21.6633753 1.47494493,25.6617476 4.06076448,28.39 C5.66809542,29.4755063 7.57158782,30.0378224 9.51076448,30 C14.7551919,30.0000116 19.0097352,25.7544158 19.0207645,20.51 Z" fill="#fff"></path></g></g></svg></span>
-</a>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/></svg>
+            124 Raymond Avenue, Poughkeepsie, New York 12604</a>
+        </div>
 
-</li>
-<li class="">
-<a href="//www.vassar.edu/social-media" class="u-ExtendedFooter__listItemLink u-ExtendedFooter__listItemLink--socialMedia">                          <span>Social Media Directory</span>
-</a>
+        <!--
+        <div class="pt-2 link-collection footer-row">
+          <a href="/alumni/community/" class="me-3 my-2">Community <i class="px-1 fa-solid fa-circle-arrow-right"></i></a> <a href="/alumni/calendar/" class="me-3 my-2">Calendar <i class="px-1 fa-solid fa-circle-arrow-right"></i></a> <a href="/alumni/contact/" class="me-3 my-2">Contact <i class="px-1 fa-solid fa-circle-arrow-right"></i></a>
+        </div>
+-->
+        <hr>
 
-</li>
-</ul>
+        <div class="pt-2 link_collection">
+          <ul class="inline-list">
 
-<hr><div class="u-ExtendedFooter__listGroup"><div class="u-ExtendedFooter__listContainer"><h3 class="u-ExtendedFooter__listHeader">About</h3><ul class="u-ExtendedFooter__list"><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/campus-safety/statistics/"> Annual Security and Fire Safety Report </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/accessibility-and-educational-opportunity/"> Accessibility </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/about/#diversity-and-inclusion-initiatives"> Diversity & Inclusion </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/about/#facts-and-stats"> Facts </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/tour#the-hudson-valley"> Location & Maps </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/offices/"> Offices </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/president"> President </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/sustainability/"> Sustainability </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/eoaa/title-ix/"> Title IX </a></li></ul></div><div class="u-ExtendedFooter__listContainer"><h3 class="u-ExtendedFooter__listHeader">Academics</h3><ul class="u-ExtendedFooter__list"><li> <a class="u-ExtendedFooter__listItemLink" href="//catalogue.vassar.edu/"> Catalogue </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/community-engaged-learning/"> Community-Engaged Learning </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/academics/departments/"> Departments </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/faculty/"> Faculty </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//library.vassar.edu/"> Libraries </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/academics/majors/"> Majors & Minors </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/academics/#research"> Research </a></li></ul></div><div class="u-ExtendedFooter__listContainer"><h3 class="u-ExtendedFooter__listHeader">Admission</h3><ul class="u-ExtendedFooter__list"><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/admission/apply/"> Apply/Deadlines </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/admission/explore/diversity-inclusion"> Diversity and Inclusion </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/student-financial-services/"> Financial Aid </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/admission/visit/"> Plan a Visit </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//apply.vassar.edu/register/requestinfo"> Request Information </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/institutional-research/consumer-information/"> Student Consumer Information </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/admission/financial-aid/tuition/"> Tuition & Fees </a></li></ul></div><div class="u-ExtendedFooter__listContainer"><h3 class="u-ExtendedFooter__listHeader">Campus Life</h3><ul class="u-ExtendedFooter__list"><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/arts/"> Arts </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassarathletics.com/"> Athletics </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/calendar/"> Calendar </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/careers/"> Career Development </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/campuslife/#civic-engagement"> Civic Engagement </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/residential-life/"> Residential Life </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/student-engagement/"> Student Growth and Engagement </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/campuslife#student-life"> Student Life </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/tour"> Tour </a></li></ul></div><div class="u-ExtendedFooter__listContainer"><h3 class="u-ExtendedFooter__listHeader">Community</h3><ul class="u-ExtendedFooter__list"><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/alums"> Alumni </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//aisapps.vassar.edu/askbanner/"> Ask Banner </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/dean-of-the-college/birt/"> Bias Incident Response Team </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="http://collegestore.vassar.edu/"> College Store </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//aisapps.vassar.edu/directory/"> Directory </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//offices.vassar.edu/human-resources/employment/"> Employment </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/news/events"> Events </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//give.vassar.edu/"> Give to Vassar </a></li><li> <a class="u-ExtendedFooter__listItemLink" href="//www.vassar.edu/families"> Parents & Families </a></li></ul></div></div>
+            <li><a href="https://www.vassar.edu/about" class="me-3 my-2">About</a></li>
 
-<div class="u-VCardContainer overlay-black-85">
-    <div class="u-VCard--site vcard">
-      <a class="url fn org" href="/">Vassar College</a>
-      <div class="adr">
-        <b class="street-address">124 Raymond Avenue</b>,
-        <b class="u-VCard__adr2">
-          <b class="locality">Poughkeepsie</b>,
-          <b class="region">New York</b>
-          <b class="postal-code">12604</b>
-        </b>
+            <li><a href="https://www.vassar.edu/academics" class="me-3 my-2">Academics</a></li>
+
+            <li><a href="https://www.vassar.edu/admission" class="me-3 my-2">Admission</a></li>
+
+            <li> <a href="https://www.vassar.edu/campuslife" class="me-3 my-2">Campus Life</a></li>
+
+            <li> <a href="https://offices.vassar.edu/campus-safety/statistics/" class="me-3 my-2">Annual Security and Fire Safety Report</a></li>
+
+            <li> <a href="https://offices.vassar.edu/eoaa/" class="me-3 my-2">Title IX</a></li>
+
+          </ul>
+
+          <ul class="inline-list mt-0">
+            <li> <a class="social-icon-link" href="https://www.facebook.com/vassarcollege/">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+              </a></li>
+            <li> <a class="social-icon-link" href="https://twitter.com/vassar/">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+              </a></li>
+            <li> <a class="social-icon-link" href="https://www.instagram.com/vassarcollege/">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a></li>
+            <li><a class="social-icon-link" href="https://www.linkedin.com/edu/school?id=19077">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+              </a></li>
+            <li><a class="social-icon-link" href="https://www.youtube.com/vassar/">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+              </a></li>
+            <li> <a class="social-icon-link" href="https://www.flickr.com/photos/vassarcollegemedia/">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM144.5 319c-35.1 0-63.5-28.4-63.5-63.5s28.4-63.5 63.5-63.5 63.5 28.4 63.5 63.5-28.4 63.5-63.5 63.5zm159 0c-35.1 0-63.5-28.4-63.5-63.5s28.4-63.5 63.5-63.5 63.5 28.4 63.5 63.5-28.4 63.5-63.5 63.5z"/></svg>
+              </a></li>
+            <li><a class="social-icon-link" href="https://www.tiktok.com/@vassar_college">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg></a></li>
+            <li><a href="https://www.vassar.edu/social-media">Social&nbsp;Media&nbsp;Directory</a></li>
+          </ul>
+        </div>
       </div>
-      <ul class="u-VCard__info">
-        <li>
-          <a class="email" href="mailto:web@vassar.edu?subject=Feedback">Feedback</a>
-        </li>
-        <li>
-          <a href="//offices.vassar.edu/eoaa/title-ix/">Non-Discrimination Notice</a>
-        </li>
-        <li> © <a href="//www.vassar.edu/">Vassar College</a></li>
-      </ul>
+
+      <div class="footer-feature-module">
+        <a href="https://campaign.vassar.edu/" class="donate-btn footer-feature-module__link">
+          <span class="feature-image-container">
+          <img src="https://www.vassar.edu/sites/default/files/2022-10/2022-campaign-logo.gif" alt="A Vassar College logo is encircled by the text 'Fearlessly Consequential: A Campaign for Our Collective Future'"></span>
+          <span class="module-link__label btn-link arrow-no-circle">Learn more about our comprehensive campaign</span></a>
+      </div>
+
     </div>
+
   </div>
 
-</footer></div>
+  <div class="footer-section text-light theme-darkest-burgundy text-center">
+
+    <p>© 2022 Vassar College</p>
+
+  </div>
+
+  <a class="link-to-top" href="#top">Back to top</a>
+
+</footer>

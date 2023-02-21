@@ -1,11 +1,13 @@
+$no-image-gradient: -webkit-gradient(linear,left top,right top,from(#651a2c),to(#951829));
+
 .site-title {
 	a, a:visited {
 		color: #fff;
 //		text-shadow: 0 0 0.4em #000;
-		
+
 		transition: 0.4s all ease;
 		transition-property: opacity, transform;
-		
+
 		&:hover {
 			opacity: 0.8;
 			transform: scale(0.94);
@@ -41,7 +43,7 @@
 .page-parent,
 .page:not(.home):not(.page-child) {
 	.u-lHeader {
-		background: var(--page-header-image);
+		background: var(--page-header-image, $no-image-gradient);
 		background-size: cover;
 		background-position: center center;
 	    position: relative;
@@ -65,7 +67,7 @@
 .page-child {
 	.u-lHeader,
 	.u-NavSite__main {
-	    position: relative;		
+	    position: relative;
 		background: $cream;
 
 		&:after {
@@ -97,5 +99,5 @@
 
 
 .site-info {
-	background: $VC__vassarVeryLightGray;	
+	background: $VC__vassarVeryLightGray;
 }

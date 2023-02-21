@@ -1,3 +1,12 @@
+## Feb 21, 2023 - v1.3.6
+
+### PHP
+* footer_markup.php: changed footer to new Admission/Alums-style, from the old Drupal template style
+* header_markup.php: updated links
+
+### CSS
+* On pages where there's no featured image, they now get a burgundy gradient instead of a blank white area
+
 ## Nov 17, 2022 - v1.3.5
 
 ### PHP

@@ -6038,7 +6038,7 @@ a:hover {
 .archive:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader,
 .blog:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader,
 .single-post:not(.home):not(.page-child):not(.archive):not(.blog):not(.single-post) .u-lHeader {
-  background: var(--page-header-image);
+  background: var(--page-header-image, -webkit-gradient(linear, left top, right top, from(#651a2c), to(#951829)));
   background-size: cover;
   background-position: center center;
   position: relative;
