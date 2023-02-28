@@ -3249,6 +3249,11 @@ div:not(.size-small).alignright {
   }
 }
 
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .margin-0 {
   margin: 0;
 }
@@ -4351,6 +4356,10 @@ table.responsive td {
 }
 .is-provider-vimeo.ratio-3x2 .wp-block-embed__wrapper {
   padding-bottom: 66.25%;
+}
+
+.node--type-alert {
+  --section-text-color: #fff;
 }
 
 .group-sidebar {

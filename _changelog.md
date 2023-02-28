@@ -1,3 +1,9 @@
+## Feb 28, 2023 - v1.4
+
+### CSS
+* Fixed awkward link colors on the Vassar alert banner
+* Added a class for center-aligning items
+
 ## Feb 21, 2023 - v1.3.6
 
 ### PHP
