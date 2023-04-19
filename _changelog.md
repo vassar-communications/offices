@@ -1,3 +1,8 @@
+## Apr 19, 2023 - v1.4.1
+
+### CSS
+* Fixed contrast issue on `th` cells
+
 ## Feb 28, 2023 - v1.4
 
 ### CSS
@@ -36,7 +41,7 @@
 ## Sep 14, 2022 - v1.3.3
 
 ### CSS
-* _button.scss, _placement.scss, _wp-block-columns.scss, _wp-block-group.scss, 
+* _button.scss, _placement.scss, _wp-block-columns.scss, _wp-block-group.scss,
 	* Minor design adjustments
 * _group-row.scss
 	* This is a full-width section that can have different background colors applied to it, similar to the section designs already on Drupal and the new Alums and Admission sites.
@@ -109,7 +114,7 @@
 ### CSS
 
 * _u-page-parent.scss
-	* Hid subnav for pages with a `no-subnav` class 
+	* Hid subnav for pages with a `no-subnav` class
 * _recent-posts.scss
 	* Added this file
 * _button.scss
