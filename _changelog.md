@@ -1,3 +1,9 @@
+## July 18, 2023 - v1.4.2
+
+### CSS
+* Fixed contrast issue on Vassar masthead focus/hover states
+
+
 ## Apr 19, 2023 - v1.4.1
 
 ### CSS

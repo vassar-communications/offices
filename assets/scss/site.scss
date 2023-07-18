@@ -27,7 +27,7 @@
 
 #wpadminbar {
 	opacity: 0;
-	
+
 	&:hover {
 		opacity: 1;
 	}
@@ -82,7 +82,7 @@
 	width: 40em;
 	padding: 2em;
 	background: #fff;
-	
+
 	animation-name: alert;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
@@ -93,7 +93,7 @@ span.edit-link {
     top: 1em;
     right: 1em;
     opacity: 0.2;
-    
+
     &:hover {
 	    opacity: 1;
     }
@@ -102,11 +102,42 @@ span.edit-link {
 
 
 
+.u-VCard--site .org {
+    font: 600 2rem/1.1 "freight-big-pro","Georgia","Times","Times New Roman",serif !important;
+    text-transform: none !important;
+}
 
 
 
+.ac-hidden.ac-revealOnTab {
+  z-index: 1000;
+}
 
 
+#vcH .g-Masthead__ID {
+  padding: 0;
+}
 
+#vcH .g-Masthead__ID a,
+#vcH .g-Masthead__ID svg path {
+  transition: 0.4s all ease;
+}
 
+#vcH .g-Masthead__ID a {
+  display: block;
+  padding: 1em 0.8em 0.6em !important;
+}
 
+#vcH .g-Masthead__ID a:hover,
+#vcH .g-Masthead__ID a:focus {
+  background: #fff !important;
+}
+
+#vcH .g-Masthead__ID a:hover svg {
+  opacity: 1 !important;
+}
+
+#vcH .g-Masthead__ID a:hover svg path,
+#vcH .g-Masthead__ID a:focus svg path {
+  fill: #333 !important;
+}
