@@ -1,17 +1,20 @@
 .home {
 	.site-title {
+		background: rgba(0,0,0,0.6);
 		color: #fff;
+		padding-right: 1em;
+		width: 12em;
 	}
 	.u-Masthead {
 		&:before {
-			background: $grad-rose;
+//			background: $grad-rose;
 		}
 		&:after {
 			background-image: var(--page-header-image);
 			background-size: cover;
 			background-position: center center;
-			filter: grayscale(1);
-			mix-blend-mode: multiply;
+//			filter: grayscale(1);
+//			mix-blend-mode: multiply;
 	
 		}
 	}
