@@ -869,7 +869,7 @@ if ( function_exists( 'lazyblocks' ) ) :
                 <td>{{person_title}}</td>
                 <td>
                     {{#if person_extension}}
-                        <a href="tel:+1845437{{person_extension}}">845-437-{{person_extension}}</a>
+                        845-437-{{person_extension}}
                     {{/if}}
                     {{#if person_office}}
                 <p class="person__office">{{person_office}}</p>

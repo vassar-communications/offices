@@ -1,3 +1,14 @@
+## Oct 11, 2023 - v1.4.3
+
+### CSS
+* Removed duotone background on homepage masthead banners (people Megg was training thought it was dark and didn't look good, we decided on this in a web meeting)
+
+## PHP
+
+* functions.php
+	* Removed link around extension; the auto-linker was making the link appear twice.
+
+
 ## July 18, 2023 - v1.4.2
 
 ### CSS
