@@ -1,3 +1,8 @@
+## Nov 21, 2023 - v1.5
+
+### CSS
+* Added new styling for buttons and call-to-action styling.
+
 ## Oct 11, 2023 - v1.4.3
 
 ### CSS

@@ -1,2 +1,44 @@
 @import "mixins";
-@import "beltpack/~beltpack";
+// @import "beltpack/~beltpack";
+
+
+@mixin linkColors(
+	$link, 
+	$visited, 
+	$hover, 
+	$active, 
+	$link_bg:transparent,
+	$linkhover_bg:transparent
+	) {
+	&:link {
+		color: $link;
+		background: $link_bg;
+	}
+	&:visited {
+		color: $visited;
+		background: $link_bg;
+	}
+	&:hover, &:visited:hover, &:focus {
+		color: $hover;
+		background: $linkhover_bg;
+	}
+	&:active, &:visited:active {
+		color: $active;
+		background: $linkhover_bg;
+	}
+}
+
+@mixin hide-visually() {
+	/*	This hides text visually, without concealing it from screen readers.
+		https://webaim.org/techniques/css/invisiblecontent/#techniques	*/
+
+	border: 0;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}

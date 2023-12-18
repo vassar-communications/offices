@@ -5,8 +5,7 @@ input[type="button"] {
 	border-radius: 0.4em;
 }
 
-.wp-block-button a.wp-block-button__link {
-
+.wp-block-button:not(.arrow-link) a.wp-block-button__link {
 	font-family: $sans-serif;
 
 	&:link,

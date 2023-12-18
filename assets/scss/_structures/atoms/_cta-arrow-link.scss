@@ -1,0 +1,20 @@
+.arrow-link a {
+
+background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTYiIHdpZHRoPSIxNCIgdmlld0JveD0iMCAwIDQ0OCA1MTIiPjwhLS0hRm9udCBBd2Vzb21lIEZyZWUgNi41LjEgYnkgQGZvbnRhd2Vzb21lIC0gaHR0cHM6Ly9mb250YXdlc29tZS5jb20gTGljZW5zZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UvZnJlZSBDb3B5cmlnaHQgMjAyMyBGb250aWNvbnMsIEluYy4tLT48cGF0aCBmaWxsPSIjOTUxODI5IiBkPSJNNDM4LjYgMjc4LjZjMTIuNS0xMi41IDEyLjUtMzIuOCAwLTQ1LjNsLTE2MC0xNjBjLTEyLjUtMTIuNS0zMi44LTEyLjUtNDUuMyAwcy0xMi41IDMyLjggMCA0NS4zTDMzOC44IDIyNCAzMiAyMjRjLTE3LjcgMC0zMiAxNC4zLTMyIDMyczE0LjMgMzIgMzIgMzJsMzA2LjcgMEwyMzMuNCAzOTMuNGMtMTIuNSAxMi41LTEyLjUgMzIuOCAwIDQ1LjNzMzIuOCAxMi41IDQ1LjMgMGwxNjAtMTYweiIvPjwvc3ZnPg==) !important; 
+	background-repeat: no-repeat !important;
+	background-position: right !important;
+	padding-right: 1.2rem;
+	text-decoration: none;
+	font-variation-settings: "wght" 600;
+	color: #951829 !important;
+transition-duration: 0.4s;
+}
+
+
+.arrow-link a:hover,
+.arrow-link a:focus {
+	background-color: transparent !important;
+	color: #951829 !important;
+	text-decoration: underline !important;
+  padding-right: 1.6rem;
+}
