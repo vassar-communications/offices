@@ -1,3 +1,8 @@
+## Dec 18, 2023 - v1.6
+
+### CSS
+* Added styling for the Fearlessly Consequential universal nav badge
+
 ## Nov 21, 2023 - v1.5
 
 ### CSS
