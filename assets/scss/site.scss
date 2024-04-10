@@ -141,3 +141,20 @@ span.edit-link {
 #vcH .g-Masthead__ID a:focus svg path {
   fill: #333 !important;
 }
+
+
+
+.node--type-alert {
+  --section-text-color: #fff;
+}
+.node--type-alert a,
+.node--type-alert a:visited {
+  color: #fff !important;
+}
+.node--type-alert a:hover,
+.node--type-alert a:focus,
+.node--type-alert a:visited:hover,
+.node--type-alert a:visited:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
