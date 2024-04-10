@@ -4552,6 +4552,17 @@ html {
   margin-bottom: 6rem;
 }
 
+.error404 .u-lHeader {
+  padding: 8em 2em 2em !important;
+  background: #eee;
+}
+.error404 .site-title a {
+  color: #666 !important;
+}
+.error404 .page-content {
+  padding-bottom: 4rem;
+}
+
 .home .u-lHeader {
   padding: 0 !important;
 }
