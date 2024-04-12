@@ -5692,6 +5692,7 @@ a:hover {
 	-------------------- */
 .u-NavSite__main a,
 .menu-main-navigation-container a {
+  border-bottom: 1px solid transparent;
   text-decoration: none;
 }
 .u-NavSite__main a,
@@ -5711,6 +5712,11 @@ a:hover {
 .menu-main-navigation-container a:active,
 .menu-main-navigation-container a:focus {
   color: #ce1e46;
+}
+.u-NavSite__main a:hover, .u-NavSite__main a:focus,
+.menu-main-navigation-container a:hover,
+.menu-main-navigation-container a:focus {
+  border-bottom: 1px solid;
 }
 .u-NavSite__main .current_page_item > a,
 .u-NavSite__main .current-menu-ancestor > a,
@@ -5791,7 +5797,7 @@ a:hover {
 }
 @media screen and (min-width: 40em) {
   .menu-item:not(.current-menu-item):hover > a {
-    background: #f1ede8;
+    background: transparent;
     color: #ce1e46;
   }
 }
@@ -5809,6 +5815,16 @@ a:hover {
 }
 
 /*	Mobile universal nav menu */
+.u-NavSite__level--2 .menu-item {
+  border-left: 1px solid transparent;
+  transition: 0.4s border ease;
+}
+
+.u-NavSite__level--2 .menu-item:hover,
+.u-NavSite__level--2 .menu-item:focus {
+  border-left: 1px solid #e00;
+}
+
 .site-title a, .site-title a:visited {
   color: #fff;
   transition: 0.4s all ease;

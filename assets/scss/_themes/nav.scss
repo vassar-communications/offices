@@ -6,8 +6,16 @@
 .u-NavSite__main,
 .menu-main-navigation-container {
 	a {
+//		$VC__vassarLinkPink: transparent;
+		border-bottom: 1px solid transparent;
+
 		@include links($VC__vassarBurgundy, $VC__vassarBurgundy, $VC__vassarLinkPink, $VC__vassarLinkPink);
 		text-decoration: none;
+		
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid;
+		}
 	}
 	.current_page_item,
 	.current-menu-ancestor {
@@ -57,7 +65,8 @@
 			text-decoration: none;
 
 		    @include break(small) {
-			    background: $light-brown-small-areas;
+//			    background: $light-brown-small-areas;
+				background: transparent;
 			    color: #ce1e46;
 		    }
 	    }
@@ -78,6 +87,16 @@
 }
 /*	Mobile universal nav menu */
 
+
+.u-NavSite__level--2 .menu-item {
+	border-left: 1px solid transparent;
+	transition: 0.4s border ease;
+}
+
+.u-NavSite__level--2 .menu-item:hover,
+.u-NavSite__level--2 .menu-item:focus{
+	border-left: 1px solid #e00;
+}
 
 
 
