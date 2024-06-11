@@ -1,3 +1,17 @@
+## June 11, 2024 - v1.7
+
+### PHP
+* functions.php
+	* Removed a script, skip-link-focus-fix.js
+	* Added code for the Search Exclude plugin (https://wordpress.org/plugins/search-exclude/#does%20this%20plugin%20affect%20seo%3F). That function, `add_meta_for_search_excluded()`, will add a meta tag on pages excluded from search to ensure that search engines - at least, the ethical ones - ignore the page also.
+* footer_markup.php
+	* Removed references to font files that didn't exist
+* header_markup.php
+	* Updated nav markup
+
+### Other
+* Removed some old backup files
+
 ## Dec 18, 2023 - v1.6
 
 ### CSS

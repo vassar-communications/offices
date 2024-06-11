@@ -1,19 +1,4 @@
 <style>
-@font-face {
-  font-display: swap;
-  font-family: "Source Sans Variable";
-  font-weight: 200 900;
-  font-stretch: normal;
-  src: url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSansVariable-Roman.ttf.woff2") format("woff2"), url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSansVariable-Roman.ttf.woff") format("woff"), url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSansVariable-Roman.ttf") format("ttf");
-}
-@font-face {
-  font-display: swap;
-  font-family: "Source Sans Variable";
-  font-weight: 200 900;
-  font-style: italic;
-  font-stretch: normal;
-  src: url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSans3VF-Italic.ttf.woff2") format("woff2"), url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSans3VF-Italic.ttf.woff") format("woff"), url("https://www.vassar.edu/themes/custom/vassar_bootstrap/fonts/SourceSans3VF-Italic.ttf") format("ttf");
-}
 
 .footer {
   color: #fff;
