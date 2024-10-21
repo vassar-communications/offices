@@ -1,3 +1,8 @@
+## Oct 21, 2024 - v1.7.1
+
+### HTML
+* footer_markup.php: Added Threads icon, moved some links around
+
 ## June 11, 2024 - v1.7
 
 ### PHP
