@@ -54,9 +54,16 @@ html {
 .entry__content > .group-row:last-child {
     padding-bottom: 6rem;
 }
-.entry__content > *:not(.group-row):last-child {
-    margin-bottom: 6rem;
+
+//.entry__content > *:not(.group-row):last-child {
+//    margin-bottom: 6rem;
+//}
+
+html:not(.blog) .entry__content > *:not(.group-row):last-child {
+  margin-bottom: 6rem;
 }
+
+
 
 @import "_u-page-404";
 @import "_u-page-home";
