@@ -1,3 +1,8 @@
+## Apr 2, 2025 - v1.7.2
+
+### HTML
+* footer_markup.php: Removed X icon
+
 ## Oct 21, 2024 - v1.7.1
 
 ### HTML
