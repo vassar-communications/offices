@@ -2934,6 +2934,12 @@ td p, td li {
   line-height: inherit;
 }
 
+.has-xsmall-font-size,
+.has-xsmall-font-size * {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
 div:not(.size-small).alignleft,
 div:not(.size-small).alignright {
   /*	Sets up a media query. This expects that all of a project's breakpoints will
